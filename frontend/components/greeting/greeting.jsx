@@ -19,6 +19,7 @@ const welcomeGreeting = (currentUser, logout) => (
     <nav className="session-nav">
       <ul className="session-btns">
         <li><button onClick={logout}>Logout</button></li>
+        <li><img className="cart-icon" src="/assets/cart.png"/></li>
       </ul>
 
     </nav>

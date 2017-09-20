@@ -28,19 +28,25 @@ a:hover, button:hover {
 
 .logo {
   font-family: 'Libre Baskerville', serif;
-  margin: 20px;
+  margin: 20px 30px;
 }
 
 .session-nav {
-  margin: 20px;
-}
-
-.session-btns a {
+  margin: 20px 15px;
 }
 
 .session-btns li {
   float: left;
-  margin: 5px 10px;
+  margin: 5px 15px;
+}
+
+.session-btns button {
+  margin: -1px 0;
+}
+
+.cart-icon {
+  width: 30px;
+  margin: -6px 0;
 }
 
 header {
@@ -79,12 +85,16 @@ header {
   border-radius: 4px;
   font-weight: normal;
   color: #fff;
+  margin-bottom: 15px;
 }
 
 .auth-form input[type=submit]:hover {
   cursor: pointer;
 }
 
+.nav-link-list li {
+  margin-bottom: 10px;
+}
 .errors {
   color: red;
 }
