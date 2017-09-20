@@ -1,0 +1,54 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 400
+}
+
+a {
+  text-decoration: none;
+}
+
+button, .session-btns a, .session-btns li, .logo {
+  color: #E55400;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  font-size: 16px;
+  padding: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.logo {
+  font-family: 'Libre Baskerville', serif;
+  margin: 20px;
+}
+
+.session-nav {
+  margin: 20px;
+}
+
+.session-btns a {
+}
+
+.session-btns li {
+  float: left;
+  margin: 5px 10px;
+}
+
+.main-content {
+
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #E1E3DF;
+}
