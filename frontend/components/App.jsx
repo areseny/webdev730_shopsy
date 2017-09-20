@@ -12,8 +12,8 @@ const App = () => (
       <Link to="/"><h1 className="logo">Shopsy</h1></Link>
       <GreetingContainer />
     </header>
-    <AuthRoute path="/login-modal" component={AuthModalContainer}/>
-    <AuthRoute path="/signup-modal" component={AuthModalContainer}/>
+    <AuthRoute path="/login" component={AuthModalContainer}/>
+    <AuthRoute path="/signup" component={AuthModalContainer}/>
   </div>
 );
 

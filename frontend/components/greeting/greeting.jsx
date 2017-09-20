@@ -7,8 +7,8 @@ const sessionLinks = (login) => {
   return(
     <nav className="session-nav">
       <ul className="session-btns">
-        <li><Link to={`/signup-modal`}>Register</Link></li>
-        <li><Link to={`/login-modal`}>Log In</Link></li>
+        <li><Link to={`/signup`}>Register</Link></li>
+        <li><Link to={`/login`}>Sign In</Link></li>
         <li><button onClick={loginDummy}>Demo</button></li>
       </ul>
     </nav>

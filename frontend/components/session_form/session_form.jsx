@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
       return (
         <div>
           <p>Not signed up yet?</p>
-          <Link to="/signup">Sign up</Link>
+          <Link to="/signup">Register</Link>
         </div>
       );
     } else {
@@ -46,28 +46,35 @@ class SessionForm extends React.Component {
     }
   }
 
+  showErrors() {
+
+  }
+
   render() {
-    const title = this.props.formType === "login" ? "Login" : "Sign Up";
+    const errors = this.props.errors.map(
+      (err, i) => <li className="errors" key={i}>{err}</li>);
+    const title = this.props.formType === "login" ? "Sign In" : "Register";
     return (
-      <div>
-        <h1>Hello! Please {title}</h1>
-        {this.navLink()}
-        <form onSubmit={this.handleSubmit}>
-          <label>Username
+      <div className="auth-form-container">
+        <form className="auth-form" onSubmit={this.handleSubmit}>
+          <h1 className="auth-form-title">{title}</h1>
             <input
+              className="auth-form-text-input"
+              placeholder="Username"
               type="text"
               value={this.state.username}
               onChange={this.update("username")}
             />
-          </label>
-          <label>Password
             <input
+              className="auth-form-text-input"
+              placeholder="Password"
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
             />
-          </label>
-          <input type="submit" value={title}/>
+          {errors}
+          <input type="submit" value={title} className="auth-form-btn"/>
+          {this.navLink()}
         </form>
       </div>
     );
