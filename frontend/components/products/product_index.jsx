@@ -8,7 +8,7 @@ export default class ProductIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="product-row">
         {this.props.products.map( product =>
         <ProductIndexItem
         key={product.id}

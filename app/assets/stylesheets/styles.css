@@ -7,10 +7,6 @@ h1 {
   font-weight: 400
 }
 
-a {
-  text-decoration: none;
-}
-
 button, .session-btns a, .session-btns li, .logo {
   color: #E55400;
 }
@@ -110,10 +106,17 @@ header {
 
 /* product index */
 
-.product-thumb {
-  width: 200px;
+.product-row {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  padding: 20px;
+  grid-row-gap: 20px;
 }
 
-.product-index-info {
+.product-thumb {
+  max-width: 100%;
+}
+
+.product-item-container {
   text-align: center;
 }

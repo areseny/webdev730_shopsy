@@ -1,14 +1,18 @@
 import React from 'react';
+import { withRouter, Link } from 'react-router-dom';
 
 const ProductIndexItem = ({ product }) => (
-  <div className="product-item-container">
-    <figure className="product-img-small">
-      <img className="product-thumb" src="assets/moonsurfer_black_model_2.jpg"/>
-    </figure>
-    <div className='product-index-info'>
-      <h2>{product.title}</h2>
+  <Link to={`products/${product.id}`}>
+    <div className="product-item-container">
+      <div className="product-index-img">
+          <img className="product-thumb" src={product.image_url}/>
+      </div>
+      <div className='product-index-info'>
+        <h2>{product.title}</h2>
+        ${product.price}
+      </div>
     </div>
-  </div>
+  </Link>
 );
 
 export default ProductIndexItem;

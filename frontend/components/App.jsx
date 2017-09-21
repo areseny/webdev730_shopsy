@@ -1,10 +1,12 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import AuthRoute from '../util/route_util';
 import { Link } from 'react-router-dom';
 import AuthModalContainer from './modals/auth_modal_container';
 import ProductIndexContainer from './products/product_index_container';
+import ProductShowContainer from './products/product_show_container';
+
 
 const App = () => (
   <div className="main-content">
@@ -14,7 +16,10 @@ const App = () => (
     </header>
     <AuthRoute path="/login" component={AuthModalContainer}/>
     <AuthRoute path="/signup" component={AuthModalContainer}/>
-    <ProductIndexContainer />
+    <Switch>
+      <Route exact path="/" component={ProductIndexContainer} />
+      <Route exact path="products/:productId" component={ProductShowContainer}/>
+    </Switch>
   </div>
 );
 
