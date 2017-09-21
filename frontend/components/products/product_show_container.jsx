@@ -4,8 +4,6 @@ import { withRouter } from 'react-router-dom';
 import { getProduct } from '../../actions/product_actions';
 
 const mapStateToProps = (state, ownProps) => {
-   console.log(state);
-   console.log(ownProps.match.params);
    return { product: state.products[ownProps.match.params.productId]};
 };
 

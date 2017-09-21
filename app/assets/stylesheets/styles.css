@@ -2,6 +2,9 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.main-content {
+}
+
 h1 {
   font-size: 34px;
   font-weight: 400
@@ -24,11 +27,11 @@ a:hover, button:hover {
 
 .logo {
   font-family: 'Libre Baskerville', serif;
-  margin: 20px 30px;
+  margin: 10px 30px;
 }
 
 .session-nav {
-  margin: 20px 15px;
+  margin: 10px 30px;
 }
 
 .session-btns li {
@@ -49,6 +52,8 @@ header {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #E1E3DF;
+  padding: 10px;
+  background-color: #fff;
 }
 
 .auth-form-title {
@@ -72,7 +77,7 @@ header {
   margin: 10px 0;
 }
 
-.auth-form input[type=submit] {
+.add-to-cart-btn, .auth-form input[type=submit] {
   font-size: 16px;
   width: 100%;
   text-decoration: none;
@@ -85,7 +90,7 @@ header {
   margin-bottom: 15px;
 }
 
-.auth-form input[type=submit]:hover {
+.add-to-cart-btn:hover, .auth-form input[type=submit]:hover {
   cursor: pointer;
   background: #B85A24;
 }
@@ -107,10 +112,14 @@ header {
 /* product index */
 
 .product-row {
+  margin: auto;
+  max-width: 90%;
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
-  padding: 20px;
   grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  padding-top: 40px;
+  padding-right: 75px;
 }
 
 .product-thumb {
@@ -119,4 +128,39 @@ header {
 
 .product-item-container {
   text-align: center;
+}
+
+/* Product Show */
+
+.product-show-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.product-image {
+  max-width: 50%;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.product-info {
+  margin-right: 60px;
+}
+
+.product-show-price {
+  font-size: 24px;
+}
+
+.product-detail-list {
+  margin: 20px 0;
+}
+
+.product-detail-list li {
+  margin: 20px 0;
 }
