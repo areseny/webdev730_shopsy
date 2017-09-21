@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as SessionActions from './actions/session_actions';
-import * as ProductApiUtil from './util/product_api_util';
+import * as ProductActions from './actions/product_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -17,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  window.fetchProducts = ProductApiUtil.fetchProducts;
-  window.fetchProduct = ProductApiUtil.fetchProduct;
+  window.getAllProducts = ProductActions.getAllProducts;
+  window.getProduct = ProductActions.getProduct;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 

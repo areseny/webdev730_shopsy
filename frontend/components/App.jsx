@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import AuthRoute from '../util/route_util';
 import { Link } from 'react-router-dom';
 import AuthModalContainer from './modals/auth_modal_container';
+import ProductIndexContainer from './products/product_index_container';
 
 const App = () => (
   <div className="main-content">
@@ -13,6 +14,7 @@ const App = () => (
     </header>
     <AuthRoute path="/login" component={AuthModalContainer}/>
     <AuthRoute path="/signup" component={AuthModalContainer}/>
+    <ProductIndexContainer />
   </div>
 );
 
