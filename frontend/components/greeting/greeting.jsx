@@ -20,7 +20,11 @@ const welcomeGreeting = (currentUser, logout) => {
     <nav className="session-nav">
       <ul className="session-btns">
         <li><button onClick={logout}>Logout</button></li>
-        <li><img className="cart-icon" src="assets/cart.png"/></li>
+        <li>
+          <img
+            className="cart-icon"
+            src="http://res.cloudinary.com/brainzilla/image/upload/v1506036925/cart_sisp9z.png"/>
+        </li>
       </ul>
 
     </nav>
