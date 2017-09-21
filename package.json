@@ -43,5 +43,7 @@
     "url": "https://github.com/brainzilla79/etsy-clone/issues"
   },
   "homepage": "https://github.com/brainzilla79/etsy-clone#readme",
-  
+  "devDependencies": {
+    
+  }
 }
