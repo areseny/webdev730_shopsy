@@ -22,10 +22,7 @@ export const login = (user) => dispatch => (
 export const signup = (user) => dispatch => (
   SessionAPIUtil.signup(user)
     .then( currentUser => dispatch(receiveCurrentUser(currentUser)),
-    err => {
-      console.log(err);
-      dispatch(receiveErrors(err.responseJSON));
-    })
+    err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const logout = () => dispatch => (

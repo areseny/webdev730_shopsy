@@ -15,15 +15,16 @@ const sessionLinks = (login) => {
   );
 };
 
-const welcomeGreeting = (currentUser, logout) => (
+const welcomeGreeting = (currentUser, logout) => {
+    return (
     <nav className="session-nav">
       <ul className="session-btns">
         <li><button onClick={logout}>Logout</button></li>
-        <li><img className="cart-icon" src="/assets/cart.png"/></li>
+        <li><img className="cart-icon" src="assets/cart.png"/></li>
       </ul>
 
     </nav>
-);
+);};
 
 const Greeting = ({ currentUser, logout, login }) => (
   currentUser ? welcomeGreeting(currentUser, logout) : sessionLinks(login)
