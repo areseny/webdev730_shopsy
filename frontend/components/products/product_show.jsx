@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 export default class ProductShow extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ export default class ProductShow extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <div className="product-show-image">
