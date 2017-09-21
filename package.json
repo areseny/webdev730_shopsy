@@ -43,7 +43,5 @@
     "url": "https://github.com/brainzilla79/etsy-clone/issues"
   },
   "homepage": "https://github.com/brainzilla79/etsy-clone#readme",
-  "devDependencies": {
-    "redux-devtools-extension": "^2.13.2"
-  }
+  
 }
