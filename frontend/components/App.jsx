@@ -6,6 +6,7 @@ import { Link, withRouter } from 'react-router-dom';
 import AuthModalContainer from './modals/auth_modal_container';
 import ProductIndexContainer from './products/product_index_container';
 import ProductShowContainer from './products/product_show_container';
+import Banner from './banner/banner.jsx';
 
 const App = () => (
   <div className="main-content">
