@@ -111,6 +111,10 @@ header {
 
 /* product index */
 
+.main-index {
+  height: 100%;
+}
+
 .product-row {
   margin: auto;
   max-width: 90%;

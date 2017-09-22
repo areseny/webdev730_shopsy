@@ -14,6 +14,7 @@
 
 class Product < ApplicationRecord
   validates :title, :image_url, :price, :description, presence: true
+  validates :title, uniqueness: true
 
   belongs_to :seller,
     primary_key: :id,
