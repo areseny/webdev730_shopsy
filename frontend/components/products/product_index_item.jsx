@@ -8,8 +8,10 @@ const ProductIndexItem = ({ product }) => (
           <img className="product-thumb" src={product.image_url}/>
       </div>
       <div className='product-index-info'>
-        <h2>{product.title}</h2>
-        ${product.price}
+        <ul>
+          <li>{product.title}</li>
+          <li>${product.price}</li>
+        </ul>
       </div>
     </div>
   </Link>

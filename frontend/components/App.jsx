@@ -13,10 +13,12 @@ const App = () => (
       <Link to="/"><h1 className="logo">Shopsy</h1></Link>
       <GreetingContainer />
     </header>
+    <Switch>
+      <Route path="/products/:productId" component={ProductShowContainer}/>
+      <Route path="/" component={ProductIndexContainer} />
+    </Switch>
     <AuthRoute path="/login" component={AuthModalContainer}/>
     <AuthRoute path="/signup" component={AuthModalContainer}/>
-    <Route exact path="/" component={ProductIndexContainer} />
-    <Route path="/products/:productId" component={ProductShowContainer}/>
   </div>
 );
 

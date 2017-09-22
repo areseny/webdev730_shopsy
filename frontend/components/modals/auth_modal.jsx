@@ -33,7 +33,7 @@ class App extends React.Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
-    this.props.history.push("/");
+    this.props.history.goBack();
   }
 
   render() {
@@ -50,7 +50,6 @@ class App extends React.Component {
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Example Modal"
         >
 
           {form}
