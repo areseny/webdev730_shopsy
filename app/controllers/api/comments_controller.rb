@@ -1,6 +1,6 @@
 class Api::CommentsController < ApplicationController
   def index
-    @comments = Product.find_by(product_id: params[:product_id]).comments
+    @comments = Product.find(params[:product_id]).comments
     render :index
   end
 

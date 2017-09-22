@@ -32,6 +32,9 @@ export default class ProductShow extends React.Component {
           </ul>
           <input type="submit" className='add-to-cart-btn' value='Add To Cart'/>
         </div>
+        <div className="comments-section">
+          <CommentIndexContainer productId={this.props.product.id}/>
+        </div>
       </div>
     );
   }

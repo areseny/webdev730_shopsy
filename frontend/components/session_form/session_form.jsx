@@ -5,10 +5,7 @@ import { Link } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: "",
-      password: ""
-    };
+    this.state = {username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -22,7 +19,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.action(user);
-    this.props.history.goBack();
   }
 
   update(field) {
@@ -35,7 +31,12 @@ class SessionForm extends React.Component {
         <div>
           <ul className="nav-link-list">
             <li><p>Not signed up yet?</p></li>
-            <li><Link to="/signup">Register</Link></li>
+            <li>
+              <Link
+                onClick={this.props.clearErrors}
+                to="/signup">Register
+              </Link>
+            </li>
           </ul>
         </div>
       );
@@ -44,7 +45,12 @@ class SessionForm extends React.Component {
         <div>
           <ul className="nav-link-list">
             <li><p>Already signed up?</p></li>
-            <li><Link to="/login">Login</Link></li>
+            <li>
+              <Link
+                onClick={this.props.clearErrors}
+                to="/login">Login
+              </Link>
+            </li>
           </ul>
         </div>
       );

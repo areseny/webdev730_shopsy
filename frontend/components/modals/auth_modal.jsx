@@ -50,6 +50,7 @@ class App extends React.Component {
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
+          contentLabel="Example Modal"
         >
 
           {form}
