@@ -5,41 +5,41 @@ export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
 export const receiveAllComments = comments => ({
-  action: RECEIVE_ALL_COMMENTS,
+  type: RECEIVE_ALL_COMMENTS,
   comments
 });
 
 export const receiveComment = comment => ({
-  action: RECEIVE_COMMENT,
+  type: RECEIVE_COMMENT,
   comment
 });
 
 export const removeComment = comment => ({
-  action: REMOVE_COMMENT,
+  type: REMOVE_COMMENT,
   comment
 });
 
-export const getComments = (productId) => (
+export const getComments = (productId) => dispatch => (
   CommentAPIUtil.fetchComments(productId)
-  .then( comments => receiveAllComments(comments))
+  .then( comments => dispatch(receiveAllComments(comments)))
 );
 
-export const getComment = (id) => (
+export const getComment = (id) => dispatch => (
   CommentAPIUtil.fetchComment(id)
-  .then( comment => receiveComment(comment))
+  .then( comment => dispatch(receiveComment(comment)))
 );
 
-export const createComment = (newComment) => (
+export const createComment = (newComment) => dispatch => (
   CommentAPIUtil.createComment(newComment)
-  .then( comment => receiveComment(comment))
+  .then( comment => dispatch(receiveComment(comment)))
 );
 
-export const updateComment = (newComment) => (
+export const updateComment = (newComment) => dispatch => (
   CommentAPIUtil.updateComment(newComment)
-  .then( comment => receiveComment(comment))
+  .then( comment => dispatch(receiveComment(comment)))
 );
 
-export const deleteComment = (id) => (
+export const deleteComment = (id) => dispatch => (
   CommentAPIUtil.deleteComment(id)
-  .then( comment => removeComment(comment))
+  .then( comment => dispatch(removeComment(comment)))
 );

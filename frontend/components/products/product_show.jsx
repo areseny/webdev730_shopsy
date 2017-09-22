@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 export default class ProductShow extends React.Component {
   constructor(props) {
@@ -31,9 +32,9 @@ export default class ProductShow extends React.Component {
             </li>
           </ul>
           <input type="submit" className='add-to-cart-btn' value='Add To Cart'/>
-        </div>
-        <div className="comments-section">
-          <CommentIndexContainer productId={this.props.product.id}/>
+          <div className="comments-section">
+            <CommentIndexContainer productId={this.props.product.id}/>
+          </div>
         </div>
       </div>
     );

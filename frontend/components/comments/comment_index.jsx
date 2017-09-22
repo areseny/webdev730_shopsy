@@ -7,6 +7,10 @@ export default class CommentIndex extends React.Component {
   }
 
   render() {
-    
+    return (
+      <div>
+        Comments
+      </div>
+    );
   }
 }

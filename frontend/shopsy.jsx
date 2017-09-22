@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import * as CommentActions from './actions/comment_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -14,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-
+  window.getComment = CommentActions.getComment;
+  window.getComments = CommentActions.getComments;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
