@@ -20,5 +20,5 @@ class Product < ApplicationRecord
     foreign_key: :seller_id,
     class_name: :User
 
-
+  has_many :comments
 end
