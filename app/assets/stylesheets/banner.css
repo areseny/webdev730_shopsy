@@ -1,0 +1,33 @@
+.banner-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.banner {
+  margin: auto;
+  background: url("http://res.cloudinary.com/brainzilla/image/upload/v1506055117/pexels-photo-349494_wcjajt.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 700px;
+}
+
+.banner-btn {
+  text-align: center;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  color: #000;
+  border: 4px solid #000;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  transform: translate(-50%, -20%);
+}
+
+.banner-btn:hover {
+  cursor: pointer;
+}
