@@ -6,10 +6,14 @@ import {
   deleteComment
  } from '../../actions/comment_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  comments: Object.values(state.comments),
-  productId: ownProps.productId
-});
+const mapStateToProps = ({ session, comments }, ownProps) => {
+  const currentUserId = session.currentUser ? session.currentUser.id : null;
+  return ({
+    comments: Object.values(comments),
+    productId: ownProps.productId,
+    currentUserId
+  });
+};
 
 const mapDispatchToProps = state => dispatch => ({
   getComments: (productId) => dispatch(getComments(productId)),

@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentIndexContainer from '../comments/comment_index_container';
+import CommentFormContainer from '../comments/comment_form_container';
 
 export default class ProductShow extends React.Component {
   constructor(props) {
@@ -33,8 +34,7 @@ export default class ProductShow extends React.Component {
           </ul>
           <input type="submit" className='add-to-cart-btn' value='Add To Cart'/>
           <div className="comments-section">
-            Comments
-            <CommentIndexContainer productId={this.props.product.id}/>
+            <CommentFormContainer productId={this.props.product.id} />
           </div>
         </div>
       </div>

@@ -7,15 +7,12 @@ export default class CommentIndex extends React.Component {
   }
 
   render() {
+    const comments = this.props.comments.reverse().map( comment =>
+      <CommentIndexItem key={comment.id} comment={comment} />);
     return (
-      <div>
-        {this.props.comments.map( comment =>
-        <CommentIndexItem
-        key={comment.id}
-        updateComment={this.props.updateComment}
-        deleteComment={this.props.deleteComment}
-        comment={comment} />
-        )}
+      <div className="comments-list">
+        {comments}
+
       </div>
     );
   }
