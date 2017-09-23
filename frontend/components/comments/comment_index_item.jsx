@@ -1,7 +1,9 @@
 import React from 'react';
 
 const CommentIndexItem = ({ comment }) => (
-  <div></div>
+  <div>
+    {comment.body}
+  </div>
 );
 
 export default CommentIndexItem;
