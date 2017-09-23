@@ -10,7 +10,7 @@ h1 {
   font-weight: 400
 }
 
-button, .session-btns a, .session-btns li, .logo {
+.session-btns button, .session-btns a, .session-btns li, .logo {
   color: #E55400;
 }
 

@@ -1,8 +1,11 @@
 import React from 'react';
 
-const CommentIndexItem = ({ comment }) => (
+const CommentIndexItem = ({ comment, deleteComment, updateComment }) => (
   <div>
-    {comment.body}
+    <div className="comment-btns">
+      <button>Delete</button>
+    </div>
+    <textarea value={comment.body} />
   </div>
 );
 

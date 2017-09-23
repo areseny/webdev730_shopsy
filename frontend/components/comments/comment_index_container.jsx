@@ -1,6 +1,10 @@
 import { connect } from 'react-redux';
 import CommentIndex from './comment_index';
-import { getComments } from '../../actions/comment_actions';
+import {
+  getComments,
+  updateComment,
+  deleteComment
+ } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   comments: Object.values(state.comments),
@@ -8,7 +12,9 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = state => dispatch => ({
-  getComments: (productId) => dispatch(getComments(productId))
+  getComments: (productId) => dispatch(getComments(productId)),
+  updateComment: (comment) => dispatch(updateComment(comment)),
+  deleteComment: (comment) => dispatch(deleteComment(comment))
 });
 
 export default connect(
