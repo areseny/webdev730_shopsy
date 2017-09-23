@@ -11,7 +11,9 @@ export default class CommentIndex extends React.Component {
       <CommentIndexItem
         key={comment.id}
         comment={comment}
+        productId={this.props.productId}
         deleteComment={this.props.deleteComment}
+        updateComment={this.props.updateComment}
         currentUserId={this.props.currentUserId}
          />);
     return (

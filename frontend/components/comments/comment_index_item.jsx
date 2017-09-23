@@ -3,13 +3,38 @@ import React from 'react';
 export default class CommentIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.comment;
-    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      body: this.props.comment.body,
+      editButton: ""
+    };
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
-  handleClick(e) {
+  handleDelete(e) {
     e.preventDefault();
     this.props.deleteComment(this.props.comment.id);
+  }
+
+  handleEdit(e) {
+    e.preventDefault();
+    const comment = Object.assign(
+      {},
+      { body: this.state.body },
+      { productId: this.props.productId },
+      { id: this.props.comment.id }
+    );
+    console.log(comment);
+    this.props.updateComment(comment);
+    this.setState({ editButton: "" });
+  }
+
+  handleChange(e) {
+    this.setState({
+      body: e.target.value,
+      editButton: <button onClick={this.handleEdit}>Edit</button>
+    });
   }
 
   commentItem() {
@@ -19,7 +44,8 @@ export default class CommentIndexItem extends React.Component {
         value={this.state.body}
         onChange={this.handleChange}
         />
-      <button onClick={this.handleClick}>Delete</button>
+      <button onClick={this.handleDelete}>Delete</button>
+      {this.state.editButton}
       </div>;
     } else {
       comment = <textarea value={this.props.comment.body} readOnly/>;
@@ -28,7 +54,6 @@ export default class CommentIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return(
       <div>
         {this.commentItem()}
