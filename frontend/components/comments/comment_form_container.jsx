@@ -1,26 +1,13 @@
 import { connect } from 'react-redux';
 import CommentForm from './comment_form';
-import {
-  createComment,
-  getComments,
-  updateComment,
-  deleteComment
- } from '../../actions/comment_actions';
+import { createComment } from '../../actions/comment_actions';
 
-const mapStateToProps = ({ session, comments }, ownProps) => {
-  const currentUserId = session.currentUser ? session.currentUser.id : null;
-  return ({
+const mapStateToProps = ({ session, comments }, ownProps) => ({
     loggedIn: Boolean(session.currentUser),
-    comments: Object.values(comments),
-    productId: ownProps.productId,
-    currentUserId
-  });
-};
+    productId: ownProps.productId
+});
 
 const mapDispatchToProps = state => dispatch => ({
-  getComments: (productId) => dispatch(getComments(productId)),
-  updateComment: (comment) => dispatch(updateComment(comment)),
-  deleteComment: (comment) => dispatch(deleteComment(comment)),
   createComment: (comment) => dispatch(createComment(comment))
 });
 

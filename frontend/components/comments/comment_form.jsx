@@ -3,7 +3,7 @@ import React from 'react';
 export default class CommentForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { body: ""};
+    this.state = { body: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -40,8 +40,6 @@ export default class CommentForm extends React.Component {
     return (
       <div>
         {this.addComments()}
-        Comments
-
       </div>
     );
   }
