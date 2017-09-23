@@ -12,7 +12,7 @@ Product.create(
   price: 50,
   description: "Woven Shirt",
   seller_id: 1,
-  image_url: "assets/ultraverse_woven.jpg"
+  image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178257/ultraverse_woven_kxfeda.jpg"
 )
 
 Product.create(
@@ -20,7 +20,7 @@ Product.create(
   price: 30,
   description: "100% Cotton",
   seller_id: 1,
-  image_url: "assets/moonsurfer.jpg"
+  image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178257/moonsurfer_togt0r.jpg"
 )
 
 Product.create(
@@ -28,7 +28,7 @@ Product.create(
   price: 30,
   description: "100% Cotton",
   seller_id: 1,
-  image_url: "assets/infinite.jpg"
+  image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178256/infinite_ksy3rg.jpg"
 )
 
 Product.create(
@@ -36,7 +36,7 @@ Product.create(
   price: 30,
   description: "100% Cotton",
   seller_id: 1,
-  image_url: "assets/universe_within.jpg"
+  image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178255/universe_within_rnq8js.jpg"
 )
 
 Product.create(
@@ -44,7 +44,7 @@ Product.create(
   price: 30,
   description: "100% Cotton",
   seller_id: 1,
-  image_url: "assets/wireframe_voyage.jpg"
+  image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178255/wireframe_voyage_rbjvcz.jpg"
 )
 
 Product.create(
@@ -52,5 +52,5 @@ Product.create(
   price: 30,
   description: "100% Cotton",
   seller_id: 1,
-  image_url: "assets/astro_wave.jpg"
+  image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178258/astro_wave_udreli.jpg"
 )
