@@ -10,6 +10,11 @@ export default class CommentIndex extends React.Component {
     return (
       <div>
         Comments
+        {this.props.comments.map( comment =>
+        <CommentIndexItem
+        key={comment.id}
+        comment={comment} />
+        )}
       </div>
     );
   }
