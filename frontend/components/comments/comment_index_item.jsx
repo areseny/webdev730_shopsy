@@ -25,7 +25,6 @@ export default class CommentIndexItem extends React.Component {
       { productId: this.props.productId },
       { id: this.props.comment.id }
     );
-    console.log(comment);
     this.props.updateComment(comment);
     this.setState({ editButton: "" });
   }
