@@ -7,6 +7,7 @@ import AuthModalContainer from './modals/auth_modal_container';
 import ProductIndexContainer from './products/product_index_container';
 import ProductShowContainer from './products/product_show_container';
 import Banner from './banner/banner.jsx';
+import CartItemsIndexContainer from './cart_items/cart_items_index_container';
 
 const App = () => (
   <div className="main-content">
@@ -15,6 +16,7 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Switch>
+      <Route path="/cart" component={CartItemsIndexContainer}/>
       <Route path="/products/:productId" component={ProductShowContainer}/>
       <Route path="/products" component={ProductIndexContainer} />
       <Route path="/" component={Banner} />

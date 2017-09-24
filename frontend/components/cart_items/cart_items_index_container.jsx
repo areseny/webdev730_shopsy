@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CartItemsIndex from './cart_items_index';
-
+import { getAllProducts } from '../../actions/product_actions';
 import { getCartItems } from '../../actions/cart_items_actions';
 
 const mapStateToProps = ({ cartItems, products }) => {
@@ -10,7 +10,8 @@ const mapStateToProps = ({ cartItems, products }) => {
 };
 
 const mapDispatchToProps = state => dispatch => ({
-  getCartItems: () => dispatch(getCartItems())
+  getCartItems: () => dispatch(getCartItems()),
+  getAllProducts: () => dispatch(getAllProducts())
 });
 
 export default connect(
