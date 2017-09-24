@@ -1,10 +1,12 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CommentFormContainer from '../comments/comment_form_container';
 
 export default class ProductShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { redirect: false };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -15,26 +17,31 @@ export default class ProductShow extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createCartItem(this.props.product.id);
+    this.setState({ redirect: true });
   }
 
   render() {
-    if (this.props.product === undefined) return (<div></div>);
+    const { product } = this.props;
+    if (!product) return (<div></div>);
     return (
       <div className="product-show-container">
         <div className="product-image">
-          <img src={this.props.product.image_url}/>
+          <img src={product.image_url}/>
         </div>
         <div className="product-info">
-          <h1>{this.props.product.title}</h1>
+          <h1>{product.title}</h1>
           <ul className="product-detail-list">
             <li>
+              Seller: {product.seller.username}
+            </li>
+            <li>
               <div className="product-show-price">
-                ${this.props.product.price}
+                ${product.price}
               </div>
             </li>
             <li>
               <div className="product-description">
-                {this.props.product.description}
+                {product.description}
               </div>
             </li>
           </ul>
@@ -45,9 +52,10 @@ export default class ProductShow extends React.Component {
               value='Add To Cart'
             />
           </form>
+          {this.state.redirect && (<Redirect to="/cart"/>)}
           <div className="comments-section">
-            <CommentFormContainer productId={this.props.product.id} />
-            <CommentIndexContainer productId={this.props.product.id}/>
+            <CommentFormContainer productId={product.id} />
+            <CommentIndexContainer productId={product.id}/>
           </div>
         </div>
       </div>

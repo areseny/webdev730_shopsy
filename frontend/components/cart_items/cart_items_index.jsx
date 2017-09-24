@@ -11,12 +11,14 @@ export default class CartItemsIndex extends React.Component {
   }
 
   render() {
+    const { deleteCartItem } = this.props;
     return (
       <div>
         Cart
         {this.props.cartProducts.map( cartProduct =>
           <CartItemsIndexItem
           key={cartProduct.id}
+          deleteCartItem={deleteCartItem}
           cartProduct={cartProduct}
           />)
         }

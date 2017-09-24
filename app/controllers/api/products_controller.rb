@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @products = Product.includes(:seller)
     render 'api/products/index'
   end
 

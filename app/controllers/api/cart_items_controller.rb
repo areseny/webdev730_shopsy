@@ -1,7 +1,7 @@
 class Api::CartItemsController < ApplicationController
   def index
-    @products = current_user.cart_products
-    render 'api/products/index'
+    @cart_items = current_user.cart_items.includes(:product)
+    render 'api/cart_items/index'
   end
 
   def show
