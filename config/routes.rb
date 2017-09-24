@@ -11,6 +11,6 @@ Rails.application.routes.draw do
       resources :comments, only: [:index]
     end
     resources :comments, only: [:show, :create, :update, :destroy]
-    resources :cart_items, only: [:create, :index, :update, :destroy]
+    resources :cart_items, only: [:create, :index, :show, :destroy]
   end
 end
