@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :logged_in?, :current_user
 
+  private
+
   def login(user)
     @current_user = user
     session[:session_token] = user.reset_session_token
@@ -20,4 +22,5 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
+
 end
