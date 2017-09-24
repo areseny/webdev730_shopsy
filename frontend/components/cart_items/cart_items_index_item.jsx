@@ -15,9 +15,14 @@ export default class CartItemsIndexItem extends React.Component {
   render() {
     const { cartProduct } = this.props;
     return (
-      <div>
-        {cartProduct.title}
-        <button onClick={this.handleClick}>Remove Item</button>
+      <div className="cart-product">
+        <img className="cart-product-img" src={cartProduct.image_url}/>
+        <ul>
+          <li>{cartProduct.title}</li>
+
+
+          <button onClick={this.handleClick}>Remove Item</button>
+        </ul>
       </div>
     );
   }
