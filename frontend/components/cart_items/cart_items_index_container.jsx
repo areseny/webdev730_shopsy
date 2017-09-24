@@ -3,15 +3,12 @@ import CartItemsIndex from './cart_items_index';
 import { getAllProducts } from '../../actions/product_actions';
 import { getCartItems } from '../../actions/cart_items_actions';
 
-const mapStateToProps = ({ cartItems, products }) => {
-  const cartProducts = Object.values(cartItems).map( cartItem =>
-  products[cartItem.product_id]);
-  return ({ cartProducts });
-};
+const mapStateToProps = ({ cartItems }) => ({
+  cartProducts: Object.values(cartItems)
+});
 
 const mapDispatchToProps = state => dispatch => ({
-  getCartItems: () => dispatch(getCartItems()),
-  getAllProducts: () => dispatch(getAllProducts())
+  getCartItems: () => dispatch(getCartItems())
 });
 
 export default connect(

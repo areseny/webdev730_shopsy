@@ -5,10 +5,16 @@ import CommentFormContainer from '../comments/comment_form_container';
 export default class ProductShow extends React.Component {
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.props.getProduct(this.props.match.params.productId);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createCartItem(this.props.product.id);
   }
 
   render() {
@@ -32,7 +38,13 @@ export default class ProductShow extends React.Component {
               </div>
             </li>
           </ul>
-          <input type="submit" className='add-to-cart-btn' value='Add To Cart'/>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="submit"
+              className='add-to-cart-btn'
+              value='Add To Cart'
+            />
+          </form>
           <div className="comments-section">
             <CommentFormContainer productId={this.props.product.id} />
             <CommentIndexContainer productId={this.props.product.id}/>

@@ -23,7 +23,8 @@ class User < ApplicationRecord
     class_name: :Product
 
   has_many :cart_items
-  
+  has_many :cart_products, through: :cart_items, source: :product
+
   after_initialize :ensure_session_token
 
   attr_reader :password

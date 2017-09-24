@@ -1,6 +1,7 @@
 class Api::CartItemsController < ApplicationController
   def index
-    @cart_items = current_user.cart_items
+    @products = current_user.cart_products
+    render 'api/products/index'
   end
 
   def show
@@ -10,7 +11,7 @@ class Api::CartItemsController < ApplicationController
   def create
     @cart_item = CartItem.new(product_id: params[:product_id])
     @cart_item.user_id = current_user.id
-    
+
     if @cart_item.save!
       render :show
     else

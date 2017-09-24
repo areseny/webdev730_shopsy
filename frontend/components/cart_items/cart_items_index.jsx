@@ -7,8 +7,7 @@ export default class CartItemsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getCartItems();
-    this.props.getAllProducts();
+     this.props.getCartItems();
   }
 
   render() {
@@ -16,7 +15,11 @@ export default class CartItemsIndex extends React.Component {
       <div>
         Cart
         {this.props.cartProducts.map( cartProduct =>
-          <CartItemsIndexItem cartProduct={cartProduct} />)}
+          <CartItemsIndexItem
+          key={cartProduct.id}
+          cartProduct={cartProduct}
+          />)
+        }
       </div>
     );
   }
