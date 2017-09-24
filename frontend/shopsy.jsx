@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as CartAPIUtil from './util/cart_api_util';
+import * as CartItemsActions from './actions/cart_items_actions';
+import { getComments } from './actions/comment_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -15,10 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.fetchCartItems = CartAPIUtil.fetchCartItems;
-  window.fetchCartItem = CartAPIUtil.fetchCartItem;
-  window.createCartItem = CartAPIUtil.createCartItem;
-  window.deleteCartItem = CartAPIUtil.deleteCartItem;
+
+  window.getCartItems = CartItemsActions.getCartItems;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
