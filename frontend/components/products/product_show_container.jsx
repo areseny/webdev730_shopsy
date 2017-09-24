@@ -4,9 +4,10 @@ import { withRouter } from 'react-router-dom';
 import { getProduct } from '../../actions/product_actions';
 import { createCartItem } from '../../actions/cart_items_actions';
 
-const mapStateToProps = (state, ownProps) => {
-   return { product: state.products[ownProps.match.params.productId]};
-};
+const mapStateToProps = (state, ownProps) => ({
+   product: state.products[ownProps.match.params.productId],
+   errors: state.errors.cart
+ });
 
 const mapDispatchToProps = state => dispatch => ({
   getProduct: (id) => dispatch(getProduct(id)),
