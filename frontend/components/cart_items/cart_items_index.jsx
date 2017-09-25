@@ -11,17 +11,20 @@ export default class CartItemsIndex extends React.Component {
   }
 
   render() {
-    const { deleteCartItem } = this.props;
+    const { deleteCartItem, cartProducts } = this.props;
     return (
-      <div>
-        Cart
-        {this.props.cartProducts.map( cartProduct =>
+      <div className="cart-body">
+        <div className="cart-header">
+          <div className="cart-msg">{cartProducts.length} items in your cart</div>
+
+        </div>
+        <div className="cart-items">
+        {cartProducts.map( cartProduct =>
           <CartItemsIndexItem
           key={cartProduct.id}
           deleteCartItem={deleteCartItem}
-          cartProduct={cartProduct}
-          />)
-        }
+          cartProduct={cartProduct}/>)}
+        </div>
       </div>
     );
   }

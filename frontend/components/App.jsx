@@ -13,9 +13,9 @@ const App = () => (
   <div className="main-content">
     <Header/>
     <Switch>
-      <Route path="/cart" component={CartItemsIndexContainer}/>
       <Route path="/products/:productId" component={ProductShowContainer}/>
       <Route path="/products" component={ProductIndexContainer} />
+      <Route path="/cart" component={CartItemsIndexContainer}/>
       <Route path="/" component={Banner} />
     </Switch>
     <AuthRoute path="/login" component={AuthModalContainer}/>

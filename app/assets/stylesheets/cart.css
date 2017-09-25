@@ -1,10 +1,26 @@
+.cart-body {
+  background: #F5F5F1;
+}
+
+.cart-msg {
+  padding: 40px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
 .cart-product {
   display: flex;
   flex-direction: row;
   height: 150px;
+  background-color: #fff;
 }
 
 .cart-product-img {
   width: 150px;
   height: auto;
+}
+
+.cart-items {
+  width: 93%;
+  margin: auto;
 }

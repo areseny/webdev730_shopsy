@@ -31,7 +31,7 @@ a:hover, button:hover {
 }
 
 .session-nav {
-  margin: 10px 30px;
+  margin: 16px 30px;
 }
 
 .session-btns li {
@@ -63,22 +63,45 @@ a:hover, button:hover {
 }
 
 .search-btn {
-  font-size: 12px;
+  font-size: 15px;
   background: #EB732E;
   color: white;
-  border: 1px solid #E1E3DF;
+  border: 1px solid #EB732E;
   width: 80px;
-  height: 28px;
+  height: 29px;
   border-radius: 0px 3px 3px 0px;
+  line-height: 17px;
+}
+
+.search-btn:hover {
+  cursor: pointer;
 }
 
 .search-input {
-  font-size: 10px;
-  width: 180px;
+  font-size: 14px;
+  width: 250px;
   border: 1px solid #E1E3DF;
   height: 24px;
   margin-right: -2px;
   border-radius: 3px 0px 0px 3px;
+  padding: 1px;
+}
+
+.categories-nav {
+  border-bottom: 1px solid #E1E3DF;
+}
+
+.categories-nav ul {
+  margin: 12px 40px;
+}
+
+.categories-nav a {
+  color: #777;
+  font-size: 14px;
+}
+
+.categories-nav a:hover {
+  color: #000;
 }
 
 .auth-form-title {
