@@ -48,12 +48,37 @@ a:hover, button:hover {
   margin: -6px 0;
 }
 
-header {
+.main-header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid #E1E3DF;
   padding: 10px;
   background-color: #fff;
+}
+
+.search-form {
+  margin: 15px 0;
+  margin-right: auto;
+}
+
+.search-btn {
+  font-size: 12px;
+  background: #EB732E;
+  color: white;
+  border: 1px solid #E1E3DF;
+  width: 80px;
+  height: 28px;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.search-input {
+  font-size: 10px;
+  width: 180px;
+  border: 1px solid #E1E3DF;
+  height: 24px;
+  margin-right: -2px;
+  border-radius: 3px 0px 0px 3px;
 }
 
 .auth-form-title {

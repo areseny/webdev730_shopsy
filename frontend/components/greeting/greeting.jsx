@@ -19,7 +19,7 @@ const sessionLinks = (login) => {
 const welcomeGreeting = (currentUser, logout) => {
     return (
     <div>
-      <SearchFormContainer />
+
       <nav className="session-nav">
         <ul className="session-btns">
           <li><button onClick={logout}>Logout</button></li>
