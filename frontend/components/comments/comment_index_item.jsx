@@ -45,8 +45,12 @@ export default class CommentIndexItem extends React.Component {
         onChange={this.handleChange}
         className="comment-body"
         /></li>
-      <li><button onClick={this.handleDelete}>Delete</button></li>
-      <li>{this.state.editButton}</li>
+      <li>
+        <div>
+          <button onClick={this.handleDelete}>Delete</button>
+          {this.state.editButton}
+        </div>
+      </li>
     </ul>;
     } else {
       comment = <textarea
@@ -60,7 +64,7 @@ export default class CommentIndexItem extends React.Component {
   render() {
     return(
       <div>
-        <ul>
+        <ul className="comment-list-item">
           <li>{this.props.comment.user}</li>
           <li>{this.commentItem()}</li>
         </ul>

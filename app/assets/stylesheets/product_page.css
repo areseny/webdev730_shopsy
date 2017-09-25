@@ -39,19 +39,35 @@
 }
 
 .comment-body {
-  width: 280px;
+  width: 275px;
   height: 60px;
-  border: 1px solid #9ca495;
+  border: 1px solid #ced3ca;
   border-radius: 3px;
   resize: none;
+  padding: 5px;
 }
 
 .add-comment-btn {
   margin: 10px 0;
   width: 120px;
+  background-color: whitesmoke;
+  border: 1px solid #E1E3DF
+}
+
+.add-comment-btn:hover {
+  cursor: pointer;
 }
 
 .comment-form {
   display: flex;
   flex-direction: column;
+}
+
+.comment-list-item {
+  margin: 10px 0;
+}
+
+.comment-list-item li {
+  margin-bottom: 5px;
+  font-size: 14px;
 }
