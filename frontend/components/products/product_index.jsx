@@ -4,6 +4,7 @@ import Banner from '../banner/banner';
 const queryString = require('query-string');
 
 export default class ProductIndex extends React.Component {
+  
   componentWillReceiveProps(nextProps) {
     if (this.props.location.search !== nextProps.location.search) {
       if (nextProps.location.search) {

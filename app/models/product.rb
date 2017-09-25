@@ -25,10 +25,11 @@ class Product < ApplicationRecord
   has_many :cart_items
 
   include PgSearch
-  
+
   pg_search_scope :search_by_product_details,
                   against: [:title, :description],
                   using: {
-                    tsearch: { any_word: true }
+                    tsearch: { any_word: true, prefix: true }
                   }
+
 end
