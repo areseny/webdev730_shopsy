@@ -1,8 +1,10 @@
 body {
   font-family: 'Lato', sans-serif;
+  min-height: 100vh;
 }
 
 .main-content {
+  min-height: 100vh;
 }
 
 h1 {
@@ -31,7 +33,7 @@ a:hover, button:hover {
 }
 
 .session-nav {
-  margin: 16px 30px;
+  margin: 16px 10px;
 }
 
 .session-btns li {

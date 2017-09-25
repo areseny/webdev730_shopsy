@@ -1,11 +1,28 @@
 .cart-body {
   background: #F5F5F1;
+  min-height: 100vh;
+}
+
+.cart-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .cart-msg {
   padding: 40px;
   font-size: 26px;
   font-weight: 600;
+}
+
+.keep-shopping-btn {
+  border: 1px solid #E1E3DF;
+  height: fit-content;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  background: #fff;
+  margin: 40px;
 }
 
 .cart-product {
@@ -21,6 +38,6 @@
 }
 
 .cart-items {
-  width: 93%;
+  width: 91%;
   margin: auto;
 }
