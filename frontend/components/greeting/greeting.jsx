@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchFormContainer from '../search/search_form_container';
 
 const sessionLinks = (login) => {
   const dummyUser = { username: "demoUser", password: "123456"};
@@ -17,19 +18,21 @@ const sessionLinks = (login) => {
 
 const welcomeGreeting = (currentUser, logout) => {
     return (
-    <nav className="session-nav">
-      <ul className="session-btns">
-        <li><button onClick={logout}>Logout</button></li>
-        <li>
-          <Link to={`/cart`}>
-            <img
-            className="cart-icon"
-            src="http://res.cloudinary.com/brainzilla/image/upload/v1506036925/cart_sisp9z.png"/>
-          </Link>
-        </li>
-      </ul>
-
-    </nav>
+    <div>
+      <SearchFormContainer />
+      <nav className="session-nav">
+        <ul className="session-btns">
+          <li><button onClick={logout}>Logout</button></li>
+          <li>
+            <Link to={`/cart`}>
+              <img
+              className="cart-icon"
+              src="http://res.cloudinary.com/brainzilla/image/upload/v1506036925/cart_sisp9z.png"/>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
 );};
 
 const Greeting = ({ currentUser, logout, login }) => (

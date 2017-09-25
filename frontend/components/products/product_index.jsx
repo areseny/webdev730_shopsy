@@ -1,10 +1,27 @@
 import React from 'react';
 import ProductIndexItem from './product_index_item';
 import Banner from '../banner/banner';
+const queryString = require('query-string');
 
 export default class ProductIndex extends React.Component {
+  componentWillReceiveProps(nextProps) {
+    if (this.props.location.search !== nextProps.location.search) {
+      if (nextProps.location.search) {
+        const parsed = queryString.parse(nextProps.location.search);
+        this.props.getSearchProducts(parsed.search);
+      } else {
+        this.props.getAllProducts();
+      }
+    }
+  }
+
   componentDidMount() {
-    this.props.getAllProducts();
+    if (this.props.location.search) {
+      const parsed = queryString.parse(this.props.location.search);
+      this.props.getSearchProducts(parsed.search);
+    } else {
+      this.props.getAllProducts();
+    }
   }
 
   render() {

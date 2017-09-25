@@ -1,26 +1,30 @@
 import React from 'react';
-import { Redirect } from 'react-router';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CommentFormContainer from '../comments/comment_form_container';
 
 export default class ProductShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { redirect: false };
+    this.state = { cartSuccess: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
+    this.props.clearErrors();
     this.props.getProduct(this.props.match.params.productId);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.createCartItem(this.props.product.id);
-    this.setState({ redirect: true });
+    if (this.props.errors.length === 0) {
+      this.setState({ cartSuccess: "Item added to cart" });
+    }
   }
 
   render() {
+    const errors = this.props.errors.map(
+      (err, i) => <li className="errors" key={i}>{err}</li>);
     const { product } = this.props;
     if (!product) return (<div></div>);
     return (
@@ -44,7 +48,10 @@ export default class ProductShow extends React.Component {
                 {product.description}
               </div>
             </li>
+            {errors}
+            <li>{this.state.cartSuccess}</li>
           </ul>
+
           <form onSubmit={this.handleSubmit}>
             <input
               type="submit"
@@ -52,7 +59,6 @@ export default class ProductShow extends React.Component {
               value='Add To Cart'
             />
           </form>
-          {this.state.redirect && (<Redirect to="/cart"/>)}
           <div className="comments-section">
             <CommentFormContainer productId={product.id} />
             <CommentIndexContainer productId={product.id}/>

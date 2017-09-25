@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as CartItemsActions from './actions/cart_items_actions';
-import { getComments } from './actions/comment_actions';
+import { fetchSearchProducts } from './util/product_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -16,8 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-
-  window.getCartItems = CartItemsActions.getCartItems;
+  window.fetchSearchProducts = fetchSearchProducts;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 

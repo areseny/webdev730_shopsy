@@ -2,7 +2,8 @@ import merge from 'lodash/merge';
 
 import {
   RECEIVE_CART_ERRORS,
-  RECEIVE_CART_ITEM
+  RECEIVE_CART_ITEM,
+  CLEAR_ERRORS
 } from '../actions/cart_items_actions';
 
 const CartErrorsReducer = (oldState = [], action) => {
@@ -12,6 +13,8 @@ const CartErrorsReducer = (oldState = [], action) => {
       return [];
     case RECEIVE_CART_ERRORS:
       return action.errors;
+    case CLEAR_ERRORS:
+      return [];
     default:
       return oldState;
   }

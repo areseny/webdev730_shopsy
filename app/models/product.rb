@@ -23,4 +23,12 @@ class Product < ApplicationRecord
 
   has_many :comments
   has_many :cart_items
+
+  include PgSearch
+  
+  pg_search_scope :search_by_product_details,
+                  against: [:title, :description],
+                  using: {
+                    tsearch: { any_word: true }
+                  }
 end

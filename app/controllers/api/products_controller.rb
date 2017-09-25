@@ -1,13 +1,17 @@
 class Api::ProductsController < ApplicationController
 
   def index
-    @products = Product.includes(:seller)
-    render 'api/products/index'
+    if params[:search]
+      @products = Product.search_by_product_details(params[:search])
+    else
+      @products = Product.includes(:seller)
+    end
+    render :index
   end
 
   def show
     @product = Product.find(params[:id])
-    render 'api/products/show'
+    render :show
   end
 
   private

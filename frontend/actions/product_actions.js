@@ -22,3 +22,8 @@ export const getProduct = (id) => dispatch => (
   ProductApiUtil.fetchProduct(id)
     .then( product => dispatch(receiveProduct(product)))
 );
+
+export const getSearchProducts = searchTerm => dispatch => (
+  ProductApiUtil.fetchSearchProducts(searchTerm)
+    .then( products => dispatch(receiveAllProducts(products)))
+);

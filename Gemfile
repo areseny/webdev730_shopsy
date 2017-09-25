@@ -32,6 +32,8 @@ gem 'pry-rails'
 
 gem 'rails_12factor'
 
+gem 'pg_search'
+
 gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
