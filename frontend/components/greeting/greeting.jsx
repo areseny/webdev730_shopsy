@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import SearchFormContainer from '../search/search_form_container';
 
 const sessionLinks = (login) => {
-  const dummyUser = { username: "demoUser", password: "123456"};
-  const loginDummy = () => login(dummyUser);
+  const guestUser = { username: "guest", password: "123456"};
+  const loginDummy = () => login(guestUser);
   return(
     <nav className="session-nav">
       <ul className="session-btns">

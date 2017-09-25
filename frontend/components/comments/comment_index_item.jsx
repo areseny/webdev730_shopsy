@@ -39,15 +39,20 @@ export default class CommentIndexItem extends React.Component {
   commentItem() {
     let comment;
     if (this.props.comment.user_id === this.props.currentUserId) {
-      comment = <div><textarea
+      comment = <ul>
+        <li><textarea
         value={this.state.body}
         onChange={this.handleChange}
-        />
-      <button onClick={this.handleDelete}>Delete</button>
-      {this.state.editButton}
-      </div>;
+        className="comment-body"
+        /></li>
+      <li><button onClick={this.handleDelete}>Delete</button></li>
+      <li>{this.state.editButton}</li>
+    </ul>;
     } else {
-      comment = <textarea value={this.props.comment.body} readOnly/>;
+      comment = <textarea
+        className="comment-body"
+        value={this.props.comment.body}
+        readOnly/>;
     }
     return comment;
   }
@@ -55,7 +60,10 @@ export default class CommentIndexItem extends React.Component {
   render() {
     return(
       <div>
-        {this.commentItem()}
+        <ul>
+          <li>{this.props.comment.user}</li>
+          <li>{this.commentItem()}</li>
+        </ul>
       </div>
     );
   }

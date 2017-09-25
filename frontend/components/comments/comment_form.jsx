@@ -27,11 +27,19 @@ export default class CommentForm extends React.Component {
     let commentForm;
     if (this.props.loggedIn) {
       commentForm = <form className="comment-form" onSubmit={this.handleSubmit}>
-        <textarea value={this.state.body} onChange={this.handleChange}/>
-        <input type="submit" value="Submit Comment"/>
+        <textarea
+          value={this.state.body}
+          onChange={this.handleChange}
+          className="comment-body"
+          />
+        <input
+          type="submit"
+          className="add-comment-btn"
+          value="Submit Comment"
+        />
       </form>;
     } else {
-      commentForm = <div>Login to add comments.</div>;
+      commentForm = <div className="comment-form">Login to add comments.</div>;
     }
     return commentForm;
   }

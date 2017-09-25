@@ -28,37 +28,41 @@ export default class ProductShow extends React.Component {
     const { product } = this.props;
     if (!product) return (<div></div>);
     return (
-      <div className="product-show-container">
-        <div className="product-image">
-          <img src={product.image_url}/>
-        </div>
-        <div className="product-info">
-          <h1>{product.title}</h1>
-          <ul className="product-detail-list">
-            <li>
-              Seller: {product.seller.username}
-            </li>
-            <li>
-              <div className="product-show-price">
-                ${product.price}
-              </div>
-            </li>
-            <li>
-              <div className="product-description">
-                {product.description}
-              </div>
-            </li>
-            {errors}
-            <li>{this.state.cartSuccess}</li>
-          </ul>
+      <div className="product-page">
+        <div className="product-show-container">
+          <div className="product-image">
+            <img src={product.image_url}/>
+          </div>
+          <div className="product-info">
+            <h1>{product.title}</h1>
+            <ul className="product-detail-list">
+              <li>
+                Seller: {product.seller.username}
+              </li>
+              <li>
+                <div className="product-show-price">
+                  ${product.price}
+                </div>
+              </li>
+              <li>
+                <div className="product-description">
+                  {product.description}
+                </div>
+              </li>
+              {errors}
+              <li>{this.state.cartSuccess}</li>
+            </ul>
 
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="submit"
-              className='add-to-cart-btn'
-              value='Add To Cart'
-            />
-          </form>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="submit"
+                className='add-to-cart-btn'
+                value='Add To Cart'
+              />
+            </form>
+          </div>
+        </div>
+        <div className="product-extras">
           <div className="comments-section">
             <CommentFormContainer productId={product.id} />
             <CommentIndexContainer productId={product.id}/>

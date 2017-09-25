@@ -18,7 +18,6 @@ export default class CommentIndex extends React.Component {
          />);
     return (
       <div className="comments-list">
-        Comments
         {comments}
       </div>
     );

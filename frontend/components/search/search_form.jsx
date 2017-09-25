@@ -15,7 +15,6 @@ export default class SearchForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props);
     this.props.history.push(`/products?search=${this.state.searchTerm}`);
   }
 

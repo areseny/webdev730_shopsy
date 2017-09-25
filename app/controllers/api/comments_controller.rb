@@ -1,6 +1,6 @@
 class Api::CommentsController < ApplicationController
   def index
-    @comments = Product.find(params[:product_id]).comments
+    @comments = Product.find(params[:product_id]).comments.includes(:user)
     render :index
   end
 
