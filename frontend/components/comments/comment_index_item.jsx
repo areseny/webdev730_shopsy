@@ -39,25 +39,31 @@ export default class CommentIndexItem extends React.Component {
     let comment;
     if (this.props.comment.user_id === this.props.currentUserId) {
       comment = (
-        <ul>
-          <li>
-            <textarea
-              value={this.state.body}
-              onChange={this.handleChange}
-              className="comment-show-body"
-            />
-          </li>
-          <li>
-            <div>
-              <button onClick={this.handleDelete}>Delete</button>
-              <button onClick={this.handleEdit}>Edit</button>
-            </div>
-          </li>
-        </ul>
+        <div className="comment-list-item">
+          <ul>
+            <li>{this.props.comment.user}</li>
+            <li>
+              <ul className="comment-btns">
+                <li>
+                  <button onClick={this.handleEdit}>Edit</button>
+                </li>
+                <li>
+                  <button onClick={this.handleDelete}>Delete</button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <textarea
+            value={this.state.body}
+            onChange={this.handleChange}
+            className="comment-show-body"
+          />
+        </div>
       );
     } else {
       comment = (
-        <div>
+        <div className="comment-list-item">
+          <div>{this.props.comment.user}</div>
           <textarea
             className="comment-show-body"
             value={this.props.comment.body}
@@ -70,13 +76,6 @@ export default class CommentIndexItem extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <ul className="comment-list-item">
-          <li>{this.props.comment.user}</li>
-          <li>{this.commentItem()}</li>
-        </ul>
-      </div>
-    );
+    return <div>{this.commentItem()}</div>;
   }
 }
