@@ -8,52 +8,53 @@
 Product.destroy_all
 User.destroy_all
 
+User.create!(username: "alex", password: "123456")
 User.create!(username: "guest", password: "123456")
 
-Product.create(
+Product.create!(
   title: "Ultraverse Woven",
   price: 50,
   description: "Woven Shirt",
-  seller_id: 1,
+  seller_id: User.find_by(username: "alex").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178257/ultraverse_woven_kxfeda.jpg"
 )
 
-Product.create(
+Product.create!(
   title: "Moonsurfer",
   price: 30,
   description: "100% Cotton",
-  seller_id: 1,
+  seller_id: User.find_by(username: "alex").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178257/moonsurfer_togt0r.jpg"
 )
 
-Product.create(
+Product.create!(
   title: "Infinite",
   price: 30,
   description: "100% Cotton",
-  seller_id: 1,
+  seller_id: User.find_by(username: "alex").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178256/infinite_ksy3rg.jpg"
 )
 
-Product.create(
+Product.create!(
   title: "Universe Within",
   price: 30,
   description: "100% Cotton",
-  seller_id: 1,
+  seller_id: User.find_by(username: "alex").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178255/universe_within_rnq8js.jpg"
 )
 
-Product.create(
+Product.create!(
   title: "Wireframe Voyage",
   price: 30,
   description: "100% Cotton",
-  seller_id: 1,
+  seller_id: User.find_by(username: "alex").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178255/wireframe_voyage_rbjvcz.jpg"
 )
 
-Product.create(
+Product.create!(
   title: "Astro Wave",
   price: 30,
   description: "100% Cotton",
-  seller_id: 1,
+  seller_id: User.find_by(username: "alex").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178258/astro_wave_udreli.jpg"
 )
