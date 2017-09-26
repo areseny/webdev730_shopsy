@@ -1,5 +1,5 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import { withRouter } from "react-router-dom";
 
 export default class SearchForm extends React.Component {
   constructor(props) {
@@ -21,14 +21,14 @@ export default class SearchForm extends React.Component {
   render() {
     return (
       <form className="search-form" onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            value={this.state.searchTerm}
-            onChange={this.handleChange}
-            className="search-input"
-          />
+        <input
+          type="text"
+          value={this.state.searchTerm}
+          onChange={this.handleChange}
+          className="search-input"
+        />
 
-        <input className="search-btn" type="submit" value="Search"/>
+        <input className="search-btn" type="submit" value="Search" />
       </form>
     );
   }

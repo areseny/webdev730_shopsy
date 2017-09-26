@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class CartItemsIndexItem extends React.Component {
   constructor(props) {
@@ -17,7 +18,11 @@ export default class CartItemsIndexItem extends React.Component {
       <div className="cart-product">
         <img className="cart-product-img" src={cartProduct.image_url} />
         <ul className="cart-product-details">
-          <li>{cartProduct.title}</li>
+          <li>
+            <Link to={`products/${cartProduct.product_id}`}>
+              {cartProduct.title}
+            </Link>
+          </li>
           <li>Seller: {cartProduct.seller.username}</li>
           <li>{cartProduct.description}</li>
         </ul>
