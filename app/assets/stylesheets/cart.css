@@ -25,19 +25,44 @@
   margin: 40px;
 }
 
+.keep-shopping-btn:hover {
+  border: 1px solid #c0c3be;
+}
+
 .cart-product {
+  border-radius: 5px;
   display: flex;
   flex-direction: row;
   height: 150px;
   background-color: #fff;
+  margin-bottom: 20px;
+  width: 50%;
 }
 
 .cart-product-img {
-  width: 150px;
+  width: 170px;
   height: auto;
 }
 
 .cart-items {
   width: 91%;
   margin: auto;
+}
+
+.cart-product-details {
+  margin: 10px;
+}
+
+.cart-product-details li {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 50%;
+}
+
+.delete-btn img {
+  width: 20px;
 }
