@@ -1,20 +1,17 @@
-export const fetchProduct = (id) => (
+export const fetchProduct = id =>
   $.ajax({
-    method: 'GET',
+    method: "GET",
     url: `api/products/${id}`
-  })
-);
+  });
 
-export const fetchProducts = () => (
+export const fetchProducts = () =>
   $.ajax({
-    method: 'GET',
+    method: "GET",
     url: `api/products`
-  })
-);
+  });
 
-export const fetchSearchProducts = searchTerm => (
+export const fetchSearchProducts = searchTerm =>
   $.ajax({
-    method: 'GET',
+    method: "GET",
     url: `api/products?search=${searchTerm}`
-  })
-);
+  });

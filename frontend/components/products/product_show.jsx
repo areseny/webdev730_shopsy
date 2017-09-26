@@ -1,6 +1,6 @@
-import React from 'react';
-import CommentIndexContainer from '../comments/comment_index_container';
-import CommentFormContainer from '../comments/comment_form_container';
+import React from "react";
+import CommentIndexContainer from "../comments/comment_index_container";
+import CommentFormContainer from "../comments/comment_form_container";
 
 export default class ProductShow extends React.Component {
   constructor(props) {
@@ -23,31 +23,28 @@ export default class ProductShow extends React.Component {
   }
 
   render() {
-    const errors = this.props.errors.map(
-      (err, i) => <li className="errors" key={i}>{err}</li>);
+    const errors = this.props.errors.map((err, i) => (
+      <li className="errors" key={i}>
+        {err}
+      </li>
+    ));
     const { product } = this.props;
-    if (!product) return (<div></div>);
+    if (!product) return <div />;
     return (
       <div className="product-page">
         <div className="product-show-container">
           <div className="product-image">
-            <img src={product.image_url}/>
+            <img src={product.image_url} />
           </div>
           <div className="product-info">
             <h1>{product.title}</h1>
             <ul className="product-detail-list">
+              <li>Seller: {product.seller.username}</li>
               <li>
-                Seller: {product.seller.username}
+                <div className="product-show-price">${product.price}</div>
               </li>
               <li>
-                <div className="product-show-price">
-                  ${product.price}
-                </div>
-              </li>
-              <li>
-                <div className="product-description">
-                  {product.description}
-                </div>
+                <div className="product-description">{product.description}</div>
               </li>
               {errors}
               <li>{this.state.cartSuccess}</li>
@@ -56,8 +53,8 @@ export default class ProductShow extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <input
                 type="submit"
-                className='add-to-cart-btn'
-                value='Add To Cart'
+                className="add-to-cart-btn"
+                value="Add To Cart"
               />
             </form>
           </div>
@@ -65,7 +62,7 @@ export default class ProductShow extends React.Component {
         <div className="product-extras">
           <div className="comments-section">
             <CommentFormContainer productId={product.id} />
-            <CommentIndexContainer productId={product.id}/>
+            <CommentIndexContainer productId={product.id} />
           </div>
         </div>
       </div>

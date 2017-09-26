@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default class CommentIndexItem extends React.Component {
   constructor(props) {
@@ -31,38 +31,46 @@ export default class CommentIndexItem extends React.Component {
 
   handleChange(e) {
     this.setState({
-      body: e.target.value,
-      editButton: <button onClick={this.handleEdit}>Edit</button>
+      body: e.target.value
     });
   }
 
   commentItem() {
     let comment;
     if (this.props.comment.user_id === this.props.currentUserId) {
-      comment = <ul>
-        <li><textarea
-        value={this.state.body}
-        onChange={this.handleChange}
-        className="comment-body"
-        /></li>
-      <li>
-        <div>
-          <button onClick={this.handleDelete}>Delete</button>
-          {this.state.editButton}
-        </div>
-      </li>
-    </ul>;
+      comment = (
+        <ul>
+          <li>
+            <textarea
+              value={this.state.body}
+              onChange={this.handleChange}
+              className="comment-show-body"
+            />
+          </li>
+          <li>
+            <div>
+              <button onClick={this.handleDelete}>Delete</button>
+              <button onClick={this.handleEdit}>Edit</button>
+            </div>
+          </li>
+        </ul>
+      );
     } else {
-      comment = <textarea
-        className="comment-body"
-        value={this.props.comment.body}
-        readOnly/>;
+      comment = (
+        <div>
+          <textarea
+            className="comment-show-body"
+            value={this.props.comment.body}
+            readOnly
+          />
+        </div>
+      );
     }
     return comment;
   }
 
   render() {
-    return(
+    return (
       <div>
         <ul className="comment-list-item">
           <li>{this.props.comment.user}</li>
@@ -71,5 +79,4 @@ export default class CommentIndexItem extends React.Component {
       </div>
     );
   }
-
 }

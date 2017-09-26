@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default class CommentForm extends React.Component {
   constructor(props) {
@@ -14,30 +14,30 @@ export default class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const comment = Object.assign(
-      {},
-      this.state,
-      {product_id: this.props.productId}
-    );
+    const comment = Object.assign({}, this.state, {
+      product_id: this.props.productId
+    });
     this.props.createComment(comment);
-    this.setState({ body: ""});
+    this.setState({ body: "" });
   }
 
   addComments() {
     let commentForm;
     if (this.props.loggedIn) {
-      commentForm = <form className="comment-form" onSubmit={this.handleSubmit}>
-        <textarea
-          value={this.state.body}
-          onChange={this.handleChange}
-          className="comment-body"
+      commentForm = (
+        <form className="comment-form" onSubmit={this.handleSubmit}>
+          <textarea
+            value={this.state.body}
+            onChange={this.handleChange}
+            className="comment-body"
           />
-        <input
-          type="submit"
-          className="add-comment-btn"
-          value="Submit Comment"
-        />
-      </form>;
+          <input
+            type="submit"
+            className="add-comment-btn"
+            value="Submit Comment"
+          />
+        </form>
+      );
     } else {
       commentForm = <div className="comment-form">Login to add comments.</div>;
     }
@@ -45,10 +45,6 @@ export default class CommentForm extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        {this.addComments()}
-      </div>
-    );
+    return <div>{this.addComments()}</div>;
   }
 }

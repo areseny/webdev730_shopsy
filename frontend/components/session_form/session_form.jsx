@@ -1,11 +1,11 @@
-import React from 'react';
-import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {username: "", password: ""};
+    this.state = { username: "", password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    return (e) => this.setState({[field]: e.target.value});
+    return e => this.setState({ [field]: e.target.value });
   }
 
   navLink() {
@@ -30,11 +30,12 @@ class SessionForm extends React.Component {
       return (
         <div>
           <ul className="nav-link-list">
-            <li><p>Not signed up yet?</p></li>
             <li>
-              <Link
-                onClick={this.props.clearErrors}
-                to="/signup">Register
+              <p>Not signed up yet?</p>
+            </li>
+            <li>
+              <Link onClick={this.props.clearErrors} to="/signup">
+                Register
               </Link>
             </li>
           </ul>
@@ -44,11 +45,12 @@ class SessionForm extends React.Component {
       return (
         <div>
           <ul className="nav-link-list">
-            <li><p>Already signed up?</p></li>
             <li>
-              <Link
-                onClick={this.props.clearErrors}
-                to="/login">Login
+              <p>Already signed up?</p>
+            </li>
+            <li>
+              <Link onClick={this.props.clearErrors} to="/login">
+                Login
               </Link>
             </li>
           </ul>
@@ -58,29 +60,32 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const errors = this.props.errors.map(
-      (err, i) => <li className="errors" key={i}>{err}</li>);
+    const errors = this.props.errors.map((err, i) => (
+      <li className="errors" key={i}>
+        {err}
+      </li>
+    ));
     const title = this.props.formType === "login" ? "Sign In" : "Register";
     return (
       <div className="auth-form-container">
         <form className="auth-form" onSubmit={this.handleSubmit}>
           <h1 className="auth-form-title">{title}</h1>
-            <input
-              className="auth-form-text-input"
-              placeholder="Username"
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-            />
-            <input
-              className="auth-form-text-input"
-              placeholder="Password"
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-            />
+          <input
+            className="auth-form-text-input"
+            placeholder="Username"
+            type="text"
+            value={this.state.username}
+            onChange={this.update("username")}
+          />
+          <input
+            className="auth-form-text-input"
+            placeholder="Password"
+            type="password"
+            value={this.state.password}
+            onChange={this.update("password")}
+          />
           {errors}
-          <input type="submit" value={title} className="auth-form-btn"/>
+          <input type="submit" value={title} className="auth-form-btn" />
           {this.navLink()}
         </form>
       </div>

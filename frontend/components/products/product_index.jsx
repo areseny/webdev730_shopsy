@@ -1,10 +1,9 @@
-import React from 'react';
-import ProductIndexItem from './product_index_item';
-import Banner from '../banner/banner';
-const queryString = require('query-string');
+import React from "react";
+import ProductIndexItem from "./product_index_item";
+import Banner from "../banner/banner";
+const queryString = require("query-string");
 
 export default class ProductIndex extends React.Component {
-  
   componentWillReceiveProps(nextProps) {
     if (this.props.location.search !== nextProps.location.search) {
       if (nextProps.location.search) {
@@ -28,15 +27,13 @@ export default class ProductIndex extends React.Component {
   render() {
     return (
       <div className="main-index">
-      <div className="product-index">
-        <div className="product-row">
-          {this.props.products.map( product =>
-          <ProductIndexItem
-          key={product.id}
-          product={product} />
-          )}
+        <div className="product-index">
+          <div className="product-row">
+            {this.props.products.map(product => (
+              <ProductIndexItem key={product.id} product={product} />
+            ))}
+          </div>
         </div>
-      </div>
       </div>
     );
   }
