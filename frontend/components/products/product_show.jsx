@@ -18,7 +18,7 @@ export default class ProductShow extends React.Component {
     e.preventDefault();
     this.props.createCartItem(this.props.product.id);
     if (this.props.errors.length === 0) {
-      this.setState({ cartSuccess: "Item added to cart" });
+      this.props.history.push(`/cart`);
     }
   }
 
