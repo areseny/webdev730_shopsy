@@ -1,5 +1,5 @@
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   min-height: 100vh;
 }
 
@@ -9,11 +9,14 @@ body {
 
 h1 {
   font-size: 34px;
-  font-weight: 400
+  font-weight: 400;
 }
 
-.session-btns button, .session-btns a, .session-btns li, .logo {
-  color: #E55400;
+.session-btns button,
+.session-btns a,
+.session-btns li,
+.logo {
+  color: #e55400;
 }
 
 button {
@@ -23,12 +26,13 @@ button {
   padding: 0;
 }
 
-a:hover, button:hover {
+a:hover,
+button:hover {
   cursor: pointer;
 }
 
 .logo {
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   margin: 10px 30px;
 }
 
@@ -50,11 +54,15 @@ a:hover, button:hover {
   margin: -6px 0;
 }
 
+.session-btns .welcome-msg {
+  color: #787878;
+}
+
 .main-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 1px solid #E1E3DF;
+  border-bottom: 1px solid #e1e3df;
   padding: 10px;
   background-color: #fff;
 }
@@ -66,9 +74,9 @@ a:hover, button:hover {
 
 .search-btn {
   font-size: 15px;
-  background: #EB732E;
+  background: #eb732e;
   color: white;
-  border: 1px solid #EB732E;
+  border: 1px solid #eb732e;
   width: 80px;
   height: 28px;
   border-radius: 0px 3px 3px 0px;
@@ -82,7 +90,7 @@ a:hover, button:hover {
 .search-input {
   font-size: 14px;
   width: 250px;
-  border: 1px solid #E1E3DF;
+  border: 1px solid #e1e3df;
   height: 24px;
   margin-right: -2px;
   border-radius: 3px 0px 0px 3px;
@@ -90,7 +98,7 @@ a:hover, button:hover {
 }
 
 .categories-nav {
-  border-bottom: 1px solid #E1E3DF;
+  border-bottom: 1px solid #e1e3df;
 }
 
 .categories-nav ul {
@@ -127,12 +135,13 @@ a:hover, button:hover {
   margin: 10px 0;
 }
 
-.add-to-cart-btn, .auth-form input[type=submit] {
+.add-to-cart-btn,
+.auth-form input[type="submit"] {
   font-size: 16px;
   width: 100%;
   text-decoration: none;
-  border: 1px solid #E1E3DF;
-  background: #EB732E;
+  border: 1px solid #e1e3df;
+  background: #eb732e;
   padding: 10px 40px;
   border-radius: 4px;
   font-weight: normal;
@@ -140,9 +149,10 @@ a:hover, button:hover {
   margin-bottom: 15px;
 }
 
-.add-to-cart-btn:hover, .auth-form input[type=submit]:hover {
+.add-to-cart-btn:hover,
+.auth-form input[type="submit"]:hover {
   cursor: pointer;
-  background: #B85A24;
+  background: #b85a24;
 }
 
 .nav-link-list {
@@ -151,7 +161,7 @@ a:hover, button:hover {
 }
 
 .nav-link-list a {
-  color: #0B4FF7;
+  color: #0b4ff7;
   margin-left: 10px;
 }
 
