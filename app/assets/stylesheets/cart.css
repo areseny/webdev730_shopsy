@@ -117,3 +117,8 @@
 .checkout-btn:hover {
   background: #1adc1a;
 }
+
+.checkout-msg {
+  text-align: center;
+  margin: 10px 0;
+}

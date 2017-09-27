@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 export default class CartItemsIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { checkoutMsg: "" };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillMount() {
@@ -19,6 +21,12 @@ export default class CartItemsIndex extends React.Component {
     const prices = this.props.cartProducts.map(product => product.price);
     const total = prices.reduce((a, b) => a + b, 0);
     return total;
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    const message = "This is for demo purposes only.";
+    this.setState({ checkoutMsg: message });
   }
 
   render() {
@@ -58,7 +66,10 @@ export default class CartItemsIndex extends React.Component {
                 <td>${this.cartTotal()}</td>
               </tr>
             </table>
-            <button className="checkout-btn">Checkout</button>
+            <button onClick={this.handleClick} className="checkout-btn">
+              Checkout
+            </button>
+            <div className="checkout-msg">{this.state.checkoutMsg}</div>
           </div>
         </div>
       </div>
