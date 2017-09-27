@@ -1,5 +1,20 @@
 .footer {
-  min-height: 150px;
+  height: 60px;
   border-top: 1px solid #e1e3df;
-  margin-top: 10px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-links li a img {
+  width: 24px;
+}
+
+.footer-links li {
+  margin: 15px;
 }
