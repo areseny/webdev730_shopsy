@@ -144,36 +144,36 @@ Product.create!(
 
 Comment.create!(
   body: "That's a handsome space man!",
-  user_id: User.find_by(username: "Samantha"),
-  product_id: Product.find_by(title: "Moonsurfer")
+  user_id: User.find_by(username: "Samantha").id,
+  product_id: Product.find_by(title: "Moonsurfer").id
 )
 
 Comment.create!(
   body: "What a great shirt! A beautiful design and high quality print!",
-  user_id: User.find_by(username: "alex"),
-  product_id: Product.find_by(title: "Universe Within")
+  user_id: User.find_by(username: "alex").id,
+  product_id: Product.find_by(title: "Universe Within").id
 )
 
 Comment.create!(
   body: "This shirt is chill af",
-  user_id: User.find_by(username: "Brainzilla"),
-  product_id: Product.find_by(title: "Order of the Dolphin")
+  user_id: User.find_by(username: "Brainzilla").id,
+  product_id: Product.find_by(title: "Order of the Dolphin").id
 )
 
 Comment.create!(
   body: "Thanks!",
-  user_id: User.find_by(username: "Samantha"),
-  product_id: Product.find_by(title: "Order of the Dolphin")
+  user_id: User.find_by(username: "Samantha").id,
+  product_id: Product.find_by(title: "Order of the Dolphin").id
 )
 
 Comment.create!(
   body: "Beautiful shirt!",
-  user_id: User.find_by(username: "alex"),
-  product_id: Product.find_by(title: "Wireframe Voyage")
+  user_id: User.find_by(username: "alex").id,
+  product_id: Product.find_by(title: "Wireframe Voyage").id
 )
 
 Comment.create!(
   body: "I lik this colorful design!",
-  user_id: User.find_by(username: "The Director"),
-  product_id: Product.find_by(title: "Floatation")
+  user_id: User.find_by(username: "The Director").id,
+  product_id: Product.find_by(title: "Floatation").id
 )
