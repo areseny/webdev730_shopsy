@@ -110,6 +110,15 @@ button:hover {
   font-size: 14px;
 }
 
+.homepage {
+  text-align: center;
+}
+
+.homepage-header {
+  margin-top: 20px;
+  /*margin: 20px 40px 0 40px;*/
+}
+
 .categories-nav a:hover {
   color: #000;
 }

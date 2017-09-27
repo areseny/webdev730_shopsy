@@ -7,9 +7,9 @@ export default class Homepage extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <div>
+      <div className="homepage">
         <Banner />
-        <h1>Featured Products</h1>
+        <h1 className="homepage-header">Featured Products</h1>
         <ProductIndexContainer location={this.props.location} />
       </div>
     );
