@@ -44,7 +44,21 @@ export default class CartItemsIndex extends React.Component {
           <div className="cart-items">{products}</div>
           <div className="cart-summary">
             <h2>Cart Summary</h2>
-            {this.cartTotal()}
+            <table className="cart-details">
+              <tr>
+                <th>Subtotal: </th>
+                <td>${this.cartTotal()}</td>
+              </tr>
+              <tr>
+                <th>Sales Tax: </th>
+                <td>$0</td>
+              </tr>
+              <tr>
+                <th>Cart Total: </th>
+                <td>${this.cartTotal()}</td>
+              </tr>
+            </table>
+            <button className="checkout-btn">Checkout</button>
           </div>
         </div>
       </div>
