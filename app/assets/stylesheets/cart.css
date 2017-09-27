@@ -77,9 +77,9 @@
 }
 
 .delete-btn {
-  position: relative;
-  right: 0%;
-  top: 0%;
+  position: absolute;
+  right: 45%;
+  /* top: 0%; */
   height: 20px;
 }
 
