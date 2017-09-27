@@ -14,6 +14,11 @@ class Api::ProductsController < ApplicationController
     render :show
   end
 
+  def featured
+    @products = Product.where("featured = true")
+    render :index
+  end
+
   private
 
   def product_params

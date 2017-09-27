@@ -36,7 +36,8 @@ Product.create!(
   description: "The Astrosurfer emerges from a Cosmic shredding session. Mens t-shirt, size medium. Printed on 100% Cotton",
   seller_id: User.find_by(username: "Brainzilla").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178257/moonsurfer_togt0r.jpg",
-  category_id: Category.find_by(name: "Mens").id
+  category_id: Category.find_by(name: "Mens").id,
+  featured: true
 )
 
 Product.create!(
@@ -54,7 +55,8 @@ Product.create!(
   description: "We are in the Universe and the Universe is in us. Mens t-shirt, size medium. Printed on 100% Cotton",
   seller_id: User.find_by(username: "Samantha").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178255/universe_within_rnq8js.jpg",
-  category_id: Category.find_by(name: "Mens").id
+  category_id: Category.find_by(name: "Mens").id,
+  featured: true
 )
 
 Product.create!(
@@ -83,7 +85,8 @@ Product.create!(
   Women's t-shirt size small. Printed on 100% cotton.",
   seller_id: User.find_by(username: "Samantha").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506534091/SWA_womens_tshirt_model_zfys5h.jpg",
-  category_id: Category.find_by(name: "Womens").id
+  category_id: Category.find_by(name: "Womens").id,
+  featured: true
 )
 
 Product.create!(
@@ -93,7 +96,8 @@ Product.create!(
   Women's t-shirt size small. Printed on 100% cotton.",
   seller_id: User.find_by(username: "Samantha").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506534091/stardust_womens_model_white_wiwawa.jpg",
-  category_id: Category.find_by(name: "Womens").id
+  category_id: Category.find_by(name: "Womens").id,
+  featured: true
 )
 
 Product.create!(
@@ -112,7 +116,8 @@ Product.create!(
   Women's t-shirt size small. Printed on 100% Polyester",
   seller_id: User.find_by(username: "Brainzilla").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506534094/floatation_w_model_iug8pb.jpg",
-  category_id: Category.find_by(name: "Womens").id
+  category_id: Category.find_by(name: "Womens").id,
+  featured: true
 )
 
 Product.create!(

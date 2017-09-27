@@ -1,9 +1,10 @@
-import { connect } from 'react-redux';
-import ProductIndex from './product_index';
+import { connect } from "react-redux";
+import ProductIndex from "./product_index";
 import {
   getAllProducts,
-  getSearchProducts
-} from '../../actions/product_actions';
+  getSearchProducts,
+  getFeaturedProducts
+} from "../../actions/product_actions";
 
 const mapStateToProps = state => ({
   products: Object.values(state.products)
@@ -11,10 +12,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = () => dispatch => ({
   getAllProducts: () => dispatch(getAllProducts()),
-  getSearchProducts: (searchTerm) => dispatch(getSearchProducts(searchTerm))
+  getSearchProducts: searchTerm => dispatch(getSearchProducts(searchTerm)),
+  getFeaturedProducts: () => dispatch(getFeaturedProducts())
 });
 
-export default connect (
-  mapStateToProps,
-  mapDispatchToProps
-)(ProductIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductIndex);

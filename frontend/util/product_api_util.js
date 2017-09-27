@@ -21,3 +21,9 @@ export const fetchProductsByCategory = categoryId =>
     method: "GET",
     url: `api/products`
   });
+
+export const fetchFeaturedProducts = () =>
+  $.ajax({
+    method: "GET",
+    url: `api/featured/products`
+  });
