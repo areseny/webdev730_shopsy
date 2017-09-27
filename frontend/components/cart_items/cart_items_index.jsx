@@ -7,8 +7,18 @@ export default class CartItemsIndex extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+    this.props.getCartItems();
+  }
+
   componentDidMount() {
     this.props.getCartItems();
+  }
+
+  cartTotal() {
+    const prices = this.props.cartProducts.map(product => product.price);
+    const total = prices.reduce((a, b) => a + b, 0);
+    return total;
   }
 
   render() {
@@ -20,7 +30,6 @@ export default class CartItemsIndex extends React.Component {
         cartProduct={cartProduct}
       />
     ));
-
     return (
       <div className="cart-body">
         <div className="cart-header">
@@ -31,7 +40,13 @@ export default class CartItemsIndex extends React.Component {
             Keep shopping
           </Link>
         </div>
-        <div className="cart-items">{products}</div>
+        <div className="cart-content">
+          <div className="cart-items">{products}</div>
+          <div className="cart-summary">
+            <h2>Cart Summary</h2>
+            {this.cartTotal()}
+          </div>
+        </div>
       </div>
     );
   }

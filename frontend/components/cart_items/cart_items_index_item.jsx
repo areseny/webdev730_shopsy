@@ -24,6 +24,7 @@ export default class CartItemsIndexItem extends React.Component {
             </Link>
           </li>
           <li>Seller: {cartProduct.seller.username}</li>
+          <li>${cartProduct.price}</li>
           <li>{cartProduct.description}</li>
         </ul>
         <button className="delete-btn" onClick={this.handleClick}>

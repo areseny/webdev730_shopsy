@@ -21,8 +21,7 @@ Product.create!(
   price: 50,
   description: "Welcome to the Ultraverse,
   a voyage into the deep manifolds of space, revealing the beauty hidden within.
-  Contrasting a low key minimal exterior with bold graphic interior lining,
-  this premium quality woven shirt is wearable yet makes that cosmic statement.",
+  Contrasting a low key minimal exterior with bold graphic interior lining.",
   seller_id: User.find_by(username: "Imaginary Foundation").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506178257/ultraverse_woven_kxfeda.jpg",
   category_id: Category.find_by(name: "Mens").id
