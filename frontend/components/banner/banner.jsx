@@ -6,7 +6,7 @@ const Banner = () => (
     <div className="banner-image">
       <div className="banner-text" />
       <Link to={"/products"}>
-        <div className="banner-btn">Shop Now</div>
+        <div className="banner-btn">Shop All Apparel</div>
       </Link>
     </div>
   </div>

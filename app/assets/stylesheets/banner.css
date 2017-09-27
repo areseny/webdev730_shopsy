@@ -1,7 +1,6 @@
 .banner-container {
   display: flex;
   justify-content: center;
-
 }
 
 .banner {
@@ -26,6 +25,7 @@
   font-size: 24px;
   font-weight: 700;
   transform: translate(-50%, -20%);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .banner-btn:hover {

@@ -8,6 +8,7 @@ import ProductShowContainer from "./products/product_show_container";
 import CartItemsIndexContainer from "./cart_items/cart_items_index_container";
 import Header from "./header/header";
 import Homepage from "./homepage/homepage";
+import Footer from "./footer/footer";
 
 const App = () => (
   <div className="main-content">
@@ -20,6 +21,7 @@ const App = () => (
     </Switch>
     <AuthRoute path="/login" component={AuthModalContainer} />
     <AuthRoute path="/signup" component={AuthModalContainer} />
+    <Footer />
   </div>
 );
 
