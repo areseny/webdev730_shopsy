@@ -15,7 +15,7 @@ Shopsy is a single page web application inspired by Etsy. It was build with a Ru
 
   * Users can easily navigate to products
 
-  <img src="http://res.cloudinary.com/brainzilla/image/upload/v1506620883/shopsy-product-index-screenshot_espuct.png" width="600"/>
+  <img src="http://res.cloudinary.com/brainzilla/image/upload/v1506621314/shopsy-product-index-screenshot_kzluuv.png" width="600"/>
 
 ### Comments
 
