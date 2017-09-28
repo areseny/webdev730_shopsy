@@ -50,7 +50,7 @@ export default class ProductShow extends React.Component {
                 <div className="product-description">{product.description}</div>
               </li>
               {errors}
-              <li>{this.state.authMsg}</li>
+              <li className="auth-msg">{this.state.authMsg}</li>
             </ul>
 
             <form onSubmit={this.handleSubmit}>
