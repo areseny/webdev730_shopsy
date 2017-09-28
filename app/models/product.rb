@@ -32,11 +32,6 @@ class Product < ApplicationRecord
 
   include PgSearch
 
-  # multisearchable against: [:title, :description],
-  #                 using: {
-  #                   tsearch: { any_word: true, prefix: true }
-  #                 }
-
   pg_search_scope :search_by_product_details,
                   against: [:title, :description],
                   using: {
