@@ -1,6 +1,6 @@
-import { connect } from "react/redux";
+import { connect } from "react-redux";
 import CategoriesNav from "./categories_nav";
-import getAllCategories from "../../actions/categories_actions";
+import { getAllCategories } from "../../actions/category_actions";
 
 const mapStateToProps = state => ({
   categories: Object.values(state.categories)

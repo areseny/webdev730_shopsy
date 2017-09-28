@@ -8,4 +8,6 @@ const receiveAllCategories = categories => ({
 });
 
 export const getAllCategories = () => dispatch =>
-  fetchAllCategories().then(categories => dispatch(receiveAllCategories));
+  fetchAllCategories().then(categories =>
+    dispatch(receiveAllCategories(categories))
+  );

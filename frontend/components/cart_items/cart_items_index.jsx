@@ -13,6 +13,10 @@ export default class CartItemsIndex extends React.Component {
     this.props.getCartItems();
   }
 
+  componentDidMount() {
+    this.props.getCartItems();
+  }
+
   cartTotal() {
     const prices = this.props.cartProducts.map(product => product.price);
     const total = prices.reduce((a, b) => a + b, 0);

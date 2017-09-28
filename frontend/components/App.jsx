@@ -13,8 +13,6 @@ import Footer from "./footer/footer";
 const App = () => (
   <div className="main-content">
     <Header />
-    <AuthRoute exact path="/login" component={AuthModalContainer} />
-    <AuthRoute path="/signup" component={AuthModalContainer} />
     <Switch>
       <Route exact path="/cart" component={CartItemsIndexContainer} />
       <Route
@@ -25,6 +23,8 @@ const App = () => (
       <Route exact path="/products" component={ProductIndexContainer} />
       <Route exact path="/" component={Homepage} />
     </Switch>
+    <AuthRoute exact path="/login" component={AuthModalContainer} />
+    <AuthRoute exact path="/signup" component={AuthModalContainer} />
     <Footer />
   </div>
 );

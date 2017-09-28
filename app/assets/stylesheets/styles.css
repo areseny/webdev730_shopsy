@@ -99,10 +99,16 @@ button:hover {
 
 .categories-nav {
   border-bottom: 1px solid #e1e3df;
+  height: 30px;
 }
 
 .categories-nav ul {
-  margin: 12px 40px;
+  margin: 12px 20px;
+}
+
+.categories-nav li {
+  float: left;
+  margin: 0 20px;
 }
 
 .categories-nav a {
