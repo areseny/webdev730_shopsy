@@ -1,0 +1,54 @@
+.auth-form-title {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form-text-input {
+  width: 300px;
+  line-height: 20px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.auth-form input {
+  margin: 10px 0;
+}
+
+.add-to-cart-btn,
+.auth-form input[type="submit"] {
+  font-size: 16px;
+  width: 100%;
+  text-decoration: none;
+  border: 1px solid #e1e3df;
+  background: #eb732e;
+  padding: 10px 40px;
+  border-radius: 4px;
+  font-weight: normal;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.add-to-cart-btn:hover,
+.auth-form input[type="submit"]:hover {
+  cursor: pointer;
+  background: #b85a24;
+}
+
+.nav-link-list {
+  display: flex;
+  margin: 5px 0;
+}
+
+.nav-link-list a {
+  color: #0b4ff7;
+  margin-left: 10px;
+}
+
+.errors {
+  color: red;
+}

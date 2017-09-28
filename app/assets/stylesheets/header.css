@@ -1,0 +1,88 @@
+.logo {
+  font-family: "Libre Baskerville", serif;
+  margin: 10px 30px;
+}
+
+.session-nav {
+  margin: 16px 10px;
+}
+
+.session-btns li {
+  float: left;
+  margin: 5px 15px;
+}
+
+.session-btns button {
+  margin: -1px 0;
+}
+
+.cart-icon {
+  width: 30px;
+  margin: -6px 0;
+}
+
+.session-btns .welcome-msg {
+  color: #787878;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1e3df;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.search-form {
+  margin: 15px 0;
+  margin-right: auto;
+}
+
+.search-btn {
+  font-size: 15px;
+  background: #eb732e;
+  color: white;
+  border: 1px solid #eb732e;
+  width: 80px;
+  height: 28px;
+  border-radius: 0px 3px 3px 0px;
+  line-height: 17px;
+}
+
+.search-btn:hover {
+  cursor: pointer;
+}
+
+.search-input {
+  font-size: 14px;
+  width: 250px;
+  border: 1px solid #e1e3df;
+  height: 24px;
+  margin-right: -2px;
+  border-radius: 3px 0px 0px 3px;
+  padding: 1px;
+}
+
+.categories-nav {
+  border-bottom: 1px solid #e1e3df;
+  height: 30px;
+}
+
+.categories-nav a:hover {
+  color: #000;
+}
+
+.categories-nav ul {
+  margin: 12px 20px;
+}
+
+.categories-nav li {
+  float: left;
+  margin: 0 20px;
+}
+
+.categories-nav a {
+  color: #777;
+  font-size: 14px;
+}
