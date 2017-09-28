@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import AuthRoute from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import { Link, withRouter } from "react-router-dom";
 import AuthModalContainer from "./modals/auth_modal_container";
 import ProductIndexContainer from "./products/product_index_container";
@@ -14,7 +14,7 @@ const App = () => (
   <div className="main-content">
     <Header />
     <Switch>
-      <Route exact path="/cart" component={CartItemsIndexContainer} />
+      <ProtectedRoute exact path="/cart" component={CartItemsIndexContainer} />
       <Route
         exact
         path="/products/:productId"
@@ -23,8 +23,8 @@ const App = () => (
       <Route exact path="/products" component={ProductIndexContainer} />
       <Route exact path="/" component={Homepage} />
     </Switch>
-    <AuthRoute exact path="/login" component={AuthModalContainer} />
-    <AuthRoute exact path="/signup" component={AuthModalContainer} />
+    <AuthRoute path="/login" component={AuthModalContainer} />
+    <AuthRoute path="/signup" component={AuthModalContainer} />
     <Footer />
   </div>
 );

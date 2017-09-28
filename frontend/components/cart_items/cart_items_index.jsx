@@ -1,6 +1,7 @@
 import React from "react";
 import CartItemsIndexItem from "./cart_items_index_item";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 
 export default class CartItemsIndex extends React.Component {
   constructor(props) {

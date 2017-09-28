@@ -1,9 +1,10 @@
-import { connect } from 'react-redux';
-import CartItemsIndex from './cart_items_index';
-import { getCartItems, deleteCartItem } from '../../actions/cart_items_actions';
+import { connect } from "react-redux";
+import CartItemsIndex from "./cart_items_index";
+import { getCartItems, deleteCartItem } from "../../actions/cart_items_actions";
 
-const mapStateToProps = ({ cartItems }) => ({
-  cartProducts: Object.values(cartItems)
+const mapStateToProps = ({ cartItems, session }) => ({
+  cartProducts: Object.values(cartItems),
+  loggedIn: Boolean(session.currentUser)
 });
 
 const mapDispatchToProps = state => dispatch => ({
@@ -11,7 +12,4 @@ const mapDispatchToProps = state => dispatch => ({
   deleteCartItem: id => dispatch(deleteCartItem(id))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CartItemsIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(CartItemsIndex);
