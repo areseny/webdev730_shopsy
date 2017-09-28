@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 
 export default class Homepage extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div className="homepage">
         <Banner />

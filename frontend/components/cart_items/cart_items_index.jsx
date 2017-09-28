@@ -13,10 +13,6 @@ export default class CartItemsIndex extends React.Component {
     this.props.getCartItems();
   }
 
-  componentDidMount() {
-    this.props.getCartItems();
-  }
-
   cartTotal() {
     const prices = this.props.cartProducts.map(product => product.price);
     const total = prices.reduce((a, b) => a + b, 0);
@@ -53,18 +49,20 @@ export default class CartItemsIndex extends React.Component {
           <div className="cart-summary">
             <h2>Cart Summary</h2>
             <table className="cart-details">
-              <tr>
-                <th>Subtotal: </th>
-                <td>${this.cartTotal()}</td>
-              </tr>
-              <tr>
-                <th>Sales Tax: </th>
-                <td>$0</td>
-              </tr>
-              <tr>
-                <th>Cart Total: </th>
-                <td>${this.cartTotal()}</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <th>Subtotal: </th>
+                  <td>${this.cartTotal()}</td>
+                </tr>
+                <tr>
+                  <th>Sales Tax: </th>
+                  <td>$0</td>
+                </tr>
+                <tr>
+                  <th>Cart Total: </th>
+                  <td>${this.cartTotal()}</td>
+                </tr>
+              </tbody>
             </table>
             <button onClick={this.handleClick} className="checkout-btn">
               Checkout

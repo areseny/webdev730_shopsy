@@ -9,6 +9,8 @@ export default class ProductIndex extends React.Component {
       if (nextProps.location.search) {
         const parsed = queryString.parse(nextProps.location.search);
         this.props.getSearchProducts(parsed.search);
+      } else if (this.props.location.pathname === "/") {
+        this.props.getFeaturedProducts();
       } else {
         this.props.getAllProducts();
       }

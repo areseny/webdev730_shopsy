@@ -6,7 +6,8 @@ import { createCartItem, clearErrors } from "../../actions/cart_items_actions";
 
 const mapStateToProps = (state, ownProps) => ({
   product: state.products[ownProps.match.params.productId],
-  errors: state.errors.cart
+  errors: state.errors.cart,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = state => dispatch => ({

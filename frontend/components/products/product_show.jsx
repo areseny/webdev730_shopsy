@@ -5,7 +5,7 @@ import CommentFormContainer from "../comments/comment_form_container";
 export default class ProductShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { cartSuccess: "" };
+    this.state = { authMsg: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -16,9 +16,11 @@ export default class ProductShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createCartItem(this.props.product.id);
-    if (this.props.errors.length === 0) {
+    if (this.props.currentUser) {
+      this.props.createCartItem(this.props.product.id);
       this.props.history.push(`/cart`);
+    } else {
+      this.setState({ authMsg: "Please login to add items to cart." });
     }
   }
 
@@ -47,7 +49,7 @@ export default class ProductShow extends React.Component {
                 <div className="product-description">{product.description}</div>
               </li>
               {errors}
-              <li>{this.state.cartSuccess}</li>
+              <li>{this.state.authMsg}</li>
             </ul>
 
             <form onSubmit={this.handleSubmit}>

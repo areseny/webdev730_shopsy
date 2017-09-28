@@ -13,14 +13,18 @@ import Footer from "./footer/footer";
 const App = () => (
   <div className="main-content">
     <Header />
-    <Switch>
-      <Route path="/products/:productId" component={ProductShowContainer} />
-      <Route path="/products" component={ProductIndexContainer} />
-      <Route path="/cart" component={CartItemsIndexContainer} />
-      <Route path="/" component={Homepage} />
-    </Switch>
-    <AuthRoute path="/login" component={AuthModalContainer} />
+    <AuthRoute exact path="/login" component={AuthModalContainer} />
     <AuthRoute path="/signup" component={AuthModalContainer} />
+    <Switch>
+      <Route exact path="/cart" component={CartItemsIndexContainer} />
+      <Route
+        exact
+        path="/products/:productId"
+        component={ProductShowContainer}
+      />
+      <Route exact path="/products" component={ProductIndexContainer} />
+      <Route exact path="/" component={Homepage} />
+    </Switch>
     <Footer />
   </div>
 );

@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
-import SessionLoginContainer from '../session_form/session_login_container';
-import SessionSignupContainer from '../session_form/session_signup_container';
+import React from "react";
+import ReactDOM from "react-dom";
+import Modal from "react-modal";
+import { withRouter } from "react-router";
+import SessionLoginContainer from "../session_form/session_login_container";
+import SessionSignupContainer from "../session_form/session_signup_container";
 
 const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)"
   }
 };
 
@@ -28,20 +29,20 @@ class App extends React.Component {
   }
 
   openModal() {
-    this.setState({modalIsOpen: true});
+    this.setState({ modalIsOpen: true });
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
     this.props.history.goBack();
+    this.setState({ modalIsOpen: false });
   }
 
   render() {
     let form;
     if (this.props.formType === "Login") {
-      form = <SessionLoginContainer/>;
+      form = <SessionLoginContainer />;
     } else {
-      form = <SessionSignupContainer/>;
+      form = <SessionSignupContainer />;
     }
     return (
       <div>
@@ -52,7 +53,6 @@ class App extends React.Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-
           {form}
         </Modal>
       </div>
