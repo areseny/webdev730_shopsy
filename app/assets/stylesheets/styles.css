@@ -205,3 +205,7 @@ button:hover {
 .product-item-container {
   text-align: center;
 }
+
+.product-index-info li {
+  margin: 5px 0;
+}
