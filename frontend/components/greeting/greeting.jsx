@@ -35,7 +35,7 @@ const welcomeGreeting = (currentUser, logout) => {
             <Link to={`/cart`}>
               <img
                 className="cart-icon"
-                src="http://res.cloudinary.com/brainzilla/image/upload/v1506036925/cart_sisp9z.png"
+                src="https://res.cloudinary.com/brainzilla/image/upload/v1506036925/cart_sisp9z.png"
               />
             </Link>
           </li>
