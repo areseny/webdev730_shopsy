@@ -34,6 +34,8 @@ gem 'rails_12factor'
 
 gem 'pg_search'
 
+gem 'seed_dump'
+
 gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
