@@ -25,6 +25,12 @@ Shopsy is a single page web application inspired by Etsy. It was build with a Ru
 
 ### Search
 
-  * users can search products by name and description.
+  * Users can search products by name and description.
 
   <img src="http://res.cloudinary.com/brainzilla/image/upload/v1506621169/shopsy-search-screenshot_hhryrm.png" width="600" />
+
+### Cart
+
+  * Users can add and remove products.
+
+  <img src="http://res.cloudinary.com/brainzilla/image/upload/v1506696337/shopsy-cart-screenshot_sw85p5.png" width="600" />
