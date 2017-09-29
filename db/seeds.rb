@@ -245,6 +245,24 @@ Product.create!(
   category_id: Category.find_by(name: "Accessories").id
 )
 
+Product.create!(
+  title: "Ratio Repeat Snapback",
+  price: 35,
+  description: "The Golden Ratio is nature's most beautiful mystery. This Black cotton twill snapback features a subtle black on black screen print, embossed metal logo and hidden interior message. Cover your head with Art, Math and Beauty today.",
+  seller_id: User.find_by(username: "alex").id,
+  image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506705846/golden_ratio_snapback_black_main_image_f88hzm.jpg",
+  category_id: Category.find_by(name: "Accessories").id
+)
+
+Product.create!(
+  title: "Aspirational Logo Snapback",
+  price: 35,
+  description: "You will become as great as your dominant aspiration. Heather two tone 5 Panel Snap Back with pop stitch logo embroidery.",
+  seller_id: User.find_by(username: "THe Director").id,
+  image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506705846/aspirational_logo_snapback_main_image_grzvtu.jpg",
+  category_id: Category.find_by(name: "Accessories").id
+)
+
 Comment.create!(
   body: "That's a handsome space man!",
   user_id: User.find_by(username: "Samantha").id,
