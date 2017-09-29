@@ -210,7 +210,7 @@ Product.create!(
 )
 
 Product.create!(
-  title: "1.618 Snapback Hat",
+  title: "1.618 Snapback",
   price: 30,
   description: "1.618 is a key number that unlocks the universal patterns found in nature.",
   seller_id: User.find_by(username: "Jeff").id,
@@ -219,7 +219,7 @@ Product.create!(
 )
 
 Product.create!(
-  title: "Stardust Snapback Hat",
+  title: "Stardust Snapback",
   price: 35,
   description: "All-over engineered sublimation art. Rear embroidered logo. Fully adjustable plastic snap closure.",
   seller_id: User.find_by(username: "Brainzilla").id,
@@ -228,7 +228,7 @@ Product.create!(
 )
 
 Product.create!(
-  title: "Flow State Snapback Hat",
+  title: "Flow State Snapback",
   price: 35,
   description: "You feel utterly at one with what you are doing and truly in the present moment. This is the flow state. All-over engineered sublimation art. Rear embroidered logo. Fully adjustable plastic snap closure.",
   seller_id: User.find_by(username: "The Director").id,
