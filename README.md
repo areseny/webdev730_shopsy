@@ -34,3 +34,17 @@ Shopsy is a single page web application inspired by Etsy. It was build with a Ru
   * Users can add and remove products.
 
   <img src="http://res.cloudinary.com/brainzilla/image/upload/v1506696337/shopsy-cart-screenshot_sw85p5.png" width="600" />
+
+## Future Features
+
+###  Categories
+
+  * This will allow users to go directly to product category via the categories nav.
+
+### Product creation
+
+  * Users will be able to create and edit products via a user page.
+
+### Enhanced product images
+
+  * Product page will have detail images and a lightbox.
