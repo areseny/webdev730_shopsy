@@ -115,7 +115,7 @@ Product.create!(
   title: "Study",
   price: 30,
   description: "This sublimated t-shirt is printed on a super-lightweight 100% polyester fabric to maximize colour and resolution, whilst retaining a very soft hand. The print is on both the front and back. ",
-  seller_id: User.find_by(username: "Jeff").id,
+  seller_id: User.find_by(username: "Edith").id,
   image_url: "http://res.cloudinary.com/brainzilla/image/upload/v1506701413/study_remix_model_front_1_lwelvc.jpg",
   category_id: Category.find_by(name: "Mens").id,
   featured: false
