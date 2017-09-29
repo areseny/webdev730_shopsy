@@ -35,6 +35,7 @@ export default class CommentIndexItem extends React.Component {
       { id: this.props.comment.id }
     );
     this.props.updateComment(comment);
+    this.setState({ submitButton: "" });
   }
 
   handleChange(e) {
@@ -44,9 +45,8 @@ export default class CommentIndexItem extends React.Component {
   }
 
   commentItem() {
-    let comment;
     if (this.props.comment.user_id === this.props.currentUserId) {
-      comment = (
+      return (
         <div className="comment-list-item">
           <ul className="comment-details">
             <li className="author-name">{this.props.comment.user}</li>
@@ -71,7 +71,7 @@ export default class CommentIndexItem extends React.Component {
         </div>
       );
     } else {
-      comment = (
+      return (
         <div className="comment-list-item">
           <ul className="comment-details">
             <li className="author-name">{this.props.comment.user}</li>
@@ -84,7 +84,6 @@ export default class CommentIndexItem extends React.Component {
         </div>
       );
     }
-    return comment;
   }
 
   render() {
