@@ -6,12 +6,12 @@ const Footer = () => (
     <ul className="footer-links">
       <li>
         <a href={"https://github.com/brainzilla79"}>
-          <img src="http://res.cloudinary.com/brainzilla/image/upload/v1506554707/GitHub-Mark-64px_kcj6xx.png" />
+          <img src="https://res.cloudinary.com/brainzilla/image/upload/v1506554707/GitHub-Mark-64px_kcj6xx.png" />
         </a>
       </li>
       <li>
         <a href={"https://www.linkedin.com/in/alexander-happ-16a33b133/"}>
-          <img src="http://res.cloudinary.com/brainzilla/image/upload/v1506554703/In-2C-66px-TM_dofc6h.png" />
+          <img src="https://res.cloudinary.com/brainzilla/image/upload/v1506554703/In-2C-66px-TM_dofc6h.png" />
         </a>
       </li>
     </ul>
