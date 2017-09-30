@@ -15,6 +15,9 @@ class ApplicationController < ActionController::Base
   end
 
   def logout
+    if current_user == User.find_by(username: "Guest")
+      CartItem.where(user_id: User.find_by(username: "Guest").id).destroy_all
+    end
     current_user.reset_session_token
     session[:session_token] = nil
   end
