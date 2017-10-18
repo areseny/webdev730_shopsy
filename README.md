@@ -1,6 +1,6 @@
 # README
 
-Shopsy is a single page web application inspired by Etsy. It was build with a Ruby on Rails backend and a React / Redux frontend. Check it out [here]("https://shopsy-happ.herokuapp.com/#/)
+Shopsy is a single page web application inspired by Etsy. It was build with a Ruby on Rails backend and a React / Redux frontend. Check it out [here](https://shopsy-happ.herokuapp.com/#/)
 
 ## Features
 
