@@ -6,10 +6,11 @@ Shopsy is a single page web application inspired by Etsy. It was build with a Ru
 
 ### Authentication
 
-  * Custom auth implementation using BCrypt.
   * Frontend uses react-modal to render the session form.
 
   <img src="http://res.cloudinary.com/brainzilla/image/upload/v1506620686/shopsy-session-form_xdbnns.png" width="600"/>
+
+  * Passwords are not stored in the databse as strings. Shopsy utilizes `BCrypt` to hash and salt the passwords for secure storage. 
 
   ```
   class User < ApplicationRecord
