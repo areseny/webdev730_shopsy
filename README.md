@@ -1,6 +1,6 @@
 # README
 
-Shopsy is a single page web application inspired by Etsy. It was build with a Ruby on Rails backend and a React / Redux frontend.
+Shopsy is a single page web application inspired by Etsy. It was build with a Ruby on Rails backend and a React / Redux frontend. Check it out [here]("https://shopsy-happ.herokuapp.com/#/)
 
 ## Features
 
@@ -11,11 +11,26 @@ Shopsy is a single page web application inspired by Etsy. It was build with a Ru
 
   <img src="http://res.cloudinary.com/brainzilla/image/upload/v1506620686/shopsy-session-form_xdbnns.png" width="600"/>
 
+  ```
+  class User < ApplicationRecord
+  #...
+
+  def password=(password)
+    @password = password
+    self.password_digest = BCrypt::Password.create(password)
+  end
+
+  def is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+```
+
 ### Product Listing
 
   * Users can easily navigate to products
 
   <img src="http://res.cloudinary.com/brainzilla/image/upload/v1506621314/shopsy-product-index-screenshot_kzluuv.png" width="600"/>
+
 
 ### Comments
 
