@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+const queryString = require("query-string");
 
 export default class SearchForm extends React.Component {
   constructor(props) {
@@ -7,6 +8,13 @@ export default class SearchForm extends React.Component {
     this.state = { searchTerm: "" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillReceiveProps() {
+    const parsed = queryString.parse(this.props.location.search);
+    if (parsed.search) {
+      this.setState({ searchTerm: "" });
+    }
   }
 
   handleChange(e) {
