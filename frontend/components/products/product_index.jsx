@@ -34,7 +34,7 @@ export default class ProductIndex extends React.Component {
         <div className="product-index">
           <div className="product-row">
             {this.props.products.length === 0
-              ? "There are no products mathcing that selection."
+              ? "There are no products matching that selection."
               : this.props.products.map(product => (
                   <ProductIndexItem key={product.id} product={product} />
                 ))}
