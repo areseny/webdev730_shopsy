@@ -26,8 +26,11 @@
   font-weight: 700;
   transform: translate(-50%, -20%);
   background: rgba(255, 255, 255, 0.2);
+  /* transition: padding 0.5s, font-size 0.5s */
 }
 
 .banner-btn:hover {
   cursor: pointer;
+  /* padding: 22px;
+  font-size: 26px; */
 }

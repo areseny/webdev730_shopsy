@@ -3,6 +3,16 @@
   margin: 10px 30px;
 }
 
+.session-btns button,
+.session-btns a,
+.logo {
+  color: #e55400;
+}
+
+.session-btns a:hover, .session-btns button:hover {
+  color: #6B2A06;
+}
+
 .session-nav {
   margin: 16px 10px;
 }
@@ -10,10 +20,6 @@
 .session-btns li {
   float: left;
   margin: 5px 15px;
-}
-
-.session-btns button {
-  margin: -1px 0;
 }
 
 .cart-icon {
@@ -37,6 +43,10 @@
 .search-form {
   margin: 15px 0;
   margin-right: auto;
+}
+
+.search-btn:hover {
+  background: #b85a24;
 }
 
 .search-btn {
