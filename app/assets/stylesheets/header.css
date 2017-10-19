@@ -27,6 +27,21 @@
   margin: -6px 0;
 }
 
+.cart-num {
+  background: #e55400;
+  color: #fff;
+  float: right;
+  padding: 3px 6px;
+  font-size: 10px;
+  border-radius: 2px;
+  position: absolute;
+  top: 21px;
+  right: 25px;
+}
+
+.empty-cart {
+  background: white;
+}
 .session-btns .welcome-msg {
   color: #787878;
 }
