@@ -7,9 +7,12 @@ class Greeting extends React.Component {
     super(props);
   }
 
+  componentWillReceiveProps() {
+    this.props.getCartItems();
+  }
+
   componentDidMount() {
     this.props.getCartItems();
-
   }
 
   sessionLinks() {
