@@ -23,6 +23,7 @@ const sessionLinks = login => {
 };
 
 const welcomeGreeting = (currentUser, logout) => {
+  const cartCount = 0;
   return (
     <div>
       <nav className="session-nav">
@@ -38,6 +39,7 @@ const welcomeGreeting = (currentUser, logout) => {
                 src="https://res.cloudinary.com/brainzilla/image/upload/v1506036925/cart_sisp9z.png"
               />
             </Link>
+            {cartCount}
           </li>
         </ul>
       </nav>

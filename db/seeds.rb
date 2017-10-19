@@ -66,7 +66,7 @@ Product.create!(
 Product.create!(
   title: "Astrosurfer Crewneck Sweatshirt",
   price: 70,
-  description: "This premium sweatshirt is made from 100% Cotton Yarn Dyed Marled Knit 3-End French Terry. Giving it an extremely soft hand and an exceptionally comfortable feel. Treat it right and this will be your favorite crewneck ever, guaranteed. Featuring a Molded Embroidery Patch, marrowed edge hem and contrasting sleeves. Made in the USA.",
+  description: "This premium sweatshirt is made from 100% Cotton Yarn Dyed Marled Knit 3-End French Terry. Giving it an extremely soft hand and an exceptionally comfortable feel.",
   seller_id: User.find_by(username: "Brainzilla").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506702332/astrosurfer_crewneck_model_front_2_gpxhpm.jpg",
   category_id: Category.find_by(name: "Mens").id

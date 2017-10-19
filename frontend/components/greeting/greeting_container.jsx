@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { logout, login } from '../../actions/session_actions';
 import Greeting from './greeting';
 
-const mapStateToProps = ({session}) => ({
+const mapStateToProps = ({cartItems, session}) => ({
   currentUser: session.currentUser
 });
 
