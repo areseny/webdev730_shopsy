@@ -10,13 +10,6 @@ export default class SearchForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps() {
-    const parsed = queryString.parse(this.props.location.search);
-    if (parsed.search) {
-      this.setState({ searchTerm: "" });
-    }
-  }
-
   handleChange(e) {
     this.setState({ searchTerm: e.target.value });
   }

@@ -12,13 +12,6 @@ h1 {
   font-weight: 400;
 }
 
-.session-btns button,
-.session-btns a,
-.session-btns li,
-.logo {
-  color: #e55400;
-}
-
 button {
   border: none;
   background-color: inherit;
