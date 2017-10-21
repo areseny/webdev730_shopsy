@@ -215,7 +215,8 @@ Product.create!(
   description: "1.618 is a key number that unlocks the universal patterns found in nature.",
   seller_id: User.find_by(username: "Jeff").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506703765/1.618_snapback_main_image_kaikcq.jpg",
-  category_id: Category.find_by(name: "Accessories").id
+  category_id: Category.find_by(name: "Accessories").id,
+  featured: true
 )
 
 Product.create!(
@@ -224,7 +225,8 @@ Product.create!(
   description: "All-over engineered sublimation art. Rear embroidered logo. Fully adjustable plastic snap closure.",
   seller_id: User.find_by(username: "Brainzilla").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506704354/stardus_snapback_main_image_3_yeyicx.jpg",
-  category_id: Category.find_by(name: "Accessories").id
+  category_id: Category.find_by(name: "Accessories").id,
+  featured: true
 )
 
 Product.create!(
@@ -233,7 +235,8 @@ Product.create!(
   description: "You feel utterly at one with what you are doing and truly in the present moment. This is the flow state. All-over engineered sublimation art. Rear embroidered logo. Fully adjustable plastic snap closure.",
   seller_id: User.find_by(username: "The Director").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506704351/flow_state_snapback_main_image_t2lqau.jpg",
-  category_id: Category.find_by(name: "Accessories").id
+  category_id: Category.find_by(name: "Accessories").id,
+  featured: true
 )
 
 Product.create!(
@@ -242,7 +245,8 @@ Product.create!(
   description: "A celebration of the wonder which emerges from the union of science and art. Solid Black Twill 6 Panel Snap Back hat, with our classic Venn Diagram Exterior woven label, adjustable closure and rear logo label. We didn't make many, so don't let inertia get the better of you.",
   seller_id: User.find_by(username: "Edith").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506704348/swa_snapback_main_image_yjqjmg.jpg",
-  category_id: Category.find_by(name: "Accessories").id
+  category_id: Category.find_by(name: "Accessories").id,
+  featured: true
 )
 
 Product.create!(
@@ -251,7 +255,8 @@ Product.create!(
   description: "The Golden Ratio is nature's most beautiful mystery. This Black cotton twill snapback features a subtle black on black screen print, embossed metal logo and hidden interior message. Cover your head with Art, Math and Beauty today.",
   seller_id: User.find_by(username: "alex").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506705846/golden_ratio_snapback_black_main_image_f88hzm.jpg",
-  category_id: Category.find_by(name: "Accessories").id
+  category_id: Category.find_by(name: "Accessories").id,
+  featured: true
 )
 
 Product.create!(
