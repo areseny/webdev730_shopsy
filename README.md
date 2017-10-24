@@ -35,7 +35,7 @@ Shopsy is a single page web application inspired by Etsy. It was build with a Ru
 
 ### Comments
 
-  * Users can create edit and delete comments on the product show page while logged in.
+  * Users can create, edit and delete comments on the product show page while logged in.
 
   <img src="http://res.cloudinary.com/brainzilla/image/upload/v1506621015/shopsy-comments-section-screenshot_r0vegu.png" width="600" />
 
