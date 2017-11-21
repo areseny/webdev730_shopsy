@@ -7,8 +7,7 @@ import MediaQuery from "react-responsive";
 
 export default class Header extends React.Component {
   render() {
-    return (
-      <header>
+    return <header>
         <div className="main-header">
           <Link to="/">
             <h1 className="logo">Shopsy</h1>
@@ -18,10 +17,14 @@ export default class Header extends React.Component {
           </MediaQuery>
           <GreetingContainer />
         </div>
+        <MediaQuery query="(max-width: 860px)">
+          <div className="search-sub-header">
+            <SearchFormContainer />
+          </div>
+        </MediaQuery>
         <div className="sub-header">
           <CategoriesNavContainer />
         </div>
-      </header>
-    );
+      </header>;
   }
 }

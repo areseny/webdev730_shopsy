@@ -9,8 +9,9 @@
   color: #e55400;
 }
 
-.session-btns a:hover, .session-btns button:hover {
-  color: #6B2A06;
+.session-btns a:hover,
+.session-btns button:hover {
+  color: #6b2a06;
 }
 
 .session-nav {
@@ -110,4 +111,56 @@
 .categories-nav a {
   color: #777;
   font-size: 14px;
+}
+
+@media only screen and (max-width: 860px) {
+  .logo {
+    font-size: 24px;
+    margin: 10px 10px;
+  }
+
+  .session-nav {
+    margin: 10px 0;
+  }
+
+  .search-sub-header {
+    border-bottom: 1px solid #e1e3df;
+    display: flex;
+  }
+
+  .search-form {
+    margin: 20px 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .search-input {
+    width: 80%;
+  }
+
+  .search-btn {
+    width: 20%;
+  }
+
+  .categories-nav li {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .session-btns li a,
+  .session-btns li button {
+    font-size: 12px;
+  }
+
+  .welcome-msg { display: none; }
+
+  .session-btns li {
+    margin: 5px 5px;
+  }
+
+  .search-btn {
+    font-size: 12px;
+  }
 }
