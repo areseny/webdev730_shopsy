@@ -127,6 +127,14 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .cart-msg {
+    padding: 30px 20px; 
+    font-size: 16px;
+  }
+
+  .keep-shopping-btn {
+    margin: 20px;
+  }
   .product-show-container {
     grid-template-columns: 100%;
   }
@@ -141,6 +149,7 @@
 
   .product-info {
     margin: auto;
+    padding: 0 20px;
   }
 
   .product-title {

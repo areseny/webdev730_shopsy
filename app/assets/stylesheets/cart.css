@@ -122,3 +122,30 @@
   text-align: center;
   margin: 15px 0;
 }
+
+@media only screen and (max-width: 810px) {
+  .cart-product-details li {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .cart-content {
+    flex-direction: column;
+  }
+
+  .cart-items {
+    margin: auto;
+    width: 90%;
+  }
+
+  .delete-btn {
+    right: 5%;
+  }
+
+  .cart-summary {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+}
