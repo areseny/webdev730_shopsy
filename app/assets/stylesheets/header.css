@@ -148,7 +148,7 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .session-btns li a,
   .session-btns li button {
     font-size: 12px;

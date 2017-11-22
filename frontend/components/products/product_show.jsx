@@ -40,7 +40,7 @@ export default class ProductShow extends React.Component {
             <img src={product.image_url} />
           </div>
           <div className="product-info">
-            <h1>{product.title}</h1>
+            <h1 className="product-title">{product.title}</h1>
             <ul className="product-detail-list">
               <li>Seller: {product.seller.username}</li>
               <li>

@@ -45,6 +45,6 @@ export default class CommentForm extends React.Component {
   }
 
   render() {
-    return <div>{this.addComments()}</div>;
+    return <div className="comment-form-container">{this.addComments()}</div>;
   }
 }

@@ -87,6 +87,6 @@ export default class CommentIndexItem extends React.Component {
   }
 
   render() {
-    return <div>{this.commentItem()}</div>;
+    return <div className="comment-list-item-container">{this.commentItem()}</div>;
   }
 }
