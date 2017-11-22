@@ -11,9 +11,7 @@
 class Category < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
-  has_many :products,
-    primary_key: :id,
-    foreign_key: :category_id,
-    class_name: :Product
+  has_many :category_products
+  has_many :products, through: :category_products, source: :products
 
 end

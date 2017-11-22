@@ -10,7 +10,6 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  image_url   :string           not null
-#  category_id :integer          not null
 #  featured    :boolean          default(FALSE), not null
 #
 
@@ -25,11 +24,9 @@ class Product < ApplicationRecord
 
   has_many :comments
   has_many :cart_items
+  has_many :category_products
 
-  belongs_to :category,
-    primary_key: :id,
-    foreign_key: :category_id,
-    class_name: :Category
+  has_many :categories, through: :category_products, source: :category
 
   include PgSearch
 

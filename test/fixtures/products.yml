@@ -10,7 +10,6 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  image_url   :string           not null
-#  category_id :integer          not null
 #  featured    :boolean          default(FALSE), not null
 #
 

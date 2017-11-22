@@ -31,7 +31,6 @@ Product.create!(
   Contrasting a low key minimal exterior with bold graphic interior lining. Mens long sleeve shirt",
   seller_id: User.find_by(username: "Brainzilla").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506178257/ultraverse_woven_kxfeda.jpg",
-  category_id: Category.find_by(name: "Mens").id
 )
 
 Product.create!(
@@ -42,7 +41,6 @@ Product.create!(
   Contrasting a low key minimal exterior with bold graphic interior lining. Mens jacket",
   seller_id: User.find_by(username: "Brainzilla").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506701413/ultraverse_jacket_black_model_zgxao5.jpg",
-  category_id: Category.find_by(name: "Mens").id
 )
 
 Product.create!(
@@ -51,7 +49,6 @@ Product.create!(
   description: "3-N 320 GSM French Terry with Sublimated block Print, exterior and interior woven lables custom Imaginary draw cord caps. Relaxed fit.",
   seller_id: User.find_by(username: "The Director").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506702332/cosmic_colorblock_hoodie_model_front_2_mwnxg9.jpg",
-  category_id: Category.find_by(name: "Mens").id
 )
 
 Product.create!(
@@ -60,7 +57,6 @@ Product.create!(
   description: "The Golden Ratio is nature's most beautiful mystery. From mollusk shells to galaxies, the proportion is embedded throughout nature, linking mathematics with beauty.",
   seller_id: User.find_by(username: "Jeff").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506702332/golden_ratio_hoodie_model_front_o5ep2t.jpg",
-  category_id: Category.find_by(name: "Mens").id
 )
 
 Product.create!(
@@ -69,7 +65,6 @@ Product.create!(
   description: "This premium sweatshirt is made from 100% Cotton Yarn Dyed Marled Knit 3-End French Terry. Giving it an extremely soft hand and an exceptionally comfortable feel.",
   seller_id: User.find_by(username: "Brainzilla").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506702332/astrosurfer_crewneck_model_front_2_gpxhpm.jpg",
-  category_id: Category.find_by(name: "Mens").id
 )
 
 Product.create!(
@@ -78,7 +73,6 @@ Product.create!(
   description: "The Astrosurfer emerges from a Cosmic shredding session. Mens t-shirt, size medium. Printed on 100% Cotton",
   seller_id: User.find_by(username: "Brainzilla").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506178257/moonsurfer_togt0r.jpg",
-  category_id: Category.find_by(name: "Mens").id,
   featured: true
 )
 
@@ -88,7 +82,6 @@ Product.create!(
   description: "The power of the imagination makes us infinite. Mens t-shirt, size medium. Printed on 100% Cotton",
   seller_id: User.find_by(username: "The Director").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506178256/infinite_ksy3rg.jpg",
-  category_id: Category.find_by(name: "Mens").id
 )
 
 Product.create!(
@@ -97,7 +90,6 @@ Product.create!(
   description: "We are in the Universe and the Universe is in us. Mens t-shirt, size medium. Printed on 100% Cotton",
   seller_id: User.find_by(username: "Samantha").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506178255/universe_within_rnq8js.jpg",
-  category_id: Category.find_by(name: "Mens").id,
   featured: true
 )
 
@@ -107,7 +99,6 @@ Product.create!(
   description: "The Golden Ratio is nature's most beautiful mystery. From mollusk shells to galaxies, the proportion is embedded throughout nature, linking mathematics with beauty.",
   seller_id: User.find_by(username: "alex").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506701413/golden_ratio_windbreaker_model_front_2_crn9ym.jpg",
-  category_id: Category.find_by(name: "Mens").id,
   featured: true
 )
 
@@ -117,7 +108,6 @@ Product.create!(
   description: "This sublimated t-shirt is printed on a super-lightweight 100% polyester fabric to maximize colour and resolution, whilst retaining a very soft hand. The print is on both the front and back. ",
   seller_id: User.find_by(username: "Edith").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506701413/study_remix_model_front_1_lwelvc.jpg",
-  category_id: Category.find_by(name: "Mens").id,
   featured: false
 )
 
@@ -127,7 +117,6 @@ Product.create!(
   description: "An inner voyage to outer space. Mens t-shirt, size medium. Printed on 100% Cotton",
   seller_id: User.find_by(username: "The Director").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506178255/wireframe_voyage_rbjvcz.jpg",
-  category_id: Category.find_by(name: "Mens").id
 )
 
 Product.create!(
@@ -137,7 +126,6 @@ Product.create!(
   Mens t-shirt, size medium. Printed on 100% cotton",
   seller_id: User.find_by(username: "The Director").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506178258/astro_wave_udreli.jpg",
-  category_id: Category.find_by(name: "Mens").id
 )
 
 Product.create!(
@@ -147,7 +135,6 @@ Product.create!(
   Women's t-shirt size small. Printed on 100% cotton.",
   seller_id: User.find_by(username: "Samantha").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506534091/SWA_womens_tshirt_model_zfys5h.jpg",
-  category_id: Category.find_by(name: "Womens").id,
   featured: true
 )
 
@@ -158,7 +145,6 @@ Product.create!(
   Women's t-shirt size small. Printed on 100% cotton.",
   seller_id: User.find_by(username: "Samantha").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506534091/stardust_womens_model_white_wiwawa.jpg",
-  category_id: Category.find_by(name: "Womens").id,
   featured: true
 )
 
@@ -168,7 +154,6 @@ Product.create!(
   description: "Rather than roaming the realms of outer space, the Psychonaut explores the depths of inner space. Women's t-shirt size small. Printed on 100% cotton.",
   seller_id: User.find_by(username: "The Director").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506534091/psychonaut_womens_tee_main_image_qaqhfy.jpg",
-  category_id: Category.find_by(name: "Womens").id
 )
 
 Product.create!(
@@ -178,7 +163,6 @@ Product.create!(
   Women's t-shirt size small. Printed on 100% Polyester",
   seller_id: User.find_by(username: "Brainzilla").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506534094/floatation_w_model_iug8pb.jpg",
-  category_id: Category.find_by(name: "Womens").id,
   featured: false
 )
 
@@ -188,7 +172,6 @@ Product.create!(
   description: "'Identity and self are fluid constructs. Reinvent yourself every day. Women's t-shirt size small. Printed on 100% cotton.",
   seller_id: User.find_by(username: "Samantha").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506534094/face_off_womens_model_pcny5v.jpg",
-  category_id: Category.find_by(name: "Womens").id
 )
 
 Product.create!(
@@ -197,7 +180,6 @@ Product.create!(
   description: "Women's t-shirt size small. Printed on 100% cotton.",
   seller_id: User.find_by(username: "Samantha").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506534093/dolphin_womens_tee_model_hhzkhp.jpg",
-  category_id: Category.find_by(name: "Womens").id
 )
 
 Product.create!(
@@ -206,7 +188,6 @@ Product.create!(
   description: "Leap before you look. Women's t-shirt size small. Printed on 100% cotton.",
   seller_id: User.find_by(username: "The Director").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506534091/after_the_jump_womens_model_lznwol.jpg",
-  category_id: Category.find_by(name: "Womens").id
 )
 
 Product.create!(
@@ -215,7 +196,6 @@ Product.create!(
   description: "1.618 is a key number that unlocks the universal patterns found in nature.",
   seller_id: User.find_by(username: "Jeff").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506703765/1.618_snapback_main_image_kaikcq.jpg",
-  category_id: Category.find_by(name: "Accessories").id,
   featured: true
 )
 
@@ -225,7 +205,6 @@ Product.create!(
   description: "All-over engineered sublimation art. Rear embroidered logo. Fully adjustable plastic snap closure.",
   seller_id: User.find_by(username: "Brainzilla").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506704354/stardus_snapback_main_image_3_yeyicx.jpg",
-  category_id: Category.find_by(name: "Accessories").id,
   featured: true
 )
 
@@ -235,7 +214,6 @@ Product.create!(
   description: "You feel utterly at one with what you are doing and truly in the present moment. This is the flow state. All-over engineered sublimation art. Rear embroidered logo. Fully adjustable plastic snap closure.",
   seller_id: User.find_by(username: "The Director").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506704351/flow_state_snapback_main_image_t2lqau.jpg",
-  category_id: Category.find_by(name: "Accessories").id,
   featured: true
 )
 
@@ -245,7 +223,6 @@ Product.create!(
   description: "A celebration of the wonder which emerges from the union of science and art. Solid Black Twill 6 Panel Snap Back hat, with our classic Venn Diagram Exterior woven label, adjustable closure and rear logo label. We didn't make many, so don't let inertia get the better of you.",
   seller_id: User.find_by(username: "Edith").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506704348/swa_snapback_main_image_yjqjmg.jpg",
-  category_id: Category.find_by(name: "Accessories").id,
   featured: true
 )
 
@@ -255,7 +232,6 @@ Product.create!(
   description: "The Golden Ratio is nature's most beautiful mystery. This Black cotton twill snapback features a subtle black on black screen print, embossed metal logo and hidden interior message. Cover your head with Art, Math and Beauty today.",
   seller_id: User.find_by(username: "alex").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506705846/golden_ratio_snapback_black_main_image_f88hzm.jpg",
-  category_id: Category.find_by(name: "Accessories").id,
   featured: true
 )
 
@@ -265,7 +241,6 @@ Product.create!(
   description: "You will become as great as your dominant aspiration. Heather two tone 5 Panel Snap Back with pop stitch logo embroidery.",
   seller_id: User.find_by(username: "The Director").id,
   image_url: "https://res.cloudinary.com/brainzilla/image/upload/v1506705846/aspirational_logo_snapback_main_image_grzvtu.jpg",
-  category_id: Category.find_by(name: "Accessories").id
 )
 
 Comment.create!(
