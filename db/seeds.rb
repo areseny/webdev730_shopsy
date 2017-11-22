@@ -9,6 +9,7 @@ Product.destroy_all
 User.destroy_all
 Category.destroy_all
 Comment.destroy_all
+CategoryProduct.destroy_all
 
 Category.create!(name: "Mens")
 Category.create!(name: "Womens")
@@ -296,3 +297,105 @@ Comment.create!(
   user_id: User.find_by(username: "Jeff").id,
   product_id: Product.find_by(title: "Ratio Repeat Windbreaker").id
 )
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Ultraverse Woven").id,
+  category_id: Category.find_by(name: "Mens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Ultraverse Jacket").id,
+  category_id: Category.find_by(name: "Mens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Cosmic Colourblock Pullover Hoodie").id,
+  category_id: Category.find_by(name: "Mens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Raito Repeat Pullover Hoodie").id,
+  category_id: Category.find_by(name: "Mens").id
+  )
+  
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Astrosurfer Crewneck Sweatshirt").id,
+  category_id: Category.find_by(name: "Mens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Moonsurfer").id,
+  category_id: Category.find_by(name: "Mens")
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Infinite"),
+  category_id: Category.find_by(name: "Mens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Universe Within").id,
+  category_id: Category.find_by(name: "Mens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Ratio Repeat Windbreaker").id,
+  category_id: Category.find_by(name: "Mens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Study").id,
+  category_id: Category.find_by(name: "Mens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Wireframe Voyage").id,
+  category_id: Category.find_by(name: "Mens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Astro Wave").id,
+  category_id: Category.find_by(name: "Mens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Science Wonder Art").id,
+  category_id: Category.find_by(name: "Womens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Stardust").id,
+  category_id: Category.find_by(name: "Womens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Psychonaut").id,
+  category_id: Category.find_by(name: "Womens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Floatation").id,
+  category_id: Category.find_by(name: "Womens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Face Off").id,
+  category_id: Category.find_by(name: "Womens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Order of the Dolphin").id,
+  category_id: Category.find_by(name: "Womens").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "After the Jump").id,
+  category_id: Category.find_by(name: "Womens").id
+)
+
+Product.where("title LIKE ?", "Snapback").find_each do |snapback|
+  CategoryProduct.create!(
+    product_id: snapback.id,
+    category_id: Category.find_by(name: "Accessories").id
+  )
+end 
