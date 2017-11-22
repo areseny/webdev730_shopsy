@@ -4,6 +4,10 @@ body {
   /* min-width: 320px; */
 }
 
+input {
+  -webkit-appearance: none;
+}
+
 .main-content {
   min-height: 100vh;
 }
