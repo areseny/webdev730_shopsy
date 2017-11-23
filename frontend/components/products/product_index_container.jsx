@@ -3,7 +3,8 @@ import ProductIndex from "./product_index";
 import {
   getAllProducts,
   getSearchProducts,
-  getFeaturedProducts
+  getFeaturedProducts,
+  getProductsByCategory
 } from "../../actions/product_actions";
 
 const mapStateToProps = state => ({
@@ -11,9 +12,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = () => dispatch => ({
-  getAllProducts: () => dispatch(getAllProducts()),
   getSearchProducts: searchTerm => dispatch(getSearchProducts(searchTerm)),
-  getFeaturedProducts: () => dispatch(getFeaturedProducts())
+  getFeaturedProducts: () => dispatch(getFeaturedProducts()),
+  getProductsByCategory: categoryId => dispatch(getProductsByCategory(categoryId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductIndex);

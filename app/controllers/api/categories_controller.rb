@@ -5,6 +5,13 @@ class Api::CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @products = Category.find(params[:id]).products.includes(:seller)
+    render 'api/products/index'
   end
+
+  private 
+
+  def category_params
+    params.require(:category).permit(:title)
+  end 
 end

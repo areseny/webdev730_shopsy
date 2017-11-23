@@ -18,10 +18,12 @@ export default class CategoriesNav extends React.Component {
     return (
       <div className="categories-nav">
         <ul>
-          <li>
+          {/* <li>
             <Link to="/products">All Products</Link>
-          </li>
+          </li> */}
+          {categoryList}
         </ul>
+
       </div>
     );
   }

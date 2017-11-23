@@ -19,7 +19,7 @@ export const fetchSearchProducts = searchTerm =>
 export const fetchProductsByCategory = categoryId =>
   $.ajax({
     method: "GET",
-    url: `api/products/cat/${categoryId}`
+    url: `api/categories/${categoryId}`
   });
 
 export const fetchFeaturedProducts = () =>

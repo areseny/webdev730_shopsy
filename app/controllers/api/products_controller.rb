@@ -15,7 +15,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def featured
-    @products = Product.where("featured = true")
+    @products = Product.where("featured = true").includes(:seller)
     render :index
   end
 

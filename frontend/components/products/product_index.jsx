@@ -1,6 +1,7 @@
 import React from "react";
 import ProductIndexItem from "./product_index_item";
 import Banner from "../banner/banner";
+import { getProductsByCategory } from "../../actions/product_actions";
 const queryString = require("query-string");
 
 export default class ProductIndex extends React.Component {
@@ -9,11 +10,14 @@ export default class ProductIndex extends React.Component {
       if (nextProps.location.search) {
         const parsed = queryString.parse(nextProps.location.search);
         this.props.getSearchProducts(parsed.search);
-      } else if (this.props.location.pathname === "/") {
-        this.props.getFeaturedProducts();
       } else {
-        this.props.getAllProducts();
+        this.props.getProductsByCategory(nextProps.match.params.categoryId);
       }
+    } else if (
+      this.props.location.pathname !== "/" &&
+      this.props.match.params.categoryId !== nextProps.match.params.categoryId
+    ) {
+      this.props.getProductsByCategory(nextProps.match.params.categoryId);
     }
   }
 
@@ -24,7 +28,7 @@ export default class ProductIndex extends React.Component {
     } else if (this.props.location.pathname === "/") {
       this.props.getFeaturedProducts();
     } else {
-      this.props.getAllProducts();
+      this.props.getProductsByCategory(this.props.match.params.categoryId);
     }
   }
 
@@ -33,11 +37,13 @@ export default class ProductIndex extends React.Component {
       <div className="main-index">
         <div className="product-index">
           <div className="product-row">
-            {this.props.products.length === 0
-              ? <p>There are no products matching that selection.</p>
-              : this.props.products.map(product => (
-                  <ProductIndexItem key={product.id} product={product} />
-                ))}
+            {this.props.products.length === 0 ? (
+              <p>There are no products matching that selection.</p>
+            ) : (
+              this.props.products.map(product => (
+                <ProductIndexItem key={product.id} product={product} />
+              ))
+            )}
           </div>
         </div>
       </div>

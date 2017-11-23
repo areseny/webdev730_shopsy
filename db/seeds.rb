@@ -9,8 +9,10 @@ Product.destroy_all
 User.destroy_all
 Category.destroy_all
 Comment.destroy_all
+Category.destroy_all
 CategoryProduct.destroy_all
 
+Category.create!(name: "All Products")
 Category.create!(name: "Mens")
 Category.create!(name: "Womens")
 Category.create!(name: "Accessories")
@@ -219,7 +221,7 @@ Product.create!(
 )
 
 Product.create!(
-  title: "Science Art Winder Snapback",
+  title: "Science Art Wonder Snapback",
   price: 35,
   description: "A celebration of the wonder which emerges from the union of science and art. Solid Black Twill 6 Panel Snap Back hat, with our classic Venn Diagram Exterior woven label, adjustable closure and rear logo label. We didn't make many, so don't let inertia get the better of you.",
   seller_id: User.find_by(username: "Edith").id,
@@ -325,11 +327,11 @@ CategoryProduct.create!(
 
 CategoryProduct.create!(
   product_id: Product.find_by(title: "Moonsurfer").id,
-  category_id: Category.find_by(name: "Mens")
+  category_id: Category.find_by(name: "Mens").id
 )
 
 CategoryProduct.create!(
-  product_id: Product.find_by(title: "Infinite"),
+  product_id: Product.find_by(title: "Infinite").id,
   category_id: Category.find_by(name: "Mens").id
 )
 
@@ -393,9 +395,39 @@ CategoryProduct.create!(
   category_id: Category.find_by(name: "Womens").id
 )
 
-Product.where("title LIKE ?", "Snapback").find_each do |snapback|
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "1.618 Snapback").id,
+  category_id: Category.find_by(name: "Accessories").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Stardust Snapback").id,
+  category_id: Category.find_by(name: "Accessories").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Flow State Snapback").id,
+  category_id: Category.find_by(name: "Accessories").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Science Art Wonder Snapback").id,
+  category_id: Category.find_by(name: "Accessories").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Ratio Repeat Snapback").id,
+  category_id: Category.find_by(name: "Accessories").id
+)
+
+CategoryProduct.create!(
+  product_id: Product.find_by(title: "Aspirational Logo Snapback").id,
+  category_id: Category.find_by(name: "Accessories").id
+)
+
+Product.all.each do |product|
   CategoryProduct.create!(
-    product_id: snapback.id,
-    category_id: Category.find_by(name: "Accessories").id
+    product_id: product.id,
+    category_id: Category.find_by(name: "All Products").id
   )
 end 

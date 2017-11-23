@@ -15,12 +15,10 @@ const App = () => (
     <Header />
     <Switch>
       <ProtectedRoute exact path="/cart" component={CartItemsIndexContainer} />
-      <Route
-        exact
-        path="/products/:productId"
-        component={ProductShowContainer}
-      />
+      <Route path="/categories/products/:productId" component={ProductShowContainer} />
+      <Route path="/products/:productId" component={ProductShowContainer} />
       <Route exact path="/products" component={ProductIndexContainer} />
+      <Route path="/categories/:categoryId" component={ProductIndexContainer} />
       <Route exact path="/" component={Homepage} />
     </Switch>
     <AuthRoute path="/login" component={AuthModalContainer} />
