@@ -8,11 +8,15 @@ class Greeting extends React.Component {
   }
 
   componentWillReceiveProps() {
-    this.props.getCartItems();
+    if (this.props.currentUser) {
+      this.props.getCartItems();
+    }
   }
 
   componentDidMount() {
-    this.props.getCartItems();
+    if (this.props.currentUser) {
+      this.props.getCartItems();
+    }
   }
 
   sessionLinks() {
