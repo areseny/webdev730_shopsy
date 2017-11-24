@@ -113,6 +113,10 @@
   font-size: 14px;
 }
 
+.search-sub-header {
+  display: none;
+}
+
 @media only screen and (max-width: 860px) {
   .logo {
     font-size: 24px;
@@ -121,6 +125,14 @@
 
   .session-nav {
     margin: 10px 0;
+  }
+
+  .search-sub-header {
+    display: block;
+  }
+
+  .desktop-search-container {
+    display: none;
   }
 
   .search-sub-header {
