@@ -28,9 +28,9 @@ export default class Header extends React.Component {
               onClick={this.handleClick}
               className="hamburger"
             />
-          </div>
           <div className="desktop-search-container">
             <SearchFormContainer />
+          </div>
           </div>
           <GreetingContainer />
         </div>
