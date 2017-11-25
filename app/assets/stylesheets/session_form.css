@@ -31,6 +31,9 @@
   font-weight: normal;
   color: #fff;
   margin-bottom: 15px;
+  transition-property: background; 
+  transition-duration: 0.4s;
+  /* transition: background 0.4s; */
 }
 
 .add-to-cart-btn:hover,

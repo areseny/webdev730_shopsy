@@ -61,10 +61,6 @@
   margin-right: auto;
 }
 
-.search-btn:hover {
-  background: #b85a24;
-}
-
 .search-btn {
   font-size: 15px;
   background: #eb732e;
@@ -74,10 +70,13 @@
   height: 28px;
   border-radius: 0px 3px 3px 0px;
   line-height: 17px;
+  transition-property: background;
+  transition-duration: 0.4s;
 }
 
 .search-btn:hover {
   cursor: pointer;
+  background: #b85a24;
 }
 
 .search-input {
@@ -163,10 +162,10 @@
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.4);
   }
-
+  
   .hide-nav {
     display: none;
   }
