@@ -7,6 +7,11 @@ export default class CategoriesNav extends React.Component {
     super(props);
   }
 
+  handleClick() {
+    const catNav = document.getElementById("catNav");
+    catNav.classList.add("hide-nav");
+  }
+
   componentDidMount() {
     this.props.getAllCategories();
   }
@@ -17,13 +22,15 @@ export default class CategoriesNav extends React.Component {
     ));
     return (
       <div className="categories-nav">
-        <ul>
-          {/* <li>
-            <Link to="/products">All Products</Link>
-          </li> */}
+        <ul className="categories-list">
+          <li className="categories-nav-header">
+            Browse By Category
+            <img src="https://res.cloudinary.com/brainzilla/image/upload/v1506393086/close_button_gwuq4f.png"
+            id="closeBtn"
+            onClick={this.handleClick} />
+          </li>
           {categoryList}
         </ul>
-
       </div>
     );
   }
