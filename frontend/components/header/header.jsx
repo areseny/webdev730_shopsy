@@ -7,12 +7,15 @@ import CategoriesNavContainer from "./categories_nav_container";
 export default class Header extends React.Component {
   componentWillReceiveProps(nextProps) {
     const catNav = document.getElementById("catNav");
+    catNav.classList.remove("show-nav");
     catNav.classList.add("hide-nav");
   }
 
   handleClick(e) {
+    e.preventDefault();
     const catNav = document.getElementById("catNav");
     catNav.classList.remove("hide-nav");
+    catNav.classList.add("show-nav");
   }
 
   render() {
