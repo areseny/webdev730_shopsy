@@ -4,6 +4,10 @@ Shopsy is a single page web application inspired by Etsy. It was build with a Ru
 
 ## Features
 
+### Responsive
+
+  * @media queries utilized for a smooth mobile browsing experience. 
+
 ### Authentication
 
   * Frontend uses react-modal to render the session form.
