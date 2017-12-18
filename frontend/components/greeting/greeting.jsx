@@ -50,7 +50,7 @@ class Greeting extends React.Component {
       <div>
         <nav className="session-nav">
           <ul className="session-btns">
-            <li className="welcome-msg">Welcome, {currentUser.username}</li>
+            <li className="welcome-msg"><Link to={`/users/${currentUser.id}`}>Welcome, {currentUser.username}</Link></li>
             <li>
               <button onClick={logout}>Logout</button>
             </li>

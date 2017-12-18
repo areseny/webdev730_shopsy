@@ -27,3 +27,9 @@ export const fetchFeaturedProducts = () =>
     method: "GET",
     url: `api/featured/products`
   });
+
+export const fetchProductsByUser = userId => 
+  $.ajax({
+    method: "GET",
+    url: `api/users/${userId}/products`
+  });

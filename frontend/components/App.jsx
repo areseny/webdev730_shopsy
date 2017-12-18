@@ -6,6 +6,7 @@ import AuthModalContainer from "./modals/auth_modal_container";
 import ProductIndexContainer from "./products/product_index_container";
 import ProductShowContainer from "./products/product_show_container";
 import CartItemsIndexContainer from "./cart_items/cart_items_index_container";
+import UserShowContainer from "./user/user_show_container";
 import Header from "./header/header";
 import Homepage from "./homepage/homepage";
 import Footer from "./footer/footer";
@@ -15,6 +16,7 @@ const App = () => (
     <Header />
     <Switch>
       <ProtectedRoute exact path="/cart" component={CartItemsIndexContainer} />
+      <ProtectedRoute path="/users/:userId" component={UserShowContainer}/>
       <Route path="/categories/products/:productId" component={ProductShowContainer} />
       <Route path="/products/:productId" component={ProductShowContainer} />
       <Route exact path="/products" component={ProductIndexContainer} />
