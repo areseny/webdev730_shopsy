@@ -1,10 +1,12 @@
 import { connect } from "react-redux";
 import ProductIndex from "./product_index";
+import { withRouter } from "react-router-dom";
 import {
   getAllProducts,
   getSearchProducts,
   getFeaturedProducts,
-  getProductsByCategory
+  getProductsByCategory,
+  getProductsByUser
 } from "../../actions/product_actions";
 
 const mapStateToProps = state => ({
@@ -14,7 +16,11 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = () => dispatch => ({
   getSearchProducts: searchTerm => dispatch(getSearchProducts(searchTerm)),
   getFeaturedProducts: () => dispatch(getFeaturedProducts()),
-  getProductsByCategory: categoryId => dispatch(getProductsByCategory(categoryId))
+  getProductsByCategory: categoryId =>
+    dispatch(getProductsByCategory(categoryId)),
+  getProductsByUser: userId => dispatch(getProductsByUser(userId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductIndex);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(ProductIndex)
+);

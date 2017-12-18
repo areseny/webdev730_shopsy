@@ -8,6 +8,7 @@ export default class UserShow extends React.Component {
 
   componentDidMount() {
     // this.props.getUser(this.props.currentUser.id);
+    // console.log(this.props.match);
   }
 
   render () {

@@ -5,6 +5,10 @@ import { getProductsByCategory } from "../../actions/product_actions";
 const queryString = require("query-string");
 
 export default class ProductIndex extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  
   componentWillReceiveProps(nextProps) {
     if (this.props.location.search !== nextProps.location.search) {
       if (nextProps.location.search) {
@@ -18,16 +22,20 @@ export default class ProductIndex extends React.Component {
       this.props.match.params.categoryId !== nextProps.match.params.categoryId
     ) {
       this.props.getProductsByCategory(nextProps.match.params.categoryId);
-    }
+    } 
   }
 
   componentDidMount() {
+    console.log(this.props.match);
     if (this.props.location.search) {
       const parsed = queryString.parse(this.props.location.search);
       this.props.getSearchProducts(parsed.search);
     } else if (this.props.location.pathname === "/") {
       this.props.getFeaturedProducts();
-    } else {
+    } else if (this.props.match.path === "/users/:userId") {
+      this.props.getProductsByUser(this.props.match.params.userId);
+    }
+    else {
       this.props.getProductsByCategory(this.props.match.params.categoryId);
     }
   }

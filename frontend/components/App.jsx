@@ -16,10 +16,11 @@ const App = () => (
     <Header />
     <Switch>
       <ProtectedRoute exact path="/cart" component={CartItemsIndexContainer} />
-      <ProtectedRoute path="/users/:userId" component={UserShowContainer}/>
+      <Route path="/users/products/:productId" component={ProductShowContainer}/>
       <Route path="/categories/products/:productId" component={ProductShowContainer} />
       <Route path="/products/:productId" component={ProductShowContainer} />
       <Route exact path="/products" component={ProductIndexContainer} />
+      <ProtectedRoute path="/users/:userId" component={UserShowContainer}/>
       <Route path="/categories/:categoryId" component={ProductIndexContainer} />
       <Route exact path="/" component={Homepage} />
     </Switch>
