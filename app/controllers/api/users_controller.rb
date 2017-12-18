@@ -5,11 +5,16 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       login(@user)
-      render 'api/users/show'
+      render :show
     else
       render json: @user.errors.full_messages, status: 422
     end
   end
+
+  def show
+    @user = User.find(params[:id]).inlcudes(:products)
+    render :show
+  end 
 
   private
 
