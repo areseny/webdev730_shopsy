@@ -37,6 +37,10 @@ gem 'pg_search'
 gem 'seed_dump'
 
 gem 'jquery-rails'
+
+gem 'cloudinary'
+
+gem "figaro"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

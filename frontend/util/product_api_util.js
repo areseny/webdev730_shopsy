@@ -33,3 +33,17 @@ export const fetchProductsByUser = userId =>
     method: "GET",
     url: `api/users/${userId}/products`
   });
+
+export const createProduct = (userId, product) => 
+  $.ajax({
+    method: "POST",
+    url: `api/users/${userId}/products`,
+    data: { product }
+  });
+
+export const updateProduct = (userId, product) => 
+  $.ajax({
+    method: 'PATCH',
+    url: `api/users/${userId}/products/${product.id}`,
+    data: { product }
+  });

@@ -42,3 +42,8 @@ export const getProductsByUser = userId => dispatch =>
   ProductApiUtil.fetchProductsByUser(userId).then(products =>
     dispatch(receiveAllProducts(products))
   );
+
+export const createProduct = newProduct => dispatch => 
+  ProductApiUtil.createProduct(newProduct).then(product => 
+    dispatch(receiveProduct(product))
+  );
