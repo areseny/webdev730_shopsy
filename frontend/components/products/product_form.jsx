@@ -13,7 +13,10 @@ export default class ProductForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
+    console.log("product", this.state);
+    console.log("params", this.props.match.params);
+    const product = Object.assign({}, this.state);
+    this.props.action(this.props.match.params.userId, product);
   }
 
   render() {
@@ -21,16 +24,19 @@ export default class ProductForm extends React.Component {
       <div className="product-form-container">
         <form className="product-form" onSubmit={this.handleSubmit}>
           <input
+            placeholder="Title"
             type="text"
             value={this.state.title}
             onChange={this.update("title")}
           />
           <input
+            placeholder="Price"
             type="number"
             value={this.state.price}
             onChange={this.update("price")}
           />
           <textarea
+            placeholder="Description"
             name="description"
             cols="30"
             rows="10"
@@ -40,9 +46,10 @@ export default class ProductForm extends React.Component {
             {this.state.description}
           </textarea>
           <input
+            placeholder="Image Url"
             type="text"
             value={this.state.imageUrl}
-            onChange={this.update("imageUrl")}
+            onChange={this.update("image_url")}
           />
           <input
             type="submit"

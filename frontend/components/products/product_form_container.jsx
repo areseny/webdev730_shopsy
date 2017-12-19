@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
       title: "",
       price: "",
       description: "",
-      imageUrl: ""
+      image_url: ""
     };
     type = "Create";
   } else {
