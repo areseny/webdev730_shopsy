@@ -22,20 +22,23 @@ export default class ProductForm extends React.Component {
   render() {
     return (
       <div className="product-form-container">
-        <form className="product-form" onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
           <input
+            className="form-text-input"
             placeholder="Title"
             type="text"
             value={this.state.title}
             onChange={this.update("title")}
           />
           <input
+            className="form-text-input"
             placeholder="Price"
             type="number"
             value={this.state.price}
             onChange={this.update("price")}
           />
           <textarea
+            className="form-text-input"
             placeholder="Description"
             name="description"
             cols="30"
@@ -46,6 +49,7 @@ export default class ProductForm extends React.Component {
             {this.state.description}
           </textarea>
           <input
+            className="form-text-input"
             placeholder="Image Url"
             type="text"
             value={this.state.image_url}

@@ -47,3 +47,9 @@ export const updateProduct = (userId, product) =>
     url: `api/users/${userId}/products/${product.id}`,
     data: { product }
   });
+
+export const deleteProduct = (userId, productId) => 
+  $.ajax({
+    method: "DELETE",
+    url: `api/users/${userId}/products/${productId}`
+  });

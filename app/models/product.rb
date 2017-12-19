@@ -24,9 +24,9 @@ class Product < ApplicationRecord
     foreign_key: :seller_id,
     class_name: :User
 
-  has_many :comments
-  has_many :cart_items
-  has_many :category_products
+  has_many :comments, dependent: :destroy
+  has_many :cart_items, dependent: :destroy
+  has_many :category_products, dependent: :destroy
 
   has_many :categories, through: :category_products, source: :category
 

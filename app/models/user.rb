@@ -15,14 +15,15 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   has_many :products,
     primary_key: :id,
     foreign_key: :seller_id,
-    class_name: :Product
+    class_name: :Product,
+    dependent: :destroy
 
-  has_many :cart_items
+  has_many :cart_items, dependent: :destroy
   has_many :cart_products, through: :cart_items, source: :product
 
   after_initialize :ensure_session_token

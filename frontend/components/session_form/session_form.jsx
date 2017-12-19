@@ -62,17 +62,17 @@ class SessionForm extends React.Component {
     const title = this.props.formType === "login" ? "Sign In" : "Register";
     return (
       <div className="auth-form-container">
-        <form className="auth-form" onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
           <h1 className="auth-form-title">{title}</h1>
           <input
-            className="auth-form-text-input"
+            className="form-text-input"
             placeholder="Username"
             type="text"
             value={this.state.username}
             onChange={this.update("username")}
           />
           <input
-            className="auth-form-text-input"
+            className="form-text-input"
             placeholder="Password"
             type="password"
             value={this.state.password}

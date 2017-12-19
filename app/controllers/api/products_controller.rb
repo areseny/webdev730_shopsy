@@ -33,6 +33,12 @@ class Api::ProductsController < ApplicationController
     
   end 
 
+  def destroy
+    @product = current_user.products.find(params[:id])
+    @product.destroy!
+    render :show
+  end
+
   private
 
   def product_params

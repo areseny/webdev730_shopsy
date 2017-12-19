@@ -8,7 +8,7 @@ export default class ProductIndex extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   componentWillReceiveProps(nextProps) {
     if (this.props.location.search !== nextProps.location.search) {
       if (nextProps.location.search) {
@@ -22,7 +22,7 @@ export default class ProductIndex extends React.Component {
       this.props.match.params.categoryId !== nextProps.match.params.categoryId
     ) {
       this.props.getProductsByCategory(nextProps.match.params.categoryId);
-    } 
+    }
   }
 
   componentDidMount() {
@@ -33,8 +33,7 @@ export default class ProductIndex extends React.Component {
       this.props.getFeaturedProducts();
     } else if (this.props.match.path === "/users/:userId") {
       this.props.getProductsByUser(this.props.match.params.userId);
-    }
-    else {
+    } else {
       this.props.getProductsByCategory(this.props.match.params.categoryId);
     }
   }
@@ -48,7 +47,12 @@ export default class ProductIndex extends React.Component {
               <p>There are no products matching that selection.</p>
             ) : (
               this.props.products.map(product => (
-                <ProductIndexItem key={product.id} product={product} />
+                <ProductIndexItem
+                  key={product.id}
+                  product={product}
+                  path={this.props.match.path}
+                  action={this.props.deleteProduct}
+                />
               ))
             )}
           </div>

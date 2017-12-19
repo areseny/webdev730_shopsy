@@ -2,6 +2,7 @@ import * as ProductApiUtil from "../util/product_api_util";
 
 export const RECEIVE_ALL_PRODUCTS = "RECEIVE_ALL_PRODUCTS";
 export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT";
+export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 
 const receiveAllProducts = products => ({
   type: RECEIVE_ALL_PRODUCTS,
@@ -10,6 +11,11 @@ const receiveAllProducts = products => ({
 
 const receiveProduct = product => ({
   type: RECEIVE_PRODUCT,
+  product
+});
+
+const removeProduct = product => ({
+  type: REMOVE_PRODUCT,
   product
 });
 
@@ -43,7 +49,12 @@ export const getProductsByUser = userId => dispatch =>
     dispatch(receiveAllProducts(products))
   );
 
-export const createProduct = (userId, newProduct) => dispatch => 
-  ProductApiUtil.createProduct(userId, newProduct).then(product => 
+export const createProduct = (userId, newProduct) => dispatch =>
+  ProductApiUtil.createProduct(userId, newProduct).then(product =>
     dispatch(receiveProduct(product))
+  );
+
+export const deleteProduct = (userId, product) => dispatch =>
+  ProductApiUtil.deleteProduct(userId, product).then(p =>
+    dispatch(removeProduct(p))
   );

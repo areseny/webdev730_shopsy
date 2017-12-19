@@ -6,7 +6,8 @@ import {
   getSearchProducts,
   getFeaturedProducts,
   getProductsByCategory,
-  getProductsByUser
+  getProductsByUser,
+  deleteProduct
 } from "../../actions/product_actions";
 
 const mapStateToProps = state => ({
@@ -18,7 +19,8 @@ const mapDispatchToProps = () => dispatch => ({
   getFeaturedProducts: () => dispatch(getFeaturedProducts()),
   getProductsByCategory: categoryId =>
     dispatch(getProductsByCategory(categoryId)),
-  getProductsByUser: userId => dispatch(getProductsByUser(userId))
+  getProductsByUser: userId => dispatch(getProductsByUser(userId)),
+  deleteProduct: (userId, productId) => dispatch(deleteProduct(userId, productId))
 });
 
 export default withRouter(

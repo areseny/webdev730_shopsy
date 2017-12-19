@@ -11,7 +11,7 @@ export default class UserShow extends React.Component {
     return (
     <div className="user-page">
       <div className="user-name">
-        {this.props.currentUser.username}'s Shop
+        {this.props.currentUser.username}
       </div>
       <ProductFormContainer type="create"/>
       <div>Products</div>
