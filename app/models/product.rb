@@ -17,6 +17,8 @@ class Product < ApplicationRecord
   validates :title, :image_url, :price, :description, presence: true
   validates :title, uniqueness: true
 
+  after_create :ensure_all_products
+
   belongs_to :seller,
     primary_key: :id,
     foreign_key: :seller_id,
@@ -36,4 +38,12 @@ class Product < ApplicationRecord
                     tsearch: { any_word: true, prefix: true }
                   }
 
+
+  private 
+
+  def ensure_all_products
+    cat_id = Category.find_by(name: "All Products").id
+    @category_product = CategoryProduct.new(product_id: self.id, category_id: cat_id)
+    @category_product.save!
+  end
 end

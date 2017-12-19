@@ -13,10 +13,10 @@ export default class ProductForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("product", this.state);
-    console.log("params", this.props.match.params);
-    const product = Object.assign({}, this.state);
+    let product = Object.assign({}, this.state);
     this.props.action(this.props.match.params.userId, product);
+    product = { title: "", price: "", description: "", image_url: "" };
+    this.setState(product);
   }
 
   render() {
@@ -48,7 +48,7 @@ export default class ProductForm extends React.Component {
           <input
             placeholder="Image Url"
             type="text"
-            value={this.state.imageUrl}
+            value={this.state.image_url}
             onChange={this.update("image_url")}
           />
           <input
