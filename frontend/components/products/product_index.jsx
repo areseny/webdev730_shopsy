@@ -26,7 +26,6 @@ export default class ProductIndex extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match);
     if (this.props.location.search) {
       const parsed = queryString.parse(this.props.location.search);
       this.props.getSearchProducts(parsed.search);
