@@ -49,8 +49,8 @@ export const getProductsByUser = userId => dispatch =>
     dispatch(receiveAllProducts(products))
   );
 
-export const createProduct = (userId, newProduct) => dispatch =>
-  ProductApiUtil.createProduct(userId, newProduct).then(product =>
+export const createProduct = (userId, newProduct, categoryIds) => dispatch =>
+  ProductApiUtil.createProduct(userId, newProduct, categoryIds).then(product =>
     dispatch(receiveProduct(product))
   );
 

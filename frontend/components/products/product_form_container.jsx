@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import ProductForm from "./product_form";
 import { withRouter } from "react-router-dom";
 import { createProduct, updateProduct } from "../../actions/product_actions";
+import { getAllCategories } from "../../actions/category_actions";
 
 const mapStateToProps = (state, ownProps) => {
   let product, type;
@@ -17,13 +18,18 @@ const mapStateToProps = (state, ownProps) => {
     product = state.products[ownProps.match.params.productId];
     type = "Update";
   }
-  return { product, type };
+  return { 
+    product,
+     type,
+     categories: Object.values(state.categories)
+     };
 };
 
 const mapDispatchToProps = (state, ownProps) => dispatch => {
   const action = ownProps.type === "create" ? createProduct : updateProduct;
   return {
-    action: (userId, product) => dispatch(action(userId, product))
+    action: (userId, product, categories) => dispatch(action(userId, product, categories)),
+    getAllCategories: () => dispatch(getAllCategories())
   };
 };
 

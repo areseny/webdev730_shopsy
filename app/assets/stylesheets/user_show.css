@@ -1,5 +1,56 @@
+.user-page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.hide-form {
+  transition: all 0.4s ease;
+  display: none;
+}
+
+.show-form {
+  display: block;
+}
 
 .product-form {
+  margin: 10px auto;
+  width: 312px;
+}
+
+.category-select option {
+  font-size: 16px;
+  color: #727272;
+}
+
+.user-page-header,
+.product-header {
+  padding: 10px 40px;
+  font-size: 24px;
+}
+
+.form textarea,
+.img-upload-container {
+  margin: 10px 0;
+}
+
+.form textarea,
+.img-upload-container > button {
+  border: solid 1px #adb3a8;
+  border-radius: 4px;
+}
+
+.img-upload-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.img-upload-container > button {
+  padding: 5px 10px;
+}
+
+.img-upload-container > button:hover {
+  border: solid 1px #000000;
 }

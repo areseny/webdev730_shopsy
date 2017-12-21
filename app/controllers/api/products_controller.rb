@@ -27,10 +27,16 @@ class Api::ProductsController < ApplicationController
     @product.seller_id = current_user.id
     if @product.save
       render :show
+      if params["categories"]
+        cat_ids = params["categories"]
+        cat_ids.each do |cat_id|
+          create_category_product(cat_id, @product.id)
+        end 
+      end 
     else 
       render json: @product.errors.full_messages, status: 422
     end 
-    
+
   end 
 
   def destroy
@@ -47,5 +53,14 @@ class Api::ProductsController < ApplicationController
                                     :description,
                                     :image_url
                                     )
+  end
+
+  def create_category_product(cat_id, product_id)
+    category_product = CategoryProduct.new(category_id: cat_id, product_id: product_id)
+
+    if category_product.save
+    else 
+      render json: category_product.errors.full_messages, status: 422
+    end 
   end
 end

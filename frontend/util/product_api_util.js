@@ -34,11 +34,11 @@ export const fetchProductsByUser = userId =>
     url: `api/users/${userId}/products`
   });
 
-export const createProduct = (userId, product) => 
+export const createProduct = (userId, product, categories) => 
   $.ajax({
     method: "POST",
     url: `api/users/${userId}/products`,
-    data: { product }
+    data: { product, categories }
   });
 
 export const updateProduct = (userId, product) => 
