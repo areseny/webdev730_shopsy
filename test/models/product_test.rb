@@ -11,6 +11,7 @@
 #  updated_at  :datetime         not null
 #  image_url   :string           not null
 #  featured    :boolean          default(FALSE), not null
+#  public_id   :string
 #
 
 require 'test_helper'

@@ -11,6 +11,7 @@
 #  updated_at  :datetime         not null
 #  image_url   :string           not null
 #  featured    :boolean          default(FALSE), not null
+#  public_id   :string
 #
 
 class Product < ApplicationRecord
@@ -18,6 +19,7 @@ class Product < ApplicationRecord
   validates :title, uniqueness: true
 
   after_create :ensure_all_products
+  before_destroy :delete_remote_image
 
   belongs_to :seller,
     primary_key: :id,
@@ -45,5 +47,9 @@ class Product < ApplicationRecord
     cat_id = Category.find_by(name: "All Products").id
     @category_product = CategoryProduct.new(product_id: self.id, category_id: cat_id)
     @category_product.save!
+  end
+
+  def delete_remote_image
+    Cloudinary::Uploader.destroy(self.public_id) if self.public_id
   end
 end

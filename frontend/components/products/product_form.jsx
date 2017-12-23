@@ -29,7 +29,7 @@ export default class ProductForm extends React.Component {
     e.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
       if (!error) {
-        console.log(results);
+        this.setState({["public_id"]: results[0].public_id});
         this.setState({ ["image_url"]: results[0].secure_url });
         document.getElementById("filename").innerHTML = `${
           results[0].original_filename
@@ -63,25 +63,35 @@ export default class ProductForm extends React.Component {
     return (
       <div id="addProductForm" className="product-form-container hide-form">
         <form className="form product-form" onSubmit={this.handleSubmit}>
-          <label for="title">Title</label>
+          <label htmlFor="title">
+            Title <span className="required-dot">*</span>
+          </label>
           <input
             className="form-text-input"
+            // placeholder="Product Title"
             name="title"
             type="text"
             value={this.state.title}
             onChange={this.update("title")}
           />
-          <label for="price">Price</label>
+          <label htmlFor="price">
+            Price <span className="required-dot">*</span>
+          </label>
           <input
             className="form-text-input"
+            // placeholder="Product Price"
             title="price"
             type="number"
+            min="0"
             value={this.state.price}
             onChange={this.update("price")}
           />
-          <label for="description">Description</label>
+          <label htmlFor="description">
+            Description <span className="required-dot">*</span>
+          </label>
           <textarea
             className="form-text-input"
+            // placeholder="Product Description"
             title="description"
             name="description"
             cols="30"
@@ -92,10 +102,18 @@ export default class ProductForm extends React.Component {
             {this.state.description}
           </textarea>
           <div className="img-upload-container">
-            <button onClick={this.uploadImg}>Upload Image</button>
+            <div className="upload-btn-container">
+              <button className="img-upload-btn" onClick={this.uploadImg}>
+                Upload Image
+              </button>
+              <span className="required-dot"> *</span>
+            </div>
             <div id="filename" />
           </div>
-          <label for="categories">Categories</label>
+          <label htmlFor="categories">
+            Categories{" "}
+            <span className="italic-msg"> - Select all that apply</span>
+          </label>
           <select
             className="category-select"
             name="categories"
@@ -104,6 +122,9 @@ export default class ProductForm extends React.Component {
           >
             {categoryList}
           </select>
+          <div className="italic-msg">
+            <span className="required-dot">*</span> Indicates required field
+          </div>
           <input
             type="submit"
             className="submit-product-btn"

@@ -51,7 +51,8 @@ class Api::ProductsController < ApplicationController
     params.require(:product).permit(:title,
                                     :price,
                                     :description,
-                                    :image_url
+                                    :image_url,
+                                    :public_id
                                     )
   end
 

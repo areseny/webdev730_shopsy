@@ -23,6 +23,10 @@
   text-align: center;
 }
 
+.product-index-img {
+  height: 220px;
+}
+
 .product-index-info li {
   margin: 5px 0;
 }

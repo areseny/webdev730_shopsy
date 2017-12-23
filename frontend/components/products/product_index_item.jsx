@@ -16,7 +16,7 @@ export default class ProductIndexItem extends React.Component {
     let editBtns;
     if (this.props.path === "/users/:userId") {
       editBtns = <div>
-          <div>Edit</div>
+          {/* <div>Edit</div> */}
           <button onClick={this.handleDelete}>Delete</button>
         </div>;
     } else {

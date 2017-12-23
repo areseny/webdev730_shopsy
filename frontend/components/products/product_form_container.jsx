@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
       title: "",
       price: "",
       description: "",
-      image_url: ""
+      image_url: "",
+      public_id: ""
     };
     type = "Create";
   } else {

@@ -14,6 +14,10 @@
   display: block;
 }
 
+.product-form-container {
+  margin-top: 40px;
+}
+
 .product-form {
   margin: 10px auto;
   width: 312px;
@@ -36,7 +40,7 @@
 }
 
 .form textarea,
-.img-upload-container > button {
+.img-upload-btn {
   border: solid 1px #adb3a8;
   border-radius: 4px;
 }
@@ -47,10 +51,25 @@
   justify-content: space-between;
 }
 
-.img-upload-container > button {
+.img-upload-btn {
   padding: 5px 10px;
+  margin-bottom: 10px;
 }
 
-.img-upload-container > button:hover {
+.img-upload-btn:hover {
   border: solid 1px #000000;
+}
+
+.required-dot {
+  color: red;
+  font-size: 16px;
+}
+
+.italic-msg {
+  font-size: 14px;
+  font-style: italic;
+}
+
+#filename {
+  padding-top: 5px;
 }
