@@ -249,11 +249,12 @@
   }
 
   .session-btns li a,
-  .session-btns li button {
-    font-size: 12px;
+  .session-btns li button,
+  .session-btns li {
+    font-size: 14px;
   }
 
-  .welcome-msg { display: none; }
+  /* .welcome-msg { display: none; } */
 
   .session-btns li {
     margin: 5px 5px;
