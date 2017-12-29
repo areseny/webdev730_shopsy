@@ -20,8 +20,6 @@ class Greeting extends React.Component {
   }
 
   sessionLinks() {
-    const guestUser = { username: "Guest", password: "123456" };
-    const loginDummy = () => this.props.login(guestUser);
     return (
       <nav className="session-nav">
         <ul className="session-btns">
@@ -30,9 +28,6 @@ class Greeting extends React.Component {
           </li>
           <li>
             <Link to={`/login`}>Sign In</Link>
-          </li>
-          <li>
-            <button onClick={loginDummy}>Demo</button>
           </li>
         </ul>
       </nav>

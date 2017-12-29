@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = { username: "", password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   handleSubmit(e) {
@@ -17,6 +18,12 @@ class SessionForm extends React.Component {
     } else {
       this.props.signup(user);
     }
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const guestUser = { username: "Guest", password: "123456" };
+    this.props.login(guestUser);
   }
 
   update(field) {
@@ -84,7 +91,7 @@ class SessionForm extends React.Component {
           />
           {errors}
           <input type="submit" value={title} className="auth-form-btn" />
-          {/* <input type="button" value="Demo Login" onClick={} className="auth-form-btn"/> */}
+          <input type="button" value="Demo Login" onClick={this.demoLogin} className="auth-form-btn"/>
           {this.navLink()}
         </form>
       </div>
