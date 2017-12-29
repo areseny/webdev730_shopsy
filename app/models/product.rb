@@ -19,7 +19,7 @@ class Product < ApplicationRecord
   validates :title, uniqueness: true
 
   after_create :ensure_all_products
-  before_destroy :delete_remote_image
+  # before_destroy :delete_remote_image
 
   belongs_to :seller,
     primary_key: :id,
