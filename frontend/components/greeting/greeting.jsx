@@ -7,8 +7,8 @@ class Greeting extends React.Component {
     super(props);
   }
 
-  componentWillReceiveProps() {
-    if (this.props.currentUser) {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.currentUser) {
       this.props.getCartItems();
     }
   }
@@ -20,18 +20,20 @@ class Greeting extends React.Component {
   }
 
   sessionLinks() {
-    return (
-      <nav className="session-nav">
+    return <nav className="session-nav">
         <ul className="session-btns">
           <li>
-            <Link to={`/signup`}>Register</Link>
+            <Link className="session-btn" to={`/signup`}>
+              Register
+            </Link>
           </li>
           <li>
-            <Link to={`/login`}>Sign In</Link>
+            <Link className="session-btn" to={`/login`}>
+              Sign In
+            </Link>
           </li>
         </ul>
-      </nav>
-    );
+      </nav>;
   }
 
   welcomeGreeting(currentUser, logout, cartCount) {
@@ -45,9 +47,13 @@ class Greeting extends React.Component {
       <div>
         <nav className="session-nav">
           <ul className="session-btns">
-            <li className="welcome-msg"><Link to={`/users/${currentUser.id}`}>Welcome, {currentUser.username}</Link></li>
-            <li>
-              <button onClick={logout}>Logout</button>
+            <li className="welcome-msg">
+              <Link className="session-btn" to={`/users/${currentUser.id}`}>
+                Sell
+              </Link>
+            </li>
+            <li className="session-btn" onClick={logout}>
+              Logout
             </li>
             <li>
               <Link to={`/cart`}>
@@ -56,7 +62,7 @@ class Greeting extends React.Component {
                   src="https://res.cloudinary.com/brainzilla/image/upload/v1506036925/cart_sisp9z.png"
                 />
               </Link>
-             {cartNum}
+              {cartNum}
             </li>
           </ul>
         </nav>
@@ -66,7 +72,11 @@ class Greeting extends React.Component {
 
   render() {
     if (this.props.currentUser) {
-      return this.welcomeGreeting(this.props.currentUser, this.props.logout, this.props.cartCount);
+      return this.welcomeGreeting(
+        this.props.currentUser,
+        this.props.logout,
+        this.props.cartCount
+      );
     } else {
       return this.sessionLinks(this.props.login);
     }

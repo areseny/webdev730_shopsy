@@ -1,11 +1,7 @@
 class Api::CartItemsController < ApplicationController
   def index
-    if current_user
       @cart_items = current_user.cart_items.includes(:product)
       render 'api/cart_items/index'
-    else 
-      @cart_items = []
-    end  
   end
 
   def show

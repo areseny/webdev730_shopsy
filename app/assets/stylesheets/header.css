@@ -3,15 +3,14 @@
   margin: 10px 30px;
 }
 
-.session-btns button,
-.session-btns a,
+.session-btn,
 .logo {
   color: #e55400;
 }
 
-.session-btns a:hover,
-.session-btns button:hover {
+.session-btn:hover {
   color: #6b2a06;
+  cursor: pointer;
 }
 
 .session-nav {
