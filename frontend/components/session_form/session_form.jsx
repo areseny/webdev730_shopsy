@@ -22,8 +22,26 @@ class SessionForm extends React.Component {
 
   demoLogin(e) {
     e.preventDefault();
-    const guestUser = { username: "Guest", password: "123456" };
-    this.props.login(guestUser);
+    this.setState({ username: "", password: ""});
+    const guestUser = ["Guest", "123456"];
+    const guestName = guestUser[0].split("");
+    const guestPass = guestUser[1].split("");
+    const setFields = () => {
+      if (guestName.length > 0) {
+        this.setState({
+          username: this.state.username.concat(guestName.shift())
+        });
+      } else if (guestPass.length > 0) {
+        this.setState({
+          password: this.state.password.concat(guestPass.shift())
+        });
+      } else {
+        clearInterval(interval);
+        const user = Object.assign({}, this.state);
+        this.props.login(user);
+      }
+    };
+    const interval = setInterval(setFields, 100);
   }
 
   update(field) {
@@ -91,7 +109,12 @@ class SessionForm extends React.Component {
           />
           {errors}
           <input type="submit" value={title} className="auth-form-btn" />
-          <input type="button" value="Demo Login" onClick={this.demoLogin} className="auth-form-btn"/>
+          <input
+            type="button"
+            value="Demo Login"
+            onClick={this.demoLogin}
+            className="auth-form-btn"
+          />
           {this.navLink()}
         </form>
       </div>
