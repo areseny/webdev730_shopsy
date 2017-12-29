@@ -15,18 +15,26 @@ export default class CategoryIndexItem extends React.Component {
     } else {
       $(e.target).prop("selected", true);
     }
-  } 
+  }
 
   render() {
     if (this.props.type === "option") {
-      return <option onMouseDown={this.handleMouseDown} value={this.props.category.id}>{this.props.category.name}</option>;
+      return (
+        <option
+          onMouseDown={this.handleMouseDown}
+          value={this.props.category.id}
+        >
+          {this.props.category.name}
+        </option>
+      );
     } else {
-      return <li>
-          <Link to={`/categories/${this.props.category.id}`}>{this.props.category.name}</Link>
-        </li>;
+      return (
+        <li>
+          <Link to={`/categories/${this.props.category.id}`}>
+            {this.props.category.name}
+          </Link>
+        </li>
+      );
     }
   }
 }
-
-
-

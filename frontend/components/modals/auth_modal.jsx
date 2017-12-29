@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import { withRouter } from "react-router";
-import SessionLoginContainer from "../session_form/session_login_container";
-import SessionSignupContainer from "../session_form/session_signup_container";
+import SessionFormContainer from "../session_form/session_form_container";
 
 const customStyles = {
   content: {
@@ -38,12 +37,6 @@ class App extends React.Component {
   }
 
   render() {
-    let form;
-    if (this.props.formType === "Login") {
-      form = <SessionLoginContainer />;
-    } else {
-      form = <SessionSignupContainer />;
-    }
     return (
       <div>
         <Modal
@@ -53,7 +46,7 @@ class App extends React.Component {
           style={customStyles}
           contentLabel="Auth Modal"
         >
-          {form}
+        <SessionFormContainer/>
         </Modal>
       </div>
     );
