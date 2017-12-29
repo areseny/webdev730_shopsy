@@ -47,7 +47,8 @@ class Greeting extends React.Component {
       <div>
         <nav className="session-nav">
           <ul className="session-btns">
-            <li className="welcome-msg">
+            <li>Welcome, {this.props.currentUser.username}</li>
+            <li className="session-btn">
               <Link className="session-btn" to={`/users/${currentUser.id}`}>
                 Sell
               </Link>
