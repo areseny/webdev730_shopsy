@@ -2,11 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 import { Route, Redirect, withRouter } from "react-router-dom";
 
+const back = props => {
+  props.history.goBack();
+  return null;
+};
+
 const Auth = ({ component: Component, path, loggedIn }) => (
   <Route
     path={path}
     render={props =>
-      !loggedIn ? <Component {...props} /> : props.history.goBack()}
+      !loggedIn ? <Component {...props} /> : back(props)}
   />
 );
 
