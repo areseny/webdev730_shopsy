@@ -4,7 +4,7 @@ class Api::ProductsController < ApplicationController
     if params[:search]
       @products = Product.search_by_product_details(params[:search])
     elsif params[:user_id]
-      @products = User.find(params[:user_id]).products
+      @products = User.find(params[:user_id]).products.includes(:seller)
     else
       @products = Product.includes(:seller)
     end
@@ -12,7 +12,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.includes(:seller).find(params[:id])
     render :show
   end
 
