@@ -69,7 +69,7 @@ export default class ProductShow extends React.Component {
             <CommentIndexContainer productId={product.id} />
           </div>
           <div className="user-products">
-            <div>See other products by this seller.</div>
+            <div>More products by this seller.</div>
             <ProductIndexContainer sellerId={this.props.product.seller.id}/>
           </div>
         </div>

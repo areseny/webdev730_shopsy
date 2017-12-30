@@ -45,13 +45,14 @@ export default class ProductIndex extends React.Component {
     }
   }
 
-  render() {
-    let products;
+  displayProducts() {
     if (this.props.products.length === 0) {
-      products = <p>There are no products matching that selection.</p>;
+      return <p>There are no products matching that selection.</p>;
     } else if (this.props.sellerId) {
-      products = this.props.products
-        .filter(product => product.id !== parseInt(this.props.match.params.productId))
+      return this.props.products
+        .filter(
+          product => product.id !== parseInt(this.props.match.params.productId)
+        )
         .map(product => (
           <ProductIndexItem
             key={product.id}
@@ -61,7 +62,7 @@ export default class ProductIndex extends React.Component {
           />
         ));
     } else {
-      products = this.props.products.map(product => (
+      return this.props.products.map(product => (
         <ProductIndexItem
           key={product.id}
           product={product}
@@ -70,12 +71,13 @@ export default class ProductIndex extends React.Component {
         />
       ));
     }
+  }
+
+  render() {
     return (
       <div className="main-index">
         <div className="product-index">
-          <div className="product-row">
-            {products}
-          </div>
+          <div className="product-row">{this.displayProducts()}</div>
         </div>
       </div>
     );
