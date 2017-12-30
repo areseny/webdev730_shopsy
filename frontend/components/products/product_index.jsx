@@ -18,6 +18,11 @@ export default class ProductIndex extends React.Component {
         this.props.getProductsByCategory(nextProps.match.params.categoryId);
       }
     } else if (
+      this.props.sellerId &&
+      this.props.sellerId !== nextProps.sellerId
+    ) {
+      this.props.getProductsByUser(nextProps.sellerId);
+    } else if (
       this.props.location.pathname !== "/" &&
       this.props.match.params.categoryId !== nextProps.match.params.categoryId
     ) {
@@ -33,28 +38,43 @@ export default class ProductIndex extends React.Component {
       this.props.getFeaturedProducts();
     } else if (this.props.match.path === "/users/:userId") {
       this.props.getProductsByUser(this.props.match.params.userId);
+    } else if (this.props.sellerId) {
+      this.props.getProductsByUser(this.props.sellerId);
     } else {
       this.props.getProductsByCategory(this.props.match.params.categoryId);
     }
   }
 
   render() {
+    let products;
+    if (this.props.products.length === 0) {
+      products = <p>There are no products matching that selection.</p>;
+    } else if (this.props.sellerId) {
+      products = this.props.products
+        .filter(product => product.id !== parseInt(this.props.match.params.productId))
+        .map(product => (
+          <ProductIndexItem
+            key={product.id}
+            product={product}
+            path={this.props.match.path}
+            action={this.props.deleteProduct}
+          />
+        ));
+    } else {
+      products = this.props.products.map(product => (
+        <ProductIndexItem
+          key={product.id}
+          product={product}
+          path={this.props.match.path}
+          action={this.props.deleteProduct}
+        />
+      ));
+    }
     return (
       <div className="main-index">
         <div className="product-index">
           <div className="product-row">
-            {this.props.products.length === 0 ? (
-              <p>There are no products matching that selection.</p>
-            ) : (
-              this.props.products.map(product => (
-                <ProductIndexItem
-                  key={product.id}
-                  product={product}
-                  path={this.props.match.path}
-                  action={this.props.deleteProduct}
-                />
-              ))
-            )}
+            {products}
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import CommentIndexContainer from "../comments/comment_index_container";
 import CommentFormContainer from "../comments/comment_form_container";
+import ProductIndexContainer from "../products/product_index_container";
 
 export default class ProductShow extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ export default class ProductShow extends React.Component {
     this.props.clearErrors();
     this.props.getProduct(this.props.match.params.productId);
   }
-
+  
   handleSubmit(e) {
     e.preventDefault();
     if (this.props.currentUser) {
@@ -66,6 +67,10 @@ export default class ProductShow extends React.Component {
           <div className="comments-section">
             <CommentFormContainer productId={product.id} />
             <CommentIndexContainer productId={product.id} />
+          </div>
+          <div className="user-products">
+            <div>See other products by this seller.</div>
+            <ProductIndexContainer sellerId={this.props.product.seller.id}/>
           </div>
         </div>
       </div>

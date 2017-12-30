@@ -22,7 +22,7 @@ export default class ProductIndexItem extends React.Component {
     } else {
       editBtns = <div />;
     }
-    return <Link to={`products/${this.props.product.id}`}>
+    return <Link to={`/products/${this.props.product.id}`}>
         <div className="product-item-container">
           <div className="product-index-img">
             <img className="product-thumb" src={this.props.product.image_url} />
