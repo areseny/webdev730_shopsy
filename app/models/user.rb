@@ -16,6 +16,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many :comments, dependent: :destroy
+  has_many :sessions
 
   has_many :products,
     primary_key: :id,
@@ -26,7 +27,7 @@ class User < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   has_many :cart_products, through: :cart_items, source: :product
 
-  after_initialize :ensure_session_token
+  # after_initialize :ensure_session_token
 
   attr_reader :password
 
@@ -44,15 +45,23 @@ class User < ApplicationRecord
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
-  def reset_session_token
-    self.session_token = SecureRandom.urlsafe_base64
-    self.save!
-    self.session_token
-  end
+  def create_session   
+    session_token = SecureRandom.urlsafe_base64
+    session = Session.new(session_token: session_token, user_id: self.id)
+    session.save
+    session_token
+  end 
 
-  private
 
-  def ensure_session_token
-    self.session_token ||= SecureRandom.urlsafe_base64
-  end
+  # def reset_session_token
+  #   self.session_token = SecureRandom.urlsafe_base64
+  #   self.save!
+  #   self.session_token
+  # end
+
+  # private
+
+  # def ensure_session_token
+  #   self.session_token ||= SecureRandom.urlsafe_base64
+  # end
 end
