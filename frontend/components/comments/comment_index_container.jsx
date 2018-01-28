@@ -15,7 +15,7 @@ const mapStateToProps = ({ session, comments }, ownProps) => {
   });
 };
 
-const mapDispatchToProps = state => dispatch => ({
+const mapDispatchToProps = dispatch => ({
   getComments: (productId) => dispatch(getComments(productId)),
   updateComment: (comment) => dispatch(updateComment(comment)),
   deleteComment: (comment) => dispatch(deleteComment(comment))
