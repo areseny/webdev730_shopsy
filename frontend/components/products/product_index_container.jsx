@@ -44,7 +44,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   const { action } = getActionAndArg(ownProps);
   return {
-    action: a => dispatch(action(a)),
+    action: arg => dispatch(action(arg)),
     deleteProduct: (userId, productId) =>
       dispatch(deleteProduct(userId, productId))
   };
