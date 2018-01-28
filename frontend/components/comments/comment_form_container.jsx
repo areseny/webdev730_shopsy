@@ -7,7 +7,7 @@ const mapStateToProps = ({ session, comments }, ownProps) => ({
     productId: ownProps.productId
 });
 
-const mapDispatchToProps = state => dispatch => ({
+const mapDispatchToProps = dispatch => ({
   createComment: (comment) => dispatch(createComment(comment))
 });
 
