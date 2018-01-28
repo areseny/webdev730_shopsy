@@ -20,7 +20,8 @@ const mapDispatchToProps = () => dispatch => ({
   getProductsByCategory: categoryId =>
     dispatch(getProductsByCategory(categoryId)),
   getProductsByUser: userId => dispatch(getProductsByUser(userId)),
-  deleteProduct: (userId, productId) => dispatch(deleteProduct(userId, productId))
+  deleteProduct: (userId, productId) =>
+    dispatch(deleteProduct(userId, productId))
 });
 
 export default withRouter(

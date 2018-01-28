@@ -10,13 +10,12 @@ export default class ProductIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.location.search !== nextProps.location.search) {
-      if (nextProps.location.search) {
-        const parsed = queryString.parse(nextProps.location.search);
-        this.props.getSearchProducts(parsed.search);
-      } else {
-        this.props.getProductsByCategory(nextProps.match.params.categoryId);
-      }
+    if (
+      nextProps.location.search &&
+      this.props.location.search !== nextProps.location.search
+    ) {
+      const parsed = queryString.parse(nextProps.location.search);
+      this.props.getSearchProducts(parsed.search);
     } else if (
       this.props.sellerId &&
       this.props.sellerId !== nextProps.sellerId
