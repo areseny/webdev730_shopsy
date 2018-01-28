@@ -6,7 +6,7 @@ const mapStateToProps = state => ({
   categories: Object.values(state.categories)
 });
 
-const mapDispatchToProps = state => dispatch => ({
+const mapDispatchToProps = dispatch => ({
   getAllCategories: () => dispatch(getAllCategories())
 });
 

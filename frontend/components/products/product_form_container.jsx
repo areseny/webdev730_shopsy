@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
      };
 };
 
-const mapDispatchToProps = (state, ownProps) => dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) =>  {
   const action = ownProps.type === "create" ? createProduct : updateProduct;
   return {
     action: (userId, product, categories) => dispatch(action(userId, product, categories)),
