@@ -1,6 +1,6 @@
 class Api::CartItemsController < ApplicationController
   def index
-      @cart_items = current_user.cart_items
+      @cart_items = current_user.cart_items.includes(product: :seller)
       render 'api/cart_items/index'
   end
 
