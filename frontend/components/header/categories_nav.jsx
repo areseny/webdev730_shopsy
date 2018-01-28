@@ -27,7 +27,7 @@ export default class CategoriesNav extends React.Component {
             Browse By Category
             <img src="https://res.cloudinary.com/brainzilla/image/upload/v1506393086/close_button_gwuq4f.png"
             id="closeBtn"
-            onClick={this.handleClick} />
+            onClick={this.handleClick.bind(this)} />
           </li>
           {categoryList}
         </ul>
