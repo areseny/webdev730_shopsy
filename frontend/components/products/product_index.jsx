@@ -10,38 +10,13 @@ export default class ProductIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (
-      nextProps.location.search &&
-      this.props.location.search !== nextProps.location.search
-    ) {
-      const parsed = queryString.parse(nextProps.location.search);
-      this.props.getSearchProducts(parsed.search);
-    } else if (
-      this.props.sellerId &&
-      this.props.sellerId !== nextProps.sellerId
-    ) {
-      this.props.getProductsByUser(nextProps.sellerId);
-    } else if (
-      this.props.location.pathname !== "/" &&
-      this.props.match.params.categoryId !== nextProps.match.params.categoryId
-    ) {
-      this.props.getProductsByCategory(nextProps.match.params.categoryId);
+    if (this.props.arg !== nextProps.arg) {
+        nextProps.action(nextProps.arg);
     }
   }
 
   componentDidMount() {
-    if (this.props.location.search) {
-      const parsed = queryString.parse(this.props.location.search);
-      this.props.getSearchProducts(parsed.search);
-    } else if (this.props.location.pathname === "/") {
-      this.props.getFeaturedProducts();
-    } else if (this.props.match.path === "/users/:userId") {
-      this.props.getProductsByUser(this.props.match.params.userId);
-    } else if (this.props.sellerId) {
-      this.props.getProductsByUser(this.props.sellerId);
-    } else {
-      this.props.getProductsByCategory(this.props.match.params.categoryId);
-    }
+    this.props.action(this.props.arg);
   }
 
   displayProducts() {

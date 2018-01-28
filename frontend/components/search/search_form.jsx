@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 const queryString = require("query-string");
 
 export default class SearchForm extends React.Component {
@@ -28,7 +28,6 @@ export default class SearchForm extends React.Component {
           onChange={this.handleChange}
           className="search-input"
         />
-
         <input className="search-btn" type="submit" value="Search" />
       </form>
     );
