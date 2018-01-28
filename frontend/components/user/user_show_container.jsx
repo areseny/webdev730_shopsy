@@ -8,7 +8,7 @@ const mapStateToProps = ({users, session}, ownProps) => ({
   currentUser: session.currentUser
 });
 
-const mapDispatchToProps = state => dispatch => ({
+const mapDispatchToProps = dispatch => ({
   getUser: id => dispatch(getUser(id))
 });
 
