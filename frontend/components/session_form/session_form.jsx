@@ -5,21 +5,20 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { username: "", password: "" };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.demoLogin = this.demoLogin.bind(this);
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
+    const { formType, login, signup } = this.props;
     const user = Object.assign({}, this.state);
-    if (this.props.formType === "login") {
-      this.props.login(user);
+    if (formType === "login") {
+      login(user);
     } else {
-      this.props.signup(user);
+      signup(user);
     }
   }
 
-  demoLogin(e) {
+  demoLogin = (e) => {
     e.preventDefault();
     this.setState({ username: "", password: ""});
     const guestUser = ["Guest", "123456"];
