@@ -14,12 +14,13 @@ export default class UserShow extends React.Component {
   }
 
   render () {
+    const buttonText = this.state.isHidden ? 'Add Product' : 'Cancel';
     return <div className="user-page">
         <div className="user-page-header">
           <div className="user-name">
             {this.props.currentUser.username}'s Store
           </div>
-          <button onClick={this.toggleForm}>Add product</button>
+          <button onClick={this.toggleForm}>{buttonText}</button>
         </div>
         {!this.state.isHidden && <ProductFormContainer type="create" />}
         <ProductIndexContainer />

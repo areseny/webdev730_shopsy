@@ -41,7 +41,7 @@ export default class ProductForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const select = document.getElementById("catSelect");
-    const options = Array.from(select.options);
+    const options = [...select.options];
     const catIds = options
       .filter(option => option.selected)
       .map(opt => opt.value);
