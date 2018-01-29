@@ -7,14 +7,15 @@ import {
 const ProductReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   const newState = { ...oldState };
+  const { products, product } = action;
   switch(action.type) {
     case RECEIVE_ALL_PRODUCTS:
-      return action.products;
+      return products;
     case RECEIVE_PRODUCT:
-      newState[action.product.id] = action.product;
+      newState[product.id] = product;
       return newState;
     case REMOVE_PRODUCT:
-      delete newState[action.product.id];
+      delete newState[product.id];
       return newState;
     default:
       return oldState;
