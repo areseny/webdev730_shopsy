@@ -5,21 +5,12 @@ import ProductFormContainer from '../products/product_form_container';
 export default class UserShow extends React.Component {
   constructor(props) {
     super(props);
-    this.toggleForm = this.toggleForm.bind(this);
+    this.state = { isHidden: true };
   }
 
-  toggleForm(e) {
+  toggleForm = (e) => {
     e.preventDefault();
-    const productForm = document.getElementById("addProductForm");
-    if (e.target.innerHTML === "Add product") {
-      productForm.classList.remove("hide-form");
-      productForm.classList.add("show-form");
-      e.target.innerHTML = "Cancel";
-    } else {
-      productForm.classList.remove("show-form");
-      productForm.classList.add("hide-form");
-      e.target.innerHTML = "Add product";
-    }
+    this.setState({ isHidden: !this.state.isHidden });
   }
 
   render () {
@@ -30,7 +21,7 @@ export default class UserShow extends React.Component {
           </div>
           <button onClick={this.toggleForm}>Add product</button>
         </div>
-        <ProductFormContainer type="create" />
+        {!this.state.isHidden && <ProductFormContainer type="create" />}
         <ProductIndexContainer />
       </div>;
   }

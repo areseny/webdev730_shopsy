@@ -2,6 +2,7 @@ import React from "react";
 import CommentIndexContainer from "../comments/comment_index_container";
 import CommentFormContainer from "../comments/comment_form_container";
 import ProductIndexContainer from "../products/product_index_container";
+import { createCartItem } from "../../actions/cart_items_actions";
 
 export default class ProductShow extends React.Component {
   constructor(props) {
@@ -11,11 +12,12 @@ export default class ProductShow extends React.Component {
   }
 
   componentDidMount() {
+    const { clearErrors, getProduct } = this.props;
     window.scrollTo(0, 0);
-    this.props.clearErrors();
-    this.props.getProduct(this.props.match.params.productId);
+    clearErrors();
+    getProduct(this.props.match.params.productId);
   }
-  
+
   handleSubmit(e) {
     e.preventDefault();
     if (this.props.currentUser) {
@@ -70,7 +72,7 @@ export default class ProductShow extends React.Component {
           </div>
           <div className="user-products">
             <div>More products by this seller.</div>
-            <ProductIndexContainer sellerId={this.props.product.seller.id}/>
+            <ProductIndexContainer sellerId={this.props.product.seller.id} />
           </div>
         </div>
       </div>

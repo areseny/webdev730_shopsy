@@ -61,7 +61,7 @@ export default class ProductForm extends React.Component {
         />
       ));
     return (
-      <div id="addProductForm" className="product-form-container hide-form">
+      <div id="addProductForm" className="product-form-container">
         <form className="form product-form" onSubmit={this.handleSubmit}>
           <label htmlFor="title">
             Title <span className="required-dot">*</span>
