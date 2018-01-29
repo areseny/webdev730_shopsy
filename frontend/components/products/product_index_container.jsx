@@ -13,22 +13,23 @@ const queryString = require("query-string");
 
 const getActionAndArg = ownProps => {
   let action, arg;
-  if (ownProps.location.search) {
+  const { location, match, sellerId } = ownProps;
+  if (location.search) {
     action = getSearchProducts;
-    let parsed = queryString.parse(ownProps.location.search);
+    let parsed = queryString.parse(location.search);
     arg = parsed.search;
-  } else if (ownProps.location.pathname === "/") {
+  } else if (location.pathname === "/") {
     action = getFeaturedProducts;
     arg = null;
-  } else if (ownProps.match.path === "/users/:userId") {
+  } else if (match.path === "/users/:userId") {
     action = getProductsByUser;
-    arg = ownProps.match.params.userId;
-  } else if (ownProps.sellerId) {
+    arg = match.params.userId;
+  } else if (sellerId) {
     action = getProductsByUser;
-    arg = ownProps.sellerId;
-  } else if (ownProps.match.path === "/categories/:categoryId") {
+    arg = sellerId;
+  } else if (match.path === "/categories/:categoryId") {
     action = getProductsByCategory;
-    arg = ownProps.match.params.categoryId;
+    arg = match.params.categoryId;
   }
   return { arg, action };
 };

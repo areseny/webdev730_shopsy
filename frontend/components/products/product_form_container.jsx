@@ -4,9 +4,9 @@ import { withRouter } from "react-router-dom";
 import { createProduct, updateProduct } from "../../actions/product_actions";
 import { getAllCategories } from "../../actions/category_actions";
 
-const mapStateToProps = (state, ownProps) => {
-  let product, type;
-  if (ownProps.type === "create") {
+const mapStateToProps = ({ products, categories } , { type, match }) => {
+  let product, formType;
+  if (type === "create") {
     product = {
       title: "",
       price: "",
@@ -14,20 +14,20 @@ const mapStateToProps = (state, ownProps) => {
       image_url: "",
       public_id: ""
     };
-    type = "Create";
+    formType = "Create";
   } else {
-    product = state.products[ownProps.match.params.productId];
-    type = "Update";
+    product = products[match.params.productId];
+    formType = "Update";
   }
   return { 
     product,
-     type,
-     categories: Object.values(state.categories)
+     formType,
+     categories: Object.values(categories)
      };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) =>  {
-  const action = ownProps.type === "create" ? createProduct : updateProduct;
+const mapDispatchToProps = (dispatch, { type }) =>  {
+  const action = type === "create" ? createProduct : updateProduct;
   return {
     action: (userId, product, categories) => dispatch(action(userId, product, categories)),
     getAllCategories: () => dispatch(getAllCategories())
