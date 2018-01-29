@@ -1,5 +1,3 @@
-import merge from 'lodash/merge';
-
 import {
   RECEIVE_CART_ITEMS,
   RECEIVE_CART_ITEM,
@@ -8,16 +6,16 @@ import {
 
 const CartItemsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  const newState = merge({}, oldState);
-
+  const newState = { ...oldState };
+  const { cartItem, cartItems } = action;
   switch(action.type) {
     case RECEIVE_CART_ITEMS:
-      return action.cartItems;
+      return cartItems;
     case RECEIVE_CART_ITEM:
-      newState[action.cartItem.id] = action.cartItem;
+      newState[cartItem.id] = cartItem;
       return newState;
     case REMOVE_CART_ITEM:
-      delete newState[action.cartItem.id];
+      delete newState[cartItem.id];
       return newState;
     default:
       return oldState;
