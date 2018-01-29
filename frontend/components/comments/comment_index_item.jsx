@@ -7,18 +7,15 @@ export default class CommentIndexItem extends React.Component {
       body: this.props.comment.body,
       submitButton: ""
     };
-    this.handleDelete = this.handleDelete.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleDelete(e) {
+  handleDelete = (e) => {
+    const { deleteComment, comment } = this.props;
     e.preventDefault();
-    this.props.deleteComment(this.props.comment.id);
+    deleteComment(comment.id);
   }
 
-  handleEdit(e) {
+  handleEdit = (e) => {
     e.preventDefault();
     const submitButton = <button onClick={this.handleSubmit}>Submit</button>;
     const ele = document.getElementById(`${this.props.comment.id}`);
@@ -26,30 +23,32 @@ export default class CommentIndexItem extends React.Component {
     this.setState({ submitButton });
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
+    const { productId, comment, updateComment } = this.props;
     e.preventDefault();
-    const comment = Object.assign(
+    const newComment = Object.assign(
       {},
+      { productId },
       { body: this.state.body },
-      { productId: this.props.productId },
-      { id: this.props.comment.id }
+      { id: comment.id }
     );
-    this.props.updateComment(comment);
+    updateComment(newComment);
     this.setState({ submitButton: "" });
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({
       body: e.target.value
     });
   }
 
   commentItem() {
-    if (this.props.comment.user_id === this.props.currentUserId) {
+    const { comment, currentUserId } = this.props;
+    if (comment.user_id === currentUserId) {
       return (
         <div className="comment-list-item">
           <ul className="comment-details">
-            <li className="author-name">{this.props.comment.user}</li>
+            <li className="author-name">{comment.user}</li>
             <li>
               <ul className="comment-btns">
                 <li>
@@ -66,7 +65,7 @@ export default class CommentIndexItem extends React.Component {
             value={this.state.body}
             onChange={this.handleChange}
             className="comment-show-body"
-            id={this.props.comment.id}
+            id={comment.id}
           />
         </div>
       );
@@ -74,11 +73,11 @@ export default class CommentIndexItem extends React.Component {
       return (
         <div className="comment-list-item">
           <ul className="comment-details">
-            <li className="author-name">{this.props.comment.user}</li>
+            <li className="author-name">{comment.user}</li>
           </ul>
           <textarea
             className="comment-show-body"
-            value={this.props.comment.body}
+            value={comment.body}
             readOnly
           />
         </div>
