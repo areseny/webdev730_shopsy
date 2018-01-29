@@ -5,7 +5,7 @@ class Api::CategoriesController < ApplicationController
   end
 
   def show
-    @products = Category.find(params[:id]).products.includes(:seller)
+    @products = Category.includes(products: :seller).find(params[:id]).products
     render 'api/products/index'
   end
 
