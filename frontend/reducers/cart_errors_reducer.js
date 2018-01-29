@@ -1,5 +1,3 @@
-import merge from 'lodash/merge';
-
 import {
   RECEIVE_CART_ERRORS,
   RECEIVE_CART_ITEM,
