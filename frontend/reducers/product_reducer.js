@@ -1,5 +1,3 @@
-import merge from 'lodash/merge';
-
 import {
   RECEIVE_ALL_PRODUCTS,
   RECEIVE_PRODUCT,
@@ -8,7 +6,7 @@ import {
 
 const ProductReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  const newState = merge({}, oldState);
+  const newState = { ...oldState };
   switch(action.type) {
     case RECEIVE_ALL_PRODUCTS:
       return action.products;
