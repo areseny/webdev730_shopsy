@@ -3,8 +3,8 @@ import UserShow from "./user_show";
 import { getUser } from "../../actions/user_actions";
 import { withRouter } from "react-router-dom";
 
-const mapStateToProps = ({ users, session }, ownProps) => ({
-  user: users[ownProps.match.params.userId],
+const mapStateToProps = ({ users, session }, { match }) => ({
+  user: users[match.params.userId],
   currentUser: session.currentUser
 });
 

@@ -3,11 +3,11 @@ import SessionForm from "./session_form";
 import { signup, login, clearErrors } from "../../actions/session_actions";
 import { withRouter } from "react-router-dom";
 
-const mapStateToProps = (state, ownProps) => {
-  const formType = ownProps.location.pathname === "/login" ? "login" : "signup";
+const mapStateToProps = ({ session, errors }, { location }) => {
+  const formType = location.pathname === "/login" ? "login" : "signup";
   return {
-    loggedIn: Boolean(state.session.currentUser),
-    errors: state.errors.session,
+    loggedIn: Boolean(session.currentUser),
+    errors: errors.session,
     formType
   };
 };

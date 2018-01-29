@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import AuthModal from "./auth_modal";
 
-const mapStateToProps = (state, ownProps) => {
-  const formType = ownProps.match.path === "/login" ? "Login" : "Signup";
+const mapStateToProps = (state, { match }) => {
+  const formType = match.path === "/login" ? "Login" : "Signup";
   return { formType };
 };
 
