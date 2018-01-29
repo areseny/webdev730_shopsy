@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser
 });
 
-const mapDispatchToProps = state => dispatch => ({
+const mapDispatchToProps = dispatch => ({
   getProduct: id => dispatch(getProduct(id)),
   createCartItem: productId => dispatch(createCartItem(productId)),
   clearErrors: () => dispatch(clearErrors())
