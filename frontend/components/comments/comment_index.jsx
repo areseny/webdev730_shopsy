@@ -2,23 +2,42 @@ import React from "react";
 import CommentIndexItem from "./comment_index_item";
 
 export default class CommentIndex extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { getComments, productId } = this.props;
+    if (productId !== nextProps.productId) {
+      getComments(nextProps.productId);
+    }
+  }
+
   componentDidMount() {
-    this.props.getComments(this.props.productId);
+    const { getComments, productId } = this.props;
+    getComments(productId);
   }
 
   render() {
-    const comments = this.props.comments
+    const {
+      comments,
+      productId,
+      deleteComment,
+      updateComment,
+      currentUserId
+    } = this.props;
+    const commentList = comments
       .reverse()
       .map(comment => (
         <CommentIndexItem
           key={comment.id}
           comment={comment}
-          productId={this.props.productId}
-          deleteComment={this.props.deleteComment}
-          updateComment={this.props.updateComment}
-          currentUserId={this.props.currentUserId}
+          productId={productId}
+          deleteComment={deleteComment}
+          updateComment={updateComment}
+          currentUserId={currentUserId}
         />
       ));
-    return <div className="comments-list">{comments}</div>;
+    return <div className="comments-list">{commentList}</div>;
   }
 }

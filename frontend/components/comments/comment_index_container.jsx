@@ -6,12 +6,12 @@ import {
   deleteComment
  } from '../../actions/comment_actions';
 
-const mapStateToProps = ({ session, comments }, ownProps) => {
+const mapStateToProps = ({ session, comments }, { productId }) => {
   const currentUserId = session.currentUser ? session.currentUser.id : null;
   return ({
+    productId,
+    currentUserId,
     comments: Object.values(comments),
-    productId: ownProps.productId,
-    currentUserId
   });
 };
 

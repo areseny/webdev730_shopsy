@@ -12,7 +12,7 @@ const mapStateToProps = ({ session, errors }, { location }) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = dispatch => {
   return {
     clearErrors: () => dispatch(clearErrors()),
     login: user => dispatch(login(user)),
