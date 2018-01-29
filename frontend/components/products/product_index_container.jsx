@@ -12,7 +12,7 @@ import {
 const queryString = require("query-string");
 
 const getActionAndArg = (ownProps) => {
-  let action, arg, type;
+  let action, arg;
   if (ownProps.location.search) {
     action = getSearchProducts;
     let parsed = queryString.parse(ownProps.location.search);
@@ -36,8 +36,8 @@ const getActionAndArg = (ownProps) => {
 const mapStateToProps = (state, ownProps) => {
   const { arg } = getActionAndArg(ownProps);
   return {
+    arg,
     products: Object.values(state.products),
-    arg
   };
 };
 
