@@ -5,7 +5,7 @@ import GreetingContainer from "../greeting/greeting_container";
 import CategoriesNavContainer from "./categories_nav_container";
 
 export default class Header extends React.Component {
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps() {
     const catNav = document.getElementById("catNav");
     catNav.classList.remove("show-nav");
     catNav.classList.add("hide-nav");

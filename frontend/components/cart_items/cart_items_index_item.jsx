@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 export default class CartItemsIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
+  handleClick = (e) => {
     e.preventDefault();
-    this.props.deleteCartItem(this.props.cartProduct.id);
+    const { deleteCartItem, cartProduct } = this.props;
+    deleteCartItem(cartProduct.id);
   }
 
   render() {

@@ -7,7 +7,6 @@ export default class CartItemsIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = { checkoutMsg: "" };
-    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillMount() {
@@ -24,7 +23,7 @@ export default class CartItemsIndex extends React.Component {
     return total;
   }
 
-  handleClick(e) {
+  handleClick = (e) => {
     e.preventDefault();
     const message = "This is for demo purposes only.";
     this.setState({ checkoutMsg: message });

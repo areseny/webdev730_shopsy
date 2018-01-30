@@ -6,15 +6,13 @@ export default class SearchForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { searchTerm: "" };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({ searchTerm: e.target.value });
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.history.push(`/products?search=${this.state.searchTerm}`);
   }

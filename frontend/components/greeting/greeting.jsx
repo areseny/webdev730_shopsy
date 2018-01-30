@@ -72,14 +72,15 @@ class Greeting extends React.Component {
   }
 
   render() {
-    if (this.props.currentUser) {
+    const { currentUser, login, logout, cartCount } = this.props;
+    if (currentUser) {
       return this.welcomeGreeting(
-        this.props.currentUser,
-        this.props.logout,
-        this.props.cartCount
+        currentUser,
+        logout,
+        cartCount
       );
     } else {
-      return this.sessionLinks(this.props.login);
+      return this.sessionLinks(login);
     }
   }
 }
