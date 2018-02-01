@@ -12,6 +12,7 @@
     "react-dom": "^15.6.1",
     "react-modal": "^2.3.2",
     "react-redux": "^5.0.6",
+    "react-responsive": "^4.0.3",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
@@ -45,6 +46,8 @@
   "homepage": "https://github.com/brainzilla79/etsy-clone#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6"
   }

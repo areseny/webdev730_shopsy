@@ -18,7 +18,7 @@ export default class ProductShow extends React.Component {
     getProduct(this.props.match.params.productId);
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.currentUser) {
       this.props.createCartItem(this.props.product.id);
