@@ -6,6 +6,11 @@ import CategoriesNavContainer from "./categories_nav_container";
 import MediaQuery from "react-responsive";
 
 export default class Header extends React.Component {
+  constructor() {
+    super();
+    this.state = { isHidden: false };
+  }
+
   componentWillReceiveProps() {
     const catNav = document.getElementById("catNav");
     catNav.classList.remove("show-nav");
@@ -20,31 +25,27 @@ export default class Header extends React.Component {
   }
 
   render() {
-    return (
-      <header>
+    return <header>
         <div className="main-header">
           <div className="left-sub-header">
             <Link to="/">
               <h1 className="logo">Shopsy</h1>
             </Link>
-            <img
-              src="https://res.cloudinary.com/brainzilla/image/upload/v1511551698/hamburger_d3hkc7.png"
-              onClick={this.handleClick}
-              className="hamburger"
-            />
-          <div className="desktop-search-container">
-            <SearchFormContainer />
-          </div>
+            <MediaQuery query="(max-width: 860px)">
+              <img src="https://res.cloudinary.com/brainzilla/image/upload/v1511551698/hamburger_d3hkc7.png" onClick={this.handleClick} className="hamburger" />
+            </MediaQuery>
+            <div className="desktop-search-container">
+              <SearchFormContainer />
+            </div>
           </div>
           <GreetingContainer />
         </div>
-        <div className="search-sub-header">
+        <MediaQuery query="(max-width: 860px)">
           <SearchFormContainer />
-        </div>
+        </MediaQuery>
         <div className="sub-header hide-nav" id="catNav">
           <CategoriesNavContainer />
         </div>
-      </header>
-    );
+      </header>;
   }
 }

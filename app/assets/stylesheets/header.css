@@ -119,14 +119,6 @@
   display: block;
 }
 
-.search-sub-header {
-  display: none;
-}
-
-.hamburger {
-  display: none;
-}
-
 .left-sub-header {
   display: flex;
   flex-direction: row;
@@ -186,7 +178,7 @@
 
   .search-form {
     margin: 20px 20px;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: nowrap;
   }
