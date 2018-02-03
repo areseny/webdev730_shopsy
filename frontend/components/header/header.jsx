@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import SearchFormContainer from "../search/search_form_container";
 import GreetingContainer from "../greeting/greeting_container";
 import CategoriesNavContainer from "./categories_nav_container";
+import MediaQuery from "react-responsive";
 
 export default class Header extends React.Component {
   componentWillReceiveProps() {
