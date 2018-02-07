@@ -6,26 +6,29 @@ import CategoriesNavContainer from "./categories_nav_container";
 import MediaQuery from "react-responsive";
 
 export default class Header extends React.Component {
-  constructor() {
-    super();
-    this.state = { isHidden: false };
+  constructor(props) {
+    super(props);
+    this.state = { isHidden: this.props.isHidden }
   }
 
-  componentWillReceiveProps() {
-    const catNav = document.getElementById("catNav");
-    catNav.classList.remove("show-nav");
-    catNav.classList.add("hide-nav");
+  componentWillReceiveProps(nextProps) {
+    this.setState({ isHidden: nextProps.isHidden });
   }
 
-  handleClick(e) {
+  handleClick = (e) => {
     e.preventDefault();
-    const catNav = document.getElementById("catNav");
-    catNav.classList.remove("hide-nav");
-    catNav.classList.add("show-nav");
+    this.setState({isHidden: false})
+    this.props.action(false);
   }
 
   render() {
-    return <header>
+    const classes = ['sub-header'];
+    if (this.state.isHidden) {
+      classes.push('hide-nav');
+    } else {
+      classes.push('show-nav');
+    }
+    return <header> 
         <div className="main-header">
           <div className="left-sub-header">
             <Link to="/">
@@ -43,9 +46,14 @@ export default class Header extends React.Component {
         <MediaQuery query="(max-width: 860px)">
           <SearchFormContainer />
         </MediaQuery>
-        <div className="sub-header hide-nav" id="catNav">
+        <MediaQuery query="(min-width: 860px)">
           <CategoriesNavContainer />
-        </div>
+        </MediaQuery>
+        <MediaQuery query="(max-width: 860px)">
+          <div className={classes.join(' ')} id="catNav">
+            <CategoriesNavContainer />
+          </div>
+        </MediaQuery>
       </header>;
   }
 }

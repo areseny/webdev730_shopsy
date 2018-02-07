@@ -7,13 +7,13 @@ import ProductIndexContainer from "./products/product_index_container";
 import ProductShowContainer from "./products/product_show_container";
 import CartItemsIndexContainer from "./cart_items/cart_items_index_container";
 import UserShowContainer from "./user/user_show_container";
-import Header from "./header/header";
+import HeaderContainer from "./header/header_contianer";
 import Homepage from "./homepage/homepage";
 import Footer from "./footer/footer";
 
 const App = () => (
   <div className="main-content">
-    <Header />
+    <HeaderContainer />
     <Switch>
       <ProtectedRoute exact path="/cart" component={CartItemsIndexContainer} />
       <Route path="/users/products/:productId" component={ProductShowContainer}/>

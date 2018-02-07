@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 export default class CategoryIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.handleMouseDown = this.handleMouseDown.bind(this);
   }
 
-  handleMouseDown(e) {
+  handleMouseDown = (e) => {
     e.preventDefault();
     const status = $(e.target).prop("selected");
     if (status) {
@@ -15,6 +14,10 @@ export default class CategoryIndexItem extends React.Component {
     } else {
       $(e.target).prop("selected", true);
     }
+  }
+
+  handleClick = (e) => {
+    this.props.action(true);
   }
 
   render() {
@@ -30,7 +33,7 @@ export default class CategoryIndexItem extends React.Component {
     } else {
       return (
         <li>
-          <Link to={`/categories/${this.props.category.id}`}>
+          <Link to={`/categories/${this.props.category.id}`} onClick={this.handleClick}>
             {this.props.category.name}
           </Link>
         </li>

@@ -8,8 +8,7 @@ export default class CategoriesNav extends React.Component {
   }
 
   handleClick = () => {
-    const catNav = document.getElementById("catNav");
-    catNav.classList.add("hide-nav");
+    this.props.receiveVisibiltyChange(true);
   }
 
   componentDidMount() {
@@ -18,7 +17,7 @@ export default class CategoriesNav extends React.Component {
 
   render() {
     const categoryList = this.props.categories.map(category => (
-      <CategoryIndexItem key={category.id} category={category} />
+      <CategoryIndexItem key={category.id} category={category} action={this.props.receiveVisibiltyChange}/>
     ));
     return (
       <div className="categories-nav">
