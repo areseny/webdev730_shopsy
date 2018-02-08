@@ -5,15 +5,6 @@
   padding: 10px 0;
 }
 
-.hide-form {
-  transition: all 0.4s ease;
-  display: none;
-}
-
-.show-form {
-  display: block;
-}
-
 .product-form-container {
   margin-top: 40px;
 }

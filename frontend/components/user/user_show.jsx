@@ -1,6 +1,6 @@
-import React from 'react';
-import ProductIndexContainer from '../products/product_index_container';
-import ProductFormContainer from '../products/product_form_container';
+import React from "react";
+import ProductIndexContainer from "../products/product_index_container";
+import ProductFormContainer from "../products/product_form_container";
 
 export default class UserShow extends React.Component {
   constructor(props) {
@@ -8,14 +8,15 @@ export default class UserShow extends React.Component {
     this.state = { isHidden: true };
   }
 
-  toggleForm = (e) => {
+  toggleForm = e => {
     e.preventDefault();
     this.setState({ isHidden: !this.state.isHidden });
-  }
+  };
 
-  render () {
-    const buttonText = this.state.isHidden ? 'Add Product' : 'Cancel';
-    return <div className="user-page">
+  render() {
+    const buttonText = this.state.isHidden ? "Add Product" : "Cancel";
+    return (
+      <div className="user-page">
         <div className="user-page-header">
           <div className="user-name">
             {this.props.currentUser.username}'s Store
@@ -23,7 +24,10 @@ export default class UserShow extends React.Component {
           <button onClick={this.toggleForm}>{buttonText}</button>
         </div>
         {!this.state.isHidden && <ProductFormContainer type="create" />}
-        <ProductIndexContainer />
-      </div>;
+        <div className="user-show-products">
+          <ProductIndexContainer />
+        </div>
+      </div>
+    );
   }
 }
