@@ -8,34 +8,38 @@ import MediaQuery from "react-responsive";
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isHidden: this.props.isHidden }
+    this.state = { isHidden: this.props.isHidden };
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({ isHidden: nextProps.isHidden });
   }
 
-  handleClick = (e) => {
+  handleClick = e => {
     e.preventDefault();
-    this.setState({isHidden: false})
     this.props.action(false);
-  }
+  };
 
   render() {
-    const classes = ['sub-header'];
+    const classes = ["sub-header"];
     if (this.state.isHidden) {
-      classes.push('hide-nav');
+      classes.push("hide-nav");
     } else {
-      classes.push('show-nav');
+      classes.push("show-nav");
     }
-    return <header> 
+    return (
+      <header>
         <div className="main-header">
           <div className="left-sub-header">
             <Link to="/">
               <h1 className="logo">Shopsy</h1>
             </Link>
             <MediaQuery query="(max-width: 860px)">
-              <img src="https://res.cloudinary.com/brainzilla/image/upload/v1511551698/hamburger_d3hkc7.png" onClick={this.handleClick} className="hamburger" />
+              <img
+                src="https://res.cloudinary.com/brainzilla/image/upload/v1511551698/hamburger_d3hkc7.png"
+                onClick={this.handleClick}
+                className="hamburger"
+              />
             </MediaQuery>
             <div className="desktop-search-container">
               <SearchFormContainer />
@@ -50,10 +54,11 @@ export default class Header extends React.Component {
           <CategoriesNavContainer />
         </MediaQuery>
         <MediaQuery query="(max-width: 860px)">
-          <div className={classes.join(' ')} id="catNav">
+          <div className={classes.join(" ")} id="catNav">
             <CategoriesNavContainer />
           </div>
         </MediaQuery>
-      </header>;
+      </header>
+    );
   }
 }
