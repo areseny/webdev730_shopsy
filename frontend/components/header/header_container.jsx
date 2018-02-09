@@ -1,10 +1,10 @@
 import Header from "./header";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { receiveVisibiltyChange } from "../../actions/component_visibility_actions";
+import { receiveVisibiltyChange } from "../../actions/ui_actions";
 
-const mapStateToProps = ({ componentVisibility }) => ({
-  isHidden: componentVisibility.isHidden
+const mapStateToProps = ({ ui }) => ({
+  isHidden: ui.isHidden
 });
 
 const mapDispatchToProps = dispatch => ({

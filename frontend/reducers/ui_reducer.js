@@ -1,8 +1,8 @@
-import { RECEIVE_VISIBILITY_CHANGE } from "../actions/component_visibility_actions";
+import { RECEIVE_VISIBILITY_CHANGE } from "../actions/ui_actions";
 
 const defaultState = { isHidden: true };
 
-const ComponentVisibiltyReducer = (oldState = defaultState, action) => {
+const UIReducer = (oldState = defaultState, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_VISIBILITY_CHANGE:
@@ -12,4 +12,4 @@ const ComponentVisibiltyReducer = (oldState = defaultState, action) => {
   }
 };
 
-export default ComponentVisibiltyReducer;
+export default UIReducer;

@@ -6,7 +6,7 @@ import CommentsReducer from "./comments_reducer";
 import CartItemsReducer from "./cart_items_reducer";
 import CategoriesReducer from "./categories_reducer";
 import UserReducer from "./user_reducer";
-import ComponentVisibilityReducer from './component_visibilty_reducer';
+import UIReducer from './ui_reducer';
 
 export default combineReducers({
   session: SessionReducer,
@@ -16,5 +16,5 @@ export default combineReducers({
   cartItems: CartItemsReducer,
   categories: CategoriesReducer,
   users: UserReducer,
-  componentVisibility: ComponentVisibilityReducer,
+  ui: UIReducer,
 });
