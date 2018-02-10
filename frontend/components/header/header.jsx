@@ -8,21 +8,21 @@ import MediaQuery from "react-responsive";
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isHidden: this.props.isHidden };
+    this.state = { isCategoriesNavHidden: this.props.isCategoriesNavHidden };
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ isHidden: nextProps.isHidden });
+    this.setState({ isCategoriesNavHidden: nextProps.isCategoriesNavHidden });
   }
 
   handleClick = e => {
     e.preventDefault();
-    this.props.action(false);
+    this.props.openCategoriesNav();
   };
 
   render() {
     const classes = ["sub-header"];
-    if (this.state.isHidden) {
+    if (this.state.isCategoriesNavHidden) {
       classes.push("hide-nav");
     } else {
       classes.push("show-nav");
