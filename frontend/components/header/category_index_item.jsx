@@ -17,7 +17,7 @@ export default class CategoryIndexItem extends React.Component {
   }
 
   handleClick = (e) => {
-    this.props.action(true);
+    this.props.action();
   }
 
   render() {

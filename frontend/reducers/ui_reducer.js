@@ -7,7 +7,7 @@ const defaultState = { isCategoriesNavHidden: true };
 
 const UIReducer = (oldState = defaultState, action) => {
   Object.freeze(oldState);
-  newState = { ...oldState };
+  const newState = { ...oldState };
   switch (action.type) {
     case OPEN_CATEGORIES_NAV:
       newState.isCategoriesNavHidden = false;

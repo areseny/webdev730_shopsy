@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import CategoriesNav from "./categories_nav";
 import { getAllCategories } from "../../actions/category_actions";
-import { receiveVisibiltyChange } from "../../actions/ui_actions";
+import { closeCategoriesNav } from "../../actions/ui_actions";
 
 const mapStateToProps = ({ categories, ui }) => ({
   categories: Object.values(categories),
@@ -10,7 +10,7 @@ const mapStateToProps = ({ categories, ui }) => ({
 
 const mapDispatchToProps = dispatch => ({
   getAllCategories: () => dispatch(getAllCategories()),
-  receiveVisibiltyChange: isHidden => dispatch(receiveVisibiltyChange(isHidden))
+  closeCategoriesNav: () => dispatch(closeCategoriesNav())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoriesNav);
