@@ -12,7 +12,6 @@ const mapStateToProps = ({ ui }) => ({
 
 const mapDispatchToProps = dispatch => ({
   openCategoriesNav: () => dispatch(openCategoriesNav()),
-  closeCategoriesNav: () => dispatch(closeCategoriesNav()),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
