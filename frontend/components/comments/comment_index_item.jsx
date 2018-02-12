@@ -18,8 +18,7 @@ export default class CommentIndexItem extends React.Component {
   handleEdit = (e) => {
     e.preventDefault();
     const submitButton = <button onClick={this.handleSubmit}>Submit</button>;
-    const ele = document.getElementById(`${this.props.comment.id}`);
-    ele.focus();
+    this.textArea.focus();
     this.setState({ submitButton });
   }
 
@@ -65,7 +64,7 @@ export default class CommentIndexItem extends React.Component {
             value={this.state.body}
             onChange={this.handleChange}
             className="comment-show-body"
-            id={comment.id}
+            ref={(textArea) => {this.textArea = textArea}}
           />
         </div>
       );
