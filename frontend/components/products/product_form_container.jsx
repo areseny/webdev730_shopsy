@@ -12,7 +12,7 @@ const mapStateToProps = ({ products, categories } , { type, match }) => {
       price: "",
       description: "",
       image_url: "",
-      public_id: ""
+      public_id: "",
     };
     formType = "Create";
   } else {

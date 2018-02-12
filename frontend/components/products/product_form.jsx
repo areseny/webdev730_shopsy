@@ -4,7 +4,7 @@ import CategoryIndexItem from "../header/category_index_item";
 export default class ProductForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.product;
+    this.state = Object.assign(this.props.product, { filename: "" });
     this.handleSubmit = this.handleSubmit.bind(this);
     this.uploadImg = this.uploadImg.bind(this);
   }
@@ -18,10 +18,15 @@ export default class ProductForm extends React.Component {
   }
 
   clearForm() {
-    document.getElementById("filename").innerHTML = "";
-    const product = { title: "", price: "", description: "", image_url: "" };
-    this.setState(product);
-    const options = Array.from(document.getElementById("catSelect").options);
+    const newState = {
+      title: "",
+      price: "",
+      description: "",
+      image_url: "",
+      filename: ""
+    };
+    this.setState(newState);
+    const options = [...document.getElementById("catSelect").options];
     options.forEach(opt => (opt.selected = false));
   }
 
@@ -29,11 +34,11 @@ export default class ProductForm extends React.Component {
     e.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
       if (!error) {
-        this.setState({["public_id"]: results[0].public_id});
-        this.setState({ ["image_url"]: results[0].secure_url });
-        document.getElementById("filename").innerHTML = `${
-          results[0].original_filename
-        }.${results[0].format}`;
+        this.setState({
+          public_id: results[0].public_id,
+          image_url: results[0].secure_url,
+          filename: `${results[0].original_filename}.${results[0].format}`
+        });
       }
     });
   }
@@ -105,7 +110,7 @@ export default class ProductForm extends React.Component {
               </button>
               <span className="required-dot"> *</span>
             </div>
-            <div id="filename" />
+            <div id="filename">{this.state.filename}</div>
           </div>
           <label htmlFor="categories">
             Categories{" "}
