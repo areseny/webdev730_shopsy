@@ -6,16 +6,6 @@ export default class CategoryIndexItem extends React.Component {
     super(props);
   }
 
-  handleMouseDown = (e) => {
-    e.preventDefault();
-    const status = $(e.target).prop("selected");
-    if (status) {
-      $(e.target).prop("selected", false);
-    } else {
-      $(e.target).prop("selected", true);
-    }
-  }
-
   handleClick = (e) => {
     this.props.action();
   }
@@ -24,7 +14,6 @@ export default class CategoryIndexItem extends React.Component {
     if (this.props.type === "option") {
       return (
         <option
-          onMouseDown={this.handleMouseDown}
           value={this.props.category.id}
         >
           {this.props.category.name}

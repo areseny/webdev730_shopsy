@@ -4,9 +4,10 @@ import CategoryIndexItem from "../header/category_index_item";
 export default class ProductForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = Object.assign(this.props.product, { filename: "" });
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.uploadImg = this.uploadImg.bind(this);
+    this.state = Object.assign(this.props.product, {
+      filename: "",
+      options: []
+    });
   }
 
   componentDidMount() {
@@ -23,14 +24,13 @@ export default class ProductForm extends React.Component {
       price: "",
       description: "",
       image_url: "",
-      filename: ""
+      filename: "",
+      options: [],
     };
     this.setState(newState);
-    const options = [...document.getElementById("catSelect").options];
-    options.forEach(opt => (opt.selected = false));
   }
 
-  uploadImg(e) {
+  uploadImg = e => {
     e.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
       if (!error) {
@@ -41,19 +41,22 @@ export default class ProductForm extends React.Component {
         });
       }
     });
-  }
+  };
 
-  handleSubmit(e) {
+  handleSelectChange = e => {
     e.preventDefault();
-    const select = document.getElementById("catSelect");
-    const options = [...select.options];
-    const catIds = options
-      .filter(option => option.selected)
-      .map(opt => opt.value);
+    const options = this.state.options;
+    options.push(e.target.value);
+    this.setState({ options: options });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const options = this.state.options;
     let product = Object.assign({}, this.state);
-    this.props.action(this.props.match.params.userId, product, catIds);
+    this.props.action(this.props.match.params.userId, product, options);
     this.clearForm();
-  }
+  };
 
   render() {
     const categoryList = this.props.categories
@@ -120,7 +123,9 @@ export default class ProductForm extends React.Component {
             className="category-select"
             name="categories"
             id="catSelect"
-            multiple
+            value={this.state.options}
+            onChange={this.handleSelectChange}
+            multiple={true}
           >
             {categoryList}
           </select>
