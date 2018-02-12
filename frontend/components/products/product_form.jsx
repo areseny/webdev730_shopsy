@@ -68,7 +68,6 @@ export default class ProductForm extends React.Component {
           </label>
           <input
             className="form-text-input"
-            // placeholder="Product Title"
             name="title"
             type="text"
             value={this.state.title}
@@ -79,7 +78,6 @@ export default class ProductForm extends React.Component {
           </label>
           <input
             className="form-text-input"
-            // placeholder="Product Price"
             title="price"
             type="number"
             min="0"
@@ -91,7 +89,6 @@ export default class ProductForm extends React.Component {
           </label>
           <textarea
             className="form-text-input"
-            // placeholder="Product Description"
             title="description"
             name="description"
             cols="30"
