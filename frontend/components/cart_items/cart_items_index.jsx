@@ -9,18 +9,8 @@ export default class CartItemsIndex extends React.Component {
     this.state = { checkoutMsg: "" };
   }
 
-  componentWillMount() {
-    this.props.getCartItems();
-  }
-
   componentDidMount() {
     this.props.getCartItems();
-  }
-
-  cartTotal() {
-    const prices = this.props.cartProducts.map(product => product.price);
-    const total = prices.reduce((a, b) => a + b, 0);
-    return total;
   }
 
   handleClick = (e) => {
@@ -30,7 +20,7 @@ export default class CartItemsIndex extends React.Component {
   }
 
   render() {
-    const { deleteCartItem, cartProducts } = this.props;
+    const { deleteCartItem, cartProducts, cartTotal } = this.props;
     const products = cartProducts.map(cartProduct => (
       <CartItemsIndexItem
         key={cartProduct.id}
@@ -56,7 +46,7 @@ export default class CartItemsIndex extends React.Component {
               <tbody>
                 <tr>
                   <th>Subtotal: </th>
-                  <td>${this.cartTotal()}</td>
+                  <td>${cartTotal}</td>
                 </tr>
                 <tr>
                   <th>Sales Tax: </th>
@@ -64,7 +54,7 @@ export default class CartItemsIndex extends React.Component {
                 </tr>
                 <tr>
                   <th>Cart Total: </th>
-                  <td>${this.cartTotal()}</td>
+                  <td>${cartTotal}</td>
                 </tr>
               </tbody>
             </table>
