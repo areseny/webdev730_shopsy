@@ -14,7 +14,7 @@ const mapStateToProps = ({ cartItems, session }) => {
   };
 };
 
-const mapDispatchToProps = state => dispatch => ({
+const mapDispatchToProps = dispatch => ({
   getCartItems: () => dispatch(getCartItems()),
   deleteCartItem: id => dispatch(deleteCartItem(id))
 });

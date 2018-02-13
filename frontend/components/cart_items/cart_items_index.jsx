@@ -9,6 +9,10 @@ export default class CartItemsIndex extends React.Component {
     this.state = { checkoutMsg: "" };
   }
 
+  componentWillMount() {
+    this.props.getCartItems();
+  }
+
   componentDidMount() {
     this.props.getCartItems();
   }
