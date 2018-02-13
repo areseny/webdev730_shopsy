@@ -13,10 +13,6 @@ export default class CartItemsIndex extends React.Component {
     this.props.getCartItems();
   }
 
-  componentDidMount() {
-    this.props.getCartItems();
-  }
-
   handleClick = (e) => {
     e.preventDefault();
     const message = "This is for demo purposes only.";
