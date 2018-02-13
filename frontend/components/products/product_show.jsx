@@ -8,7 +8,6 @@ export default class ProductShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = { authMsg: "" };
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
