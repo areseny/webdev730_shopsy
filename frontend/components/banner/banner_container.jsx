@@ -3,11 +3,9 @@ import Banner from "./banner";
 import { getAllCategories } from "../../actions/category_actions";
 
 const mapStateToProps = state => ({
-  categories: Object.values(state.categories)
+  allProducts: Object.values(state.categories).filter(
+    cat => cat.name === "All Products"
+  )[0]
 });
 
-const mapDispatchToProps = state => dispatch => ({
-  getAllCategories: () => dispatch(getAllCategories())
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Banner);
+export default connect(mapStateToProps, null)(Banner);
