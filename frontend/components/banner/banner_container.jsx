@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import Banner from "./banner";
-import { getAllCategories } from "../../actions/category_actions";
 
 const mapStateToProps = state => ({
   allProducts: Object.values(state.categories).filter(
