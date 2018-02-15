@@ -8,7 +8,7 @@ class Greeting extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser) {
+    if (!this.props.currentUser && nextProps.currentUser) {
       this.props.getCartItems();
     }
   }
