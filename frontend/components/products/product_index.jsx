@@ -49,7 +49,6 @@ export default class ProductIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props.match);
     return (
       <div className="main-index">
         <div className="product-index">

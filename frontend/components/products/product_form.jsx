@@ -59,6 +59,7 @@ export default class ProductForm extends React.Component {
   };
 
   render() {
+    const requiredDot = <span className="required-dot">*</span>;
     const categoryList = this.props.categories
       .slice(1)
       .map(category => (
@@ -72,7 +73,7 @@ export default class ProductForm extends React.Component {
       <div id="addProductForm" className="product-form-container">
         <form className="form product-form" onSubmit={this.handleSubmit}>
           <label htmlFor="title">
-            Title <span className="required-dot">*</span>
+            Title {requiredDot}
           </label>
           <input
             className="form-text-input"
@@ -82,7 +83,7 @@ export default class ProductForm extends React.Component {
             onChange={this.update("title")}
           />
           <label htmlFor="price">
-            Price <span className="required-dot">*</span>
+            Price {requiredDot} 
           </label>
           <input
             className="form-text-input"
@@ -93,7 +94,7 @@ export default class ProductForm extends React.Component {
             onChange={this.update("price")}
           />
           <label htmlFor="description">
-            Description <span className="required-dot">*</span>
+            Description {requiredDot} 
           </label>
           <textarea
             className="form-text-input"
@@ -130,7 +131,7 @@ export default class ProductForm extends React.Component {
             {categoryList}
           </select>
           <div className="italic-msg">
-            <span className="required-dot">*</span> Indicates required field
+            {requiredDot}  Indicates required field
           </div>
           <input
             type="submit"

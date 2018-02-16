@@ -15,10 +15,19 @@ export default class UserShow extends React.Component {
   toggleForm = e => {
     e.preventDefault();
     this.setState({ isProductFormHidden: !this.state.isProductFormHidden });
+    if (this.props.match.params.productId) {
+      this.props.history.push(`/users/${this.props.currentUser.id}`);
+      this.props.closeProductForm();
+      // console.log(props)
+    } else {
+      this.props.openProductForm();
+    }
   };
 
   render() {
-    const buttonText = this.state.isProductFormHidden ? "Add Product" : "Cancel";
+    const buttonText = this.state.isProductFormHidden
+      ? "Add Product"
+      : "Cancel";
     return (
       <div className="user-page">
         <div className="user-page-header">

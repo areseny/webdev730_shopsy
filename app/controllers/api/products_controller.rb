@@ -12,7 +12,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.includes(:seller).find(params[:id])
+    @product = Product.includes(:seller, :categories).find(params[:id])
     render :show
   end
 
