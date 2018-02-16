@@ -4,19 +4,24 @@ import { withRouter, Link } from "react-router-dom";
 export default class ProductIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.handleDelete = this.handleDelete.bind(this);
   }
 
-  handleDelete(e) {
+  handleDelete = (e) => {
     e.preventDefault();
-    this.props.action(this.props.product.seller.id, this.props.product.id);
+    const { deleteProduct, product } = this.props;
+    deleteProduct(product.seller.id, product.id);
+  }
+
+  handleEdit = (e) => {
+    e.preventDefault();
+
   }
 
   render() {
     let editBtns;
     if (this.props.path === "/users/:userId") {
       editBtns = <div>
-          {/* <div>Edit</div> */}
+          <button onClick={this.handleEdit}>Edit</button>
           <button onClick={this.handleDelete}>Delete</button>
         </div>;
     } else {

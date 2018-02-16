@@ -41,7 +41,7 @@ export default class ProductIndex extends React.Component {
           key={product.id}
           product={product}
           path={this.props.match.path}
-          action={this.props.deleteProduct}
+          deleteProduct={this.props.deleteProduct}
         />
       ));
     }

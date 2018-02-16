@@ -9,7 +9,7 @@ export default class CategoriesNav extends React.Component {
 
   handleClick = () => {
     this.props.closeCategoriesNav();
-  }
+  };
 
   componentDidMount() {
     this.props.getAllCategories();
@@ -28,9 +28,11 @@ export default class CategoriesNav extends React.Component {
         <ul className="categories-list">
           <li className="categories-nav-header">
             Browse By Category
-            <img src="https://res.cloudinary.com/brainzilla/image/upload/v1506393086/close_button_gwuq4f.png"
-            id="closeBtn"
-            onClick={this.handleClick} />
+            <img
+              src="https://res.cloudinary.com/brainzilla/image/upload/v1506393086/close_button_gwuq4f.png"
+              id="closeBtn"
+              onClick={this.handleClick}
+            />
           </li>
           {categoryList}
         </ul>
