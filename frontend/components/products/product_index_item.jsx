@@ -14,7 +14,7 @@ export default class ProductIndexItem extends React.Component {
 
   handleEdit = (e) => {
     e.preventDefault();
-
+    
   }
 
   render() {

@@ -58,3 +58,8 @@ export const deleteProduct = (userId, product) => dispatch =>
   ProductApiUtil.deleteProduct(userId, product).then(p =>
     dispatch(removeProduct(p))
   );
+
+export const updateProduct = (userId, product) => dispatch =>
+  ProductApiUtil.updateProduct(userId, product).then(updatedProduct =>
+    dispatch(receiveProduct(updatedProduct))
+  );
