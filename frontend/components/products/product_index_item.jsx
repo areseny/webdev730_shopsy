@@ -6,16 +6,17 @@ export default class ProductIndexItem extends React.Component {
     super(props);
   }
 
-  handleDelete = (e) => {
+  handleDelete = e => {
     e.preventDefault();
     const { deleteProduct, product } = this.props;
     deleteProduct(product.seller.id, product.id);
-  }
+  };
 
-  handleEdit = (e) => {
+  handleEdit = e => {
     e.preventDefault();
-    
-  }
+    openProductForm();
+    productToEdit(product);
+  };
 
   render() {
     let editBtns;
@@ -25,21 +26,21 @@ export default class ProductIndexItem extends React.Component {
           <button onClick={this.handleDelete}>Delete</button>
         </div>;
     } else {
-      editBtns = <div />;
+      editBtns = "";
     }
-    return <Link to={`/products/${this.props.product.id}`}>
-        <div className="product-item-container">
-          <div className="product-index-img">
+    return <div className="product-item-container">
+        <div className="product-index-img">
+          <Link to={`/products/${this.props.product.id}`}>
             <img className="product-thumb" src={this.props.product.image_url} />
-          </div>
-          <div className="product-index-info">
-            <ul>
-              <li>{this.props.product.title}</li>
-              <li>${this.props.product.price}</li>
-              <li>{editBtns}</li>
-            </ul>
-          </div>
+          </Link>
         </div>
-      </Link>;
+        <div className="product-index-info">
+          <ul>
+            <li><Link to={`/products/${this.props.product.id}`}>{this.props.product.title}</Link></li>
+            <li>${this.props.product.price}</li>
+            <li>{editBtns}</li>
+          </ul>
+        </div>
+      </div>;
   }
 }

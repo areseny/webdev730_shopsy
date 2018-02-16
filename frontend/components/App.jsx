@@ -17,7 +17,6 @@ const App = () => (
     <Switch>
       <ProtectedRoute exact path="/cart" component={CartItemsIndexContainer} />
       <Route path="/users/products/:productId" component={ProductShowContainer}/>
-      <Route path="/categories/products/:productId" component={ProductShowContainer} />
       <Route path="/products/:productId" component={ProductShowContainer} />
       <Route exact path="/products" component={ProductIndexContainer} />
       <ProtectedRoute path="/users/:userId" component={UserShowContainer}/>
