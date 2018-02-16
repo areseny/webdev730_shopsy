@@ -22,7 +22,7 @@ const getActionAndArg = ownProps => {
   } else if (location.pathname === "/") {
     action = getFeaturedProducts;
     arg = null;
-  } else if (match.path === "/users/:userId") {
+  } else if (match.params.userId) {
     action = getProductsByUser;
     arg = match.params.userId;
   } else if (sellerId) {

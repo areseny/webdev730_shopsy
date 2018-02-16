@@ -6,7 +6,7 @@ import { getAllCategories } from "../../actions/category_actions";
 
 const mapStateToProps = ({ products, categories } , { type, match }) => {
   let product, formType;
-  if (type === "create") {
+  if (!match.params.productId) {
     product = {
       title: "",
       price: "",
@@ -14,10 +14,8 @@ const mapStateToProps = ({ products, categories } , { type, match }) => {
       image_url: "",
       public_id: "",
     };
-    formType = "Create";
   } else {
     product = products[match.params.productId];
-    formType = "Update";
   }
   return { 
     product,
@@ -26,8 +24,8 @@ const mapStateToProps = ({ products, categories } , { type, match }) => {
      };
 };
 
-const mapDispatchToProps = (dispatch, { type }) =>  {
-  const action = type === "create" ? createProduct : updateProduct;
+const mapDispatchToProps = (dispatch, { match }) =>  {
+  const action = !match.params.productId ? createProduct : updateProduct;
   return {
     action: (userId, product, categories) => dispatch(action(userId, product, categories)),
     getAllCategories: () => dispatch(getAllCategories())

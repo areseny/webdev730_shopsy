@@ -3,9 +3,10 @@ import UserShow from "./user_show";
 import { getUser } from "../../actions/user_actions";
 import { withRouter } from "react-router-dom";
 
-const mapStateToProps = ({ users, session }, { match }) => ({
+const mapStateToProps = ({ users, session, ui }, { match }) => ({
   user: users[match.params.userId],
-  currentUser: session.currentUser
+  currentUser: session.currentUser,
+  isProductFormHidden: ui.isProductFormHidden,
 });
 
 const mapDispatchToProps = dispatch => ({

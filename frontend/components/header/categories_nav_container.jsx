@@ -5,7 +5,6 @@ import { closeCategoriesNav } from "../../actions/ui_actions";
 
 const mapStateToProps = ({ categories, ui }) => ({
   categories: Object.values(categories),
-  ui: ui.isHidden
 });
 
 const mapDispatchToProps = dispatch => ({

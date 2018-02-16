@@ -13,16 +13,14 @@ export default class ProductIndexItem extends React.Component {
   };
 
   handleEdit = e => {
-    e.preventDefault();
-    openProductForm();
-    productToEdit(product);
+    this.props.openProductForm();
   };
 
   render() {
     let editBtns;
-    if (this.props.path === "/users/:userId") {
+    if (this.props.path === "/users/:userId/:productId?") {
       editBtns = <div>
-          <button onClick={this.handleEdit}>Edit</button>
+          <Link to={`/users/${this.props.userId}/${this.props.product.id}`} onClick={this.handleEdit}>Edit</Link>
           <button onClick={this.handleDelete}>Delete</button>
         </div>;
     } else {

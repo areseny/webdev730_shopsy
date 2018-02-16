@@ -11,7 +11,7 @@ export default class ProductIndex extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.arg !== nextProps.arg) {
-        nextProps.action(nextProps.arg);
+      nextProps.action(nextProps.arg);
     }
   }
 
@@ -32,23 +32,24 @@ export default class ProductIndex extends React.Component {
             key={product.id}
             product={product}
             path={this.props.match.path}
+            />
+          ));
+        } else {
+          return this.props.products.map(product => (
+            <ProductIndexItem
+            key={product.id}
+            product={product}
+            path={this.props.match.path}
+            userId={this.props.match.params.userId}
             deleteProduct={this.props.deleteProduct}
-            productToEdit={this.props.productToEdit}
             openProductForm={this.props.openProductForm}
-          />
-        ));
-    } else {
-      return this.props.products.map(product => (
-        <ProductIndexItem
-          key={product.id}
-          product={product}
-          path={this.props.match.path}
         />
       ));
     }
   }
 
   render() {
+    console.log(this.props.match);
     return (
       <div className="main-index">
         <div className="product-index">

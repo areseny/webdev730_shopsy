@@ -19,7 +19,7 @@ const App = () => (
       <Route path="/users/products/:productId" component={ProductShowContainer}/>
       <Route path="/products/:productId" component={ProductShowContainer} />
       <Route exact path="/products" component={ProductIndexContainer} />
-      <ProtectedRoute path="/users/:userId" component={UserShowContainer}/>
+      <ProtectedRoute path="/users/:userId/:productId?" component={UserShowContainer}/>
       <Route path="/categories/:categoryId" component={ProductIndexContainer} />
       <Route exact path="/" component={Homepage} />
     </Switch>
