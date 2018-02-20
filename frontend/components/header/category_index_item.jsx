@@ -14,7 +14,7 @@ export default class CategoryIndexItem extends React.Component {
     if (this.props.type === "option") {
       return (
         <option
-          value={this.props.category.id}
+          value={String(this.props.category.id)}
         >
           {this.props.category.name}
         </option>

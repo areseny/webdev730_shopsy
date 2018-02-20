@@ -5,8 +5,7 @@ export default class ProductForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = Object.assign(this.props.product, {
-      filename: "",
-      options: []
+      filename: ""
     });
   }
 
@@ -31,7 +30,7 @@ export default class ProductForm extends React.Component {
       description: "",
       image_url: "",
       filename: "",
-      options: [],
+      productCategories: []
     };
     this.setState(newState);
   }
@@ -51,20 +50,21 @@ export default class ProductForm extends React.Component {
 
   handleSelectChange = e => {
     e.preventDefault();
-    const options = this.state.options;
-    options.push(e.target.value);
-    this.setState({ options: options });
+    const productCategories = this.state.productCategories;
+    productCategories.push(e.target.value);
+    this.setState({ productCategories });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    const options = this.state.options;
+    const productCategories = this.state.productCategories;
     let product = Object.assign({}, this.state);
-    this.props.action(this.props.match.params.userId, product, options);
+    this.props.action(this.props.match.params.userId, product, productCategories);
     this.clearForm();
   };
 
   render() {
+    console.log(this.state);
     const requiredDot = <span className="required-dot">*</span>;
     const categoryList = this.props.categories
       .slice(1)
@@ -73,14 +73,12 @@ export default class ProductForm extends React.Component {
           key={category.id}
           category={category}
           type="option"
-        />
+        /> 
       ));
     return (
       <div id="addProductForm" className="product-form-container">
         <form className="form product-form" onSubmit={this.handleSubmit}>
-          <label htmlFor="title">
-            Title {requiredDot}
-          </label>
+          <label htmlFor="title">Title {requiredDot}</label>
           <input
             className="form-text-input"
             name="title"
@@ -88,9 +86,7 @@ export default class ProductForm extends React.Component {
             value={this.state.title}
             onChange={this.update("title")}
           />
-          <label htmlFor="price">
-            Price {requiredDot} 
-          </label>
+          <label htmlFor="price">Price {requiredDot}</label>
           <input
             className="form-text-input"
             title="price"
@@ -99,9 +95,7 @@ export default class ProductForm extends React.Component {
             value={this.state.price}
             onChange={this.update("price")}
           />
-          <label htmlFor="description">
-            Description {requiredDot} 
-          </label>
+          <label htmlFor="description">Description {requiredDot}</label>
           <textarea
             className="form-text-input"
             title="description"
@@ -130,14 +124,14 @@ export default class ProductForm extends React.Component {
             className="category-select"
             name="categories"
             id="catSelect"
-            value={this.state.options}
-            onChange={this.handleSelectChange}
             multiple={true}
+            value={this.state.productCategories}
+            onChange={this.handleSelectChange}
           >
             {categoryList}
           </select>
           <div className="italic-msg">
-            {requiredDot}  Indicates required field
+            {requiredDot} Indicates required field
           </div>
           <input
             type="submit"
