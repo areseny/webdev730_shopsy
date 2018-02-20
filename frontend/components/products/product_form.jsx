@@ -10,6 +10,12 @@ export default class ProductForm extends React.Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.product !== nextProps.product) {
+      this.setState(nextProps.product);
+    }
+  }
+
   componentDidMount() {
     this.props.getAllCategories();
   }

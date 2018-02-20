@@ -5,29 +5,27 @@ import ProductFormContainer from "../products/product_form_container";
 export default class UserShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isProductFormHidden: this.props.isProductFormHidden };
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ isProductFormHidden: nextProps.isProductFormHidden });
+  componentWillUnmount() {
+    this.props.closeProductForm();
   }
 
   toggleForm = e => {
     e.preventDefault();
-    this.setState({ isProductFormHidden: !this.state.isProductFormHidden });
     if (this.props.match.params.productId) {
       this.props.history.push(`/users/${this.props.currentUser.id}`);
       this.props.closeProductForm();
-      // console.log(props)
-    } else {
+    } else if (this.props.isProductFormHidden) {
       this.props.openProductForm();
+    } else {
+      this.props.closeProductForm();
     }
   };
 
   render() {
-    const buttonText = this.state.isProductFormHidden
-      ? "Add Product"
-      : "Cancel";
+    const { isProductFormHidden } = this.props;
+    const buttonText = isProductFormHidden ? "Add Product" : "Cancel";
     return (
       <div className="user-page">
         <div className="user-page-header">
@@ -36,7 +34,7 @@ export default class UserShow extends React.Component {
           </div>
           <button onClick={this.toggleForm}>{buttonText}</button>
         </div>
-        {!this.state.isProductFormHidden && <ProductFormContainer />}
+        {!isProductFormHidden && <ProductFormContainer />}
         <div className="user-show-products">
           <ProductIndexContainer />
         </div>
