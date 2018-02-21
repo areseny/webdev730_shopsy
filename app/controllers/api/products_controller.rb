@@ -43,15 +43,10 @@ class Api::ProductsController < ApplicationController
 
     if @product.update_attributes(product_params)
       if params["categories"]
+        @product.categories.destroy_all
         cat_ids = params["categories"]
-        current_cat_ids = @product.categories.map { |category| category.id }
-        new_ids = cat_ids.reject {|id| current_cat_ids.include?(id)}
-        old_ids = current_cat_ids.select {|id| !cat_ids.include?(id)}
-        new_ids.each do |cat_id|
+        cat_ids.each do |cat_id|
           create_category_product(cat_id, @product.id)
-        end 
-        old_ids.each do |cat_id|
-          category_product = CategoryProduct.where(category_id: cat_id, product_id: @product.id)
         end 
       end 
       render :show
