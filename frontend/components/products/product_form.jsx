@@ -64,7 +64,6 @@ export default class ProductForm extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     const requiredDot = <span className="required-dot">*</span>;
     const categoryList = this.props.categories
       .slice(1)

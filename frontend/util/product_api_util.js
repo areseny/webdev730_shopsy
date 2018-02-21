@@ -41,11 +41,11 @@ export const createProduct = (userId, product, categories) =>
     data: { product, categories }
   });
 
-export const updateProduct = (userId, product) => 
+export const updateProduct = (userId, product, categories) => 
   $.ajax({
     method: 'PATCH',
     url: `api/users/${userId}/products/${product.id}`,
-    data: { product }
+    data: { product, categories }
   });
 
 export const deleteProduct = (userId, productId) => 
