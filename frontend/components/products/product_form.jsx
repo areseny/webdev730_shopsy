@@ -19,6 +19,10 @@ export default class ProductForm extends React.Component {
     this.props.getAllCategories();
   }
 
+  componentWillUnmount() {
+    this.props.closeProductForm();
+  }
+
   update(field) {
     return e => this.setState({ [field]: e.target.value });
   }
@@ -48,10 +52,15 @@ export default class ProductForm extends React.Component {
     });
   };
 
-  handleSelectChange = e => {
+  handleSelectMousedown = e => {
     e.preventDefault();
     const productCategories = this.state.productCategories;
-    productCategories.push(e.target.value);
+    if (!productCategories.includes(e.target.value)) {
+      productCategories.push(e.target.value);
+    } else {
+      const index = productCategories.indexOf(e.target.value);
+      productCategories.splice(index, 1);
+    }
     this.setState({ productCategories });
   };
 
@@ -59,8 +68,13 @@ export default class ProductForm extends React.Component {
     e.preventDefault();
     const productCategories = this.state.productCategories;
     let product = Object.assign({}, this.state);
-    this.props.action(this.props.match.params.userId, product, productCategories);
+    this.props.submitAction(
+      this.props.match.params.userId,
+      product,
+      productCategories
+    );
     this.clearForm();
+    this.props.closeProductForm();
   };
 
   render() {
@@ -72,7 +86,7 @@ export default class ProductForm extends React.Component {
           key={category.id}
           category={category}
           type="option"
-        /> 
+        />
       ));
     return (
       <div id="addProductForm" className="product-form-container">
@@ -125,7 +139,7 @@ export default class ProductForm extends React.Component {
             id="catSelect"
             multiple={true}
             value={this.state.productCategories}
-            onChange={this.handleSelectChange}
+            onMouseDown={this.handleSelectMousedown}
           >
             {categoryList}
           </select>

@@ -3,6 +3,7 @@ import ProductForm from "./product_form";
 import { withRouter } from "react-router-dom";
 import { createProduct, updateProduct } from "../../actions/product_actions";
 import { getAllCategories } from "../../actions/category_actions";
+import { closeProductForm } from "../../actions/ui_actions";
 
 const mapStateToProps = ({ products, categories }, { type, match }) => {
   let product, formType;
@@ -30,12 +31,8 @@ const mapStateToProps = ({ products, categories }, { type, match }) => {
 };
 
 const mapDispatchToProps = (dispatch, { match }) => {
-  const action = !match.params.productId ? createProduct : updateProduct;
-  return {
-    action: (userId, product, categories) =>
-      dispatch(action(userId, product, categories)),
-    getAllCategories: () => dispatch(getAllCategories())
-  };
+  const submitAction = !match.params.productId ? createProduct : updateProduct;
+  return { submitAction: (userId, product, categories) => dispatch(submitAction(userId, product, categories)), getAllCategories: () => dispatch(getAllCategories()), closeProductForm: () => dispatch(closeProductForm()) };
 };
 
 export default withRouter(

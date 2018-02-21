@@ -44,7 +44,9 @@ class Api::ProductsController < ApplicationController
     if @product.update_attributes(product_params)
       if params["categories"]
         cat_ids = params["categories"]
-        cat_ids.each do |cat_id|
+        current_cat_ids = @product.categories.map { |category| category.id }
+        new_ids = cat_ids.reject {|id| current_cat_ids.include?(id)}
+        new_ids.each do |cat_id|
           create_category_product(cat_id, @product.id)
         end 
       end 
