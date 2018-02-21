@@ -55,6 +55,7 @@ export default class ProductForm extends React.Component {
   handleSelectMousedown = e => {
     e.preventDefault();
     const productCategories = this.state.productCategories;
+    console.log(productCategories);
     if (!productCategories.includes(e.target.value)) {
       productCategories.push(e.target.value);
     } else {

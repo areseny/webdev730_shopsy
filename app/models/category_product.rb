@@ -10,6 +10,8 @@
 #
 
 class CategoryProduct < ApplicationRecord
+  validates :category, uniqueness: { scope: :product, message: "Product may only be added to category once" }
+
   belongs_to :category
   belongs_to :product
 end
