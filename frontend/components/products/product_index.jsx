@@ -43,6 +43,9 @@ export default class ProductIndex extends React.Component {
             userId={this.props.match.params.userId}
             deleteProduct={this.props.deleteProduct}
             openProductForm={this.props.openProductForm}
+            closeProductForm={this.props.closeProductForm}
+            isEditing={Boolean(this.props.match.params.productId)}
+            history={this.props.history}
         />
       ));
     }

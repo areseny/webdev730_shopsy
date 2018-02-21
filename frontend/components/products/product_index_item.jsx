@@ -8,8 +8,10 @@ export default class ProductIndexItem extends React.Component {
 
   handleDelete = e => {
     e.preventDefault();
-    const { deleteProduct, product } = this.props;
+    const { deleteProduct, product, closeProductForm, isEditing, userId } = this.props;
     deleteProduct(product.seller.id, product.id);
+    closeProductForm();
+    if (isEditing) this.props.history.push(`/users/${userId}`);
   };
 
   handleEdit = e => {
@@ -19,14 +21,22 @@ export default class ProductIndexItem extends React.Component {
   render() {
     let editBtns;
     if (this.props.path === "/users/:userId/:productId?") {
-      editBtns = <div>
-          <Link to={`/users/${this.props.userId}/${this.props.product.id}`} onClick={this.handleEdit}>Edit</Link>
+      editBtns = (
+        <div>
+          <Link
+            to={`/users/${this.props.userId}/${this.props.product.id}`}
+            onClick={this.handleEdit}
+          >
+            Edit
+          </Link>
           <button onClick={this.handleDelete}>Delete</button>
-        </div>;
+        </div>
+      );
     } else {
       editBtns = "";
     }
-    return <div className="product-item-container">
+    return (
+      <div className="product-item-container">
         <div className="product-index-img">
           <Link to={`/products/${this.props.product.id}`}>
             <img className="product-thumb" src={this.props.product.image_url} />
@@ -34,11 +44,16 @@ export default class ProductIndexItem extends React.Component {
         </div>
         <div className="product-index-info">
           <ul>
-            <li><Link to={`/products/${this.props.product.id}`}>{this.props.product.title}</Link></li>
+            <li>
+              <Link to={`/products/${this.props.product.id}`}>
+                {this.props.product.title}
+              </Link>
+            </li>
             <li>${this.props.product.price}</li>
             <li>{editBtns}</li>
           </ul>
         </div>
-      </div>;
+      </div>
+    );
   }
 }

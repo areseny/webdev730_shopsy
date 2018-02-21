@@ -9,7 +9,7 @@ import {
   getProductsByUser,
   deleteProduct
 } from "../../actions/product_actions";
-import { openProductForm } from "../../actions/ui_actions";
+import { openProductForm, closeProductForm } from "../../actions/ui_actions";
 const queryString = require("query-string");
 
 const getActionAndArg = ownProps => {
@@ -49,7 +49,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     action: arg => dispatch(action(arg)),
     deleteProduct: (userId, productId) =>
       dispatch(deleteProduct(userId, productId)),
-    openProductForm: () => dispatch(openProductForm())
+    openProductForm: () => dispatch(openProductForm()),
+    closeProductForm: () => dispatch(closeProductForm())
   };
 };
 
