@@ -1,11 +1,11 @@
-import React from "react";
-import CategoryIndexItem from "../header/category_index_item";
+import React from 'react';
+import CategoryIndexItem from '../header/category_index_item';
 
 export default class ProductForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = Object.assign(this.props.product, {
-      filename: ""
+      filename: ''
     });
   }
 
@@ -15,7 +15,7 @@ export default class ProductForm extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.getAllCategories();
   }
 
@@ -29,11 +29,11 @@ export default class ProductForm extends React.Component {
 
   clearForm() {
     const newState = {
-      title: "",
-      price: "",
-      description: "",
-      image_url: "",
-      filename: "",
+      title: '',
+      price: '',
+      description: '',
+      image_url: '',
+      filename: '',
       productCategories: []
     };
     this.setState(newState);
@@ -98,7 +98,7 @@ export default class ProductForm extends React.Component {
             name="title"
             type="text"
             value={this.state.title}
-            onChange={this.update("title")}
+            onChange={this.update('title')}
           />
           <label htmlFor="price">Price {requiredDot}</label>
           <input
@@ -107,7 +107,7 @@ export default class ProductForm extends React.Component {
             type="number"
             min="0"
             value={this.state.price}
-            onChange={this.update("price")}
+            onChange={this.update('price')}
           />
           <label htmlFor="description">Description {requiredDot}</label>
           <textarea
@@ -117,7 +117,7 @@ export default class ProductForm extends React.Component {
             cols="30"
             rows="10"
             value={this.state.description}
-            onChange={this.update("description")}
+            onChange={this.update('description')}
           >
             {this.state.description}
           </textarea>
@@ -131,7 +131,7 @@ export default class ProductForm extends React.Component {
             <div id="filename">{this.state.filename}</div>
           </div>
           <label htmlFor="categories">
-            Categories{" "}
+            Categories{' '}
             <span className="italic-msg"> - Select all that apply</span>
           </label>
           <select

@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import CategoryIndexItem from "./category_index_item";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import CategoryIndexItem from './category_index_item';
 
 export default class CategoriesNav extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class CategoriesNav extends React.Component {
     this.props.closeCategoriesNav();
   };
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.getAllCategories();
   }
 
